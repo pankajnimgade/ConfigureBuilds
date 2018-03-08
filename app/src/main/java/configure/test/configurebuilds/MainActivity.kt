@@ -5,8 +5,8 @@ import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import configure.test.configurebuilds.R
-
+import com.squareup.picasso.Picasso
+import configure.test.submodulemylibrary.SubModuleMainActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -20,6 +20,14 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
+
+        initialize()
+    }
+
+    private fun initialize() {
+        var picasso: Picasso
+        val subModuleMainActivity: SubModuleMainActivity
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

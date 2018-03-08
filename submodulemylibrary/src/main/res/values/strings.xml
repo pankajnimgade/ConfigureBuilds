@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SubModuleMyLibrary</string>
+    <string name="title_activity_sub_module_main">SubModuleMainActivity</string>
 </resources>

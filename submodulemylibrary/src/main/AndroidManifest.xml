@@ -1,2 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="configure.test.submodulemylibrary" />
+    package="configure.test.submodulemylibrary">
+
+    <application>
+        <activity
+            android:name=".SubModuleMainActivity"
+            android:label="@string/title_activity_sub_module_main"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+    </application>
+
+</manifest>
