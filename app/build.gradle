@@ -43,6 +43,9 @@ android {
      * but it includes debugging tools and is signed with the debug key. The release
      * build type applies Proguard settings and is not signed by default.
      */
+    flavorDimensions "tier"
+
+
     buildTypes {
 
         /**
@@ -55,6 +58,19 @@ android {
         }
     }
 
+    productFlavors {
+        free {
+            // Assigns this product flavor to the "tier" flavor dimension. Specifying
+            // this property is optional if you are using only one dimension.
+            dimension "tier"
+
+        }
+
+        paid {
+            dimension "tier"
+        }
+
+    }
 
 }
 
