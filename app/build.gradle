@@ -26,6 +26,7 @@ android {
      */
     defaultConfig {
         applicationId "configure.test.configurebuilds"
+        testApplicationId "configure.test.configurebuilds.test"
         // Defines the minimum API level required to run the app.
         minSdkVersion 21
         // Specifies the API level used to test the app.
@@ -48,6 +49,9 @@ android {
 
     buildTypes {
 
+        debug {
+            applicationIdSuffix ".debug"
+        }
         /**
          * By default, Android Studio configures the release build type to enable code
          * shrinking, using minifyEnabled, and specifies the Proguard settings file.
@@ -63,13 +67,25 @@ android {
             // Assigns this product flavor to the "tier" flavor dimension. Specifying
             // this property is optional if you are using only one dimension.
             dimension "tier"
+            applicationIdSuffix ".free"
 
         }
 
         paid {
             dimension "tier"
-        }
+            applicationIdSuffix ".paid"
 
+        }
+    }
+
+
+    applicationVariants.all { variant ->
+        variant.getCompileConfiguration().resolutionStrategy {
+        }
+        variant.runtimeConfiguration.resolutionStrategy {
+        }
+        variant.getAnnotationProcessorConfiguration().resolutionStrategy {
+        }
     }
 
 }
