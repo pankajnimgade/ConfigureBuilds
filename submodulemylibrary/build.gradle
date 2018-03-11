@@ -3,10 +3,15 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'pankaj'
+            keyPassword 'pankaj'
+            storeFile file('H:/Projects/Android_Projects/ConfigureBuilds/app/keyStore/ConfigureBuildsKeyStore.jks')
+            storePassword 'pankaj'
+        }
+    }
     compileSdkVersion 26
-
-
-
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 26
@@ -16,14 +21,12 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
-
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {
@@ -37,8 +40,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     api 'com.squareup.okhttp:okhttp:2.0.0'
     api 'com.squareup.picasso:picasso:2.3.2'
-    api group: 'commons-io', name: 'commons-io', version: '2.6'
-    testImplementation group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
-
+    api 'commons-io:commons-io:2.6'
+    testImplementation 'org.mockito:mockito-all:1.10.19'
 }
 

@@ -7,3 +7,7 @@
 /build
 /captures
 .externalNativeBuild
+*.class
+*.jks
+/release
+/app/release

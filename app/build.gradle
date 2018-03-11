@@ -5,8 +5,15 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 26
-
+    signingConfigs {
+        config {
+            keyAlias 'pankaj'
+            keyPassword 'pankaj'
+            storeFile file('H:/Projects/Android_Projects/ConfigureBuilds/app/keyStore/ConfigureBuildsKeyStore.jks')
+            storePassword 'pankaj'
+        }
+    }
+    compileSdkVersion 27
     /**
      * buildToolsVersion specifies the version of the SDK build tools, command-line
      * utilities, and compiler that Gradle should use to build your app. You need to
@@ -15,9 +22,7 @@ android {
      * If you're using Android plugin 3.0.0 or higher, this property is optional—
      * the plugin uses a recommended version of the build tools by default.
      */
-
     buildToolsVersion "27.0.3"
-
     /**
      * The defaultConfig block encapsulates default settings and entries for all
      * build variants, and can override some attributes in main/AndroidManifest.xml
@@ -30,7 +35,7 @@ android {
         // Defines the minimum API level required to run the app.
         minSdkVersion 21
         // Specifies the API level used to test the app.
-        targetSdkVersion 26
+        targetSdkVersion 27
         // Defines the version number of your app.
         versionCode 1
         // Defines a user-friendly version name for your app.
@@ -45,11 +50,10 @@ android {
      * build type applies Proguard settings and is not signed by default.
      */
     flavorDimensions "tier"
-
-
     buildTypes {
 
         debug {
+            ext.enableCrashlytics = false
             applicationIdSuffix ".debug"
         }
         /**
@@ -61,7 +65,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
     productFlavors {
         free {
             // Assigns this product flavor to the "tier" flavor dimension. Specifying
@@ -76,9 +79,22 @@ android {
             applicationIdSuffix ".paid"
 
         }
+
+        dev {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-dev"
+            applicationIdSuffix '.dev'
+        }
+
+        prod {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-prod"
+            applicationIdSuffix '.prod'
+
+        }
     }
-
-
     applicationVariants.all { variant ->
         variant.getCompileConfiguration().resolutionStrategy {
         }
@@ -87,15 +103,16 @@ android {
         variant.getAnnotationProcessorConfiguration().resolutionStrategy {
         }
     }
-
 }
+
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:appcompat-v7:27.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.android.support:cardview-v7:27.1.0'
+    implementation 'com.android.support:design:27.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
