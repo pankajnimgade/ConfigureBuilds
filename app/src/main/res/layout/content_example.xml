@@ -21,9 +21,9 @@
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="top"
         android:fadeScrollbars="true"
-        android:scrollbars="none"
-        android:layout_gravity="top">
+        android:scrollbars="none">
 
         <TextView
             android:layout_width="wrap_content"
@@ -35,4 +35,25 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:id="@+id/ExampleActivity_scrollToRight_HorizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:fadeScrollbars="true"
+        android:scrollbars="none">
+
+        <TextView
+            android:id="@+id/ExampleActivity_scrollToRight_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:scrollHorizontally="true"
+            android:text="@string/scrollText"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    </HorizontalScrollView>
+
 </LinearLayout>

@@ -3,11 +3,17 @@ package configure.test.configurebuilds.activities
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
+import android.view.View
+import android.widget.HorizontalScrollView
+import android.widget.TextView
 import configure.test.configurebuilds.R
 
 import kotlinx.android.synthetic.main.activity_example.*
 
 class ExampleActivity : AppCompatActivity() {
+
+    private lateinit var horizontalScrollView: HorizontalScrollView
+    private lateinit var textView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +25,18 @@ class ExampleActivity : AppCompatActivity() {
                     .setAction("Action", null).show()
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        initializeUI()
+    }
+
+    private fun initializeUI() {
+
+        horizontalScrollView = findViewById(R.id.ExampleActivity_scrollToRight_HorizontalScrollView)
+        textView = findViewById(R.id.ExampleActivity_scrollToRight_textView)
+
+        horizontalScrollView.post {
+            horizontalScrollView.fullScroll(View.FOCUS_RIGHT)
+        }
     }
 
 }
