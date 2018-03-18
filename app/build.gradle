@@ -70,12 +70,14 @@ android {
             // Assigns this product flavor to the "tier" flavor dimension. Specifying
             // this property is optional if you are using only one dimension.
             dimension "tier"
+            versionNameSuffix "-free"
             applicationIdSuffix ".free"
 
         }
 
         paid {
             dimension "tier"
+            versionNameSuffix "-paid"
             applicationIdSuffix ".paid"
 
         }
@@ -117,5 +119,4 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation "com.google.code.gson:gson:${rootProject.ext.gsonVersion}"
-    api project(':submodulemylibrary')
 }

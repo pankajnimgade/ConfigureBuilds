@@ -11,3 +11,5 @@
 *.jks
 /release
 /app/release
+.idea/modules.xml
+.idea/gradle.xml
