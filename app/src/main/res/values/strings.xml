@@ -4,4 +4,7 @@
     <string name="title_activity_example">ExampleActivity</string>
     <string name="scrollText">
         12111112222222233333333444444444444445555555555566666666677777777788888888889999999</string>
+    <string name="title_activity_custom_edit_text">CustomEditTextActivity</string>
+    <string name="title_activity_test_dock_tile">TestDockTileActivity</string>
+    <string name="title_activity_list">ListActivity</string>
 </resources>

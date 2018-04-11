@@ -3,13 +3,13 @@
     package="configure.test.configurebuilds">
 
     <application
+        android:name=".application.StartUp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:name=".application.StartUp">
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -23,6 +23,33 @@
         <activity
             android:name=".activities.ExampleActivity"
             android:label="@string/title_activity_example"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.edittext.CustomEditTextActivity"
+            android:label="@string/title_activity_custom_edit_text"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.dock.list.TestDockTileActivity"
+            android:label="@string/title_activity_test_dock_tile"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.dock.list.ListActivity"
+            android:label="@string/title_activity_list"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data

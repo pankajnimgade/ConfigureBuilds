@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
             val activityItem = list[position]
             holder.title.text = activityItem.activityName
             holder.rootLayout.setOnClickListener {
-                context.startActivity(Intent(context, ExampleActivity::class.java))
+                context.startActivity(Intent(context, activityItem.activityClass))
             }
         }
 
