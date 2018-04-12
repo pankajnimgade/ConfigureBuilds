@@ -7,4 +7,5 @@
     <string name="title_activity_custom_edit_text">CustomEditTextActivity</string>
     <string name="title_activity_test_dock_tile">TestDockTileActivity</string>
     <string name="title_activity_list">ListActivity</string>
+    <string name="title_activity_decorator_one">DecoratorOneActivity</string>
 </resources>

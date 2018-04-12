@@ -14,6 +14,9 @@ import configure.test.configurebuilds.R
 import configure.test.configurebuilds.activities.dock.list.RecyclerSectionItemDecoration.SectionCallback
 import kotlinx.android.synthetic.main.activity_test_dock_tile.*
 
+/**
+ * http://www.codexpedia.com/android/android-recyclerview-with-sticky-header-using-itemdecoration/
+ * */
 class TestDockTileActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView

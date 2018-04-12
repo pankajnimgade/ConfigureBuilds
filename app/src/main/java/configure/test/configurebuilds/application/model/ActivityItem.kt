@@ -2,6 +2,7 @@ package configure.test.configurebuilds.application.model
 
 import android.app.Activity
 import configure.test.configurebuilds.activities.ExampleActivity
+import configure.test.configurebuilds.activities.decorator_one.DecoratorOneActivity
 import configure.test.configurebuilds.activities.dock.list.ListActivity
 import configure.test.configurebuilds.activities.dock.list.TestDockTileActivity
 import configure.test.configurebuilds.activities.edittext.CustomEditTextActivity
@@ -19,6 +20,7 @@ class ActivityItem(val activityClass: Class<out Activity>, val activityName: Str
             list.add(ActivityItem(ExampleActivity::class.java, "Example Activity"))
             list.add(ActivityItem(ListActivity::class.java, "List Item"))
             list.add(ActivityItem(TestDockTileActivity::class.java, "Test Dock tile"))
+            list.add(ActivityItem(DecoratorOneActivity::class.java, "Decorator One"))
             return list
         }
     }
