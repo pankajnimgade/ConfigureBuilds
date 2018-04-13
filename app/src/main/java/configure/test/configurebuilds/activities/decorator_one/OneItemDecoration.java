@@ -118,6 +118,10 @@ public class OneItemDecoration extends RecyclerView.ItemDecoration {
             int parentTop = child.getBottom() + params.bottomMargin;
             int parentBottom = parentTop + mDrawable.getIntrinsicHeight();
 
+/*            // this will allow the divider to be drawn on top of the recycler view's child
+            int parentTop = child.getTop() - params.topMargin;
+            int parentBottom = parentTop + mDrawable.getIntrinsicHeight();*/
+
             mDrawable.setBounds(parentLeft, parentTop, parentRight, parentBottom);
             mDrawable.draw(canvas);
         }
