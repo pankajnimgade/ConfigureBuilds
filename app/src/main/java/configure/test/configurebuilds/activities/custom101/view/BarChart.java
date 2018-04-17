@@ -9,22 +9,33 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
+import java.util.Random;
+
 public class BarChart extends View {
 
     private static final String TAG = BarChart.class.getSimpleName();
     private int maxHeight = getHeight();
     private int maxWidth = getWidth();
-    private float mPadding = 15f;
+    private float mPadding = 10f;
     private static Paint mAxisBlackPaint;
-    private static Paint mGuilLineBlackPaint;
+    private static Paint mGuideLineBlackPaint;
+    private static Paint mBarChartPaint;
+    private static final int barCount = 10;
+    private static final float barSpacing = 10f;
 
     static {
-        mAxisBlackPaint = new Paint(Color.BLACK);
+        mAxisBlackPaint = new Paint();
+        mAxisBlackPaint.setColor(Color.BLACK);
         mAxisBlackPaint.setFakeBoldText(true);
         mAxisBlackPaint.setStrokeWidth(3f);
 
-        mGuilLineBlackPaint = new Paint(Color.BLACK);
-        mGuilLineBlackPaint.setStrokeWidth(1f);
+        mGuideLineBlackPaint = new Paint(Color.BLACK);
+        mGuideLineBlackPaint.setColor(Color.GRAY);
+        mGuideLineBlackPaint.setStrokeWidth(1f);
+
+        mBarChartPaint = new Paint(Color.GREEN);
+        mBarChartPaint.setColor(Color.GREEN);
+        mBarChartPaint.setStyle(Paint.Style.FILL);
     }
 
     public BarChart(Context context) {
@@ -61,11 +72,30 @@ public class BarChart extends View {
         //draw charts y-axis
         canvas.drawLine(gridLeft, gridTop, gridLeft, gridBottom, mAxisBlackPaint);
 
+        //draw right border of chart
+        canvas.drawLine(gridRight, gridTop, gridRight, gridBottom, mGuideLineBlackPaint);
+
         //draw guideLines
         float guideLineWidth = (gridBottom - gridTop) / 10f;
         for (int i = 0; i < 10; i++) {
-            float yValue = gridTop + (i* guideLineWidth);
-            canvas.drawLine(gridLeft, yValue, gridRight, yValue, mGuilLineBlackPaint);
+            float yValue = gridTop + (i * guideLineWidth);
+            canvas.drawLine(gridLeft, yValue, gridRight, yValue, mGuideLineBlackPaint);
+        }
+
+        // draw bars in chart
+        final float totalColumnSpacing = barSpacing * (barCount + 1);
+        float columnWidth = (gridRight - gridLeft - totalColumnSpacing) / barCount;
+
+        float columnLeft = gridLeft + barSpacing;
+        float columnRight = columnLeft + columnWidth;
+
+        for (int i = 0; i < barCount; i++) {
+            float columnTop = (new Random().nextInt((int) gridBottom)) + gridTop + gridTop + gridTop;
+            canvas.drawRect(columnLeft, columnTop, columnRight, gridBottom, mBarChartPaint);
+
+            //
+            columnLeft = columnRight+ barSpacing;
+            columnRight = columnLeft + columnWidth;
         }
 
 
