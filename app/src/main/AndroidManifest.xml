@@ -65,6 +65,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="configure.test.configurebuilds.MainActivity" />
         </activity>
+        <activity
+            android:name=".activities.decorator_two.DecoratorTwoActivity"
+            android:label="@string/title_activity_decorator_two"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

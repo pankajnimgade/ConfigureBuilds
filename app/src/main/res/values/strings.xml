@@ -8,4 +8,5 @@
     <string name="title_activity_test_dock_tile">TestDockTileActivity</string>
     <string name="title_activity_list">ListActivity</string>
     <string name="title_activity_decorator_one">DecoratorOneActivity</string>
+    <string name="title_activity_decorator_two">DecoratorTwoActivity</string>
 </resources>
