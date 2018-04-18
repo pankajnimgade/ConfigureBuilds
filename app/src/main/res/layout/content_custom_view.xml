@@ -9,9 +9,20 @@
     tools:showIn="@layout/activity_custom_view">
 
     <configure.test.configurebuilds.activities.custom101.view.BarChart
+        android:id="@+id/CustomViewActivity_BarChart"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/CustomViewActivity_animate_button" />
+
+    <Button
+        android:id="@+id/CustomViewActivity_animate_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Animate"
+        android:onClick="barChartAnimate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

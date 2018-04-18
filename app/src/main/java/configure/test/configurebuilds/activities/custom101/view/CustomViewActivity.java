@@ -1,15 +1,20 @@
 package configure.test.configurebuilds.activities.custom101.view;
 
+import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
+import android.view.animation.AccelerateInterpolator;
 
 import configure.test.configurebuilds.R;
 
 public class CustomViewActivity extends AppCompatActivity {
+
+    private static final String TAG = CustomViewActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,4 +34,15 @@ public class CustomViewActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+
+    public void barChartAnimate(View view) {
+        Log.d(TAG, "barChartAnimate: ");
+
+        ValueAnimator mValueAnimator = new ValueAnimator();
+        mValueAnimator.setDuration(500);
+        mValueAnimator.setInterpolator(new AccelerateInterpolator());
+        mValueAnimator.addUpdateListener((ValueAnimator.AnimatorUpdateListener) findViewById(R.id.CustomViewActivity_BarChart));
+        mValueAnimator.setFloatValues(0f, 1f);
+        mValueAnimator.start();
+    }
 }

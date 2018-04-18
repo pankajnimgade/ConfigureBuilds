@@ -1,5 +1,6 @@
 package configure.test.configurebuilds.activities.custom101.view;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -11,7 +12,7 @@ import android.view.View;
 
 import java.util.Random;
 
-public class BarChart extends View {
+public class BarChart extends View implements ValueAnimator.AnimatorUpdateListener {
 
     private static final String TAG = BarChart.class.getSimpleName();
     private int maxHeight = getHeight();
@@ -21,7 +22,12 @@ public class BarChart extends View {
     private static Paint mGuideLineBlackPaint;
     private static Paint mBarChartPaint;
     private static final int barCount = 10;
+    private static final float[] barPercentage = new float[barCount];
     private static final float barSpacing = 10f;
+    private float mAnimationFraction = 0f;
+
+    private static ValueAnimator mValueAnimator;
+
 
     static {
         mAxisBlackPaint = new Paint();
@@ -36,6 +42,10 @@ public class BarChart extends View {
         mBarChartPaint = new Paint(Color.GREEN);
         mBarChartPaint.setColor(Color.GREEN);
         mBarChartPaint.setStyle(Paint.Style.FILL);
+
+        for (int i = 0; i < barPercentage.length; i++) {
+            barPercentage[i] = new Random().nextFloat();
+        }
     }
 
     public BarChart(Context context) {
@@ -81,6 +91,7 @@ public class BarChart extends View {
             float yValue = gridTop + (i * guideLineWidth);
             canvas.drawLine(gridLeft, yValue, gridRight, yValue, mGuideLineBlackPaint);
         }
+        float gridHeight = gridBottom - gridTop;
 
         // draw bars in chart
         final float totalColumnSpacing = barSpacing * (barCount + 1);
@@ -89,15 +100,24 @@ public class BarChart extends View {
         float columnLeft = gridLeft + barSpacing;
         float columnRight = columnLeft + columnWidth;
 
-        for (int i = 0; i < barCount; i++) {
-            float columnTop = (new Random().nextInt((int) gridBottom)) + gridTop + gridTop + gridTop;
+        for (float percent : barPercentage) {
+
+            float columnTop = ((1 - percent * mAnimationFraction) * gridHeight) + gridTop;
             canvas.drawRect(columnLeft, columnTop, columnRight, gridBottom, mBarChartPaint);
 
             //
-            columnLeft = columnRight+ barSpacing;
+            columnLeft = columnRight + barSpacing;
             columnRight = columnLeft + columnWidth;
         }
 
 
+    }
+
+
+    @Override
+    public void onAnimationUpdate(ValueAnimator animation) {
+        mAnimationFraction = animation.getAnimatedFraction();
+
+        invalidate();
     }
 }
