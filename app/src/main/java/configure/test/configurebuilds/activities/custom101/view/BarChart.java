@@ -15,9 +15,6 @@ import java.util.Random;
 public class BarChart extends View implements ValueAnimator.AnimatorUpdateListener {
 
     private static final String TAG = BarChart.class.getSimpleName();
-    private int maxHeight = getHeight();
-    private int maxWidth = getWidth();
-    private float mPadding = 10f;
     private static Paint mAxisBlackPaint;
     private static Paint mGuideLineBlackPaint;
     private static Paint mBarChartPaint;
@@ -64,10 +61,11 @@ public class BarChart extends View implements ValueAnimator.AnimatorUpdateListen
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         Log.d(TAG, "onDraw: ...");
-        maxHeight = getHeight();
-        maxWidth = getWidth();
+        int maxHeight = getHeight();
+        int maxWidth = getWidth();
         Log.d(TAG, "onDraw: maxHeight: " + getHeight());
         Log.d(TAG, "onDraw: maxWidth: " + getWidth());
+        float mPadding = 10f;
         final float gridTop = mPadding;
         final float gridRight = maxWidth - mPadding;
         final float gridBottom = maxHeight - mPadding;

@@ -10,4 +10,5 @@
     <string name="title_activity_decorator_one">DecoratorOneActivity</string>
     <string name="title_activity_decorator_two">DecoratorTwoActivity</string>
     <string name="title_activity_custom_view">CustomViewActivity</string>
+    <string name="title_activity_custom_tab_layout">CustomTabLayoutActivity</string>
 </resources>
