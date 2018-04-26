@@ -9,6 +9,7 @@ import configure.test.configurebuilds.activities.decorator_two.DecoratorTwoActiv
 import configure.test.configurebuilds.activities.dock.list.ListActivity
 import configure.test.configurebuilds.activities.dock.list.TestDockTileActivity
 import configure.test.configurebuilds.activities.edittext.CustomEditTextActivity
+import configure.test.configurebuilds.activities.expresso.ExpressoTestActivity
 
 /**
  * Created by Pankaj Nimgade on 3/11/2018.
@@ -20,6 +21,7 @@ class ActivityItem(val activityClass: Class<out Activity>, val activityName: Str
         fun getActivityItemList(): List<ActivityItem> {
             val list = mutableListOf<ActivityItem>()
             list.add(ActivityItem(CustomTabLayoutActivity::class.java, "Custom Tab Layout"))
+            list.add(ActivityItem(ExpressoTestActivity::class.java, "Expresso Test Activity"))
             list.add(ActivityItem(CustomViewActivity::class.java, "Custom View Activity"))
             list.add(ActivityItem(CustomEditTextActivity::class.java, "Custom EditText Activity"))
             list.add(ActivityItem(ExampleActivity::class.java, "Example Activity"))
