@@ -10,6 +10,7 @@ import configure.test.configurebuilds.activities.dock.list.ListActivity
 import configure.test.configurebuilds.activities.dock.list.TestDockTileActivity
 import configure.test.configurebuilds.activities.edittext.CustomEditTextActivity
 import configure.test.configurebuilds.activities.expresso.ExpressoTestActivity
+import configure.test.configurebuilds.activities.superscript.SuperScriptActivity
 
 /**
  * Created by Pankaj Nimgade on 3/11/2018.
@@ -20,6 +21,7 @@ class ActivityItem(val activityClass: Class<out Activity>, val activityName: Str
     companion object {
         fun getActivityItemList(): List<ActivityItem> {
             val list = mutableListOf<ActivityItem>()
+            list.add(ActivityItem(SuperScriptActivity::class.java, "Super Script test"))
             list.add(ActivityItem(CustomTabLayoutActivity::class.java, "Custom Tab Layout"))
             list.add(ActivityItem(ExpressoTestActivity::class.java, "Expresso Test Activity"))
             list.add(ActivityItem(CustomViewActivity::class.java, "Custom View Activity"))

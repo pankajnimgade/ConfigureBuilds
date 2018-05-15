@@ -12,4 +12,5 @@
     <string name="title_activity_custom_view">CustomViewActivity</string>
     <string name="title_activity_custom_tab_layout">CustomTabLayoutActivity</string>
     <string name="title_activity_expresso_test">ExpressoTestActivity</string>
+    <string name="title_activity_super_script">SuperScriptActivity</string>
 </resources>
