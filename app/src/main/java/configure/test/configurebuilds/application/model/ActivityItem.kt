@@ -2,6 +2,7 @@ package configure.test.configurebuilds.application.model
 
 import android.app.Activity
 import configure.test.configurebuilds.activities.ExampleActivity
+import configure.test.configurebuilds.activities.accessibility.AccessibilityActivity
 import configure.test.configurebuilds.activities.custom101.view.CustomViewActivity
 import configure.test.configurebuilds.activities.custom102.tablayout.CustomTabLayoutActivity
 import configure.test.configurebuilds.activities.decorator_one.DecoratorOneActivity
@@ -21,6 +22,7 @@ class ActivityItem(val activityClass: Class<out Activity>, val activityName: Str
     companion object {
         fun getActivityItemList(): List<ActivityItem> {
             val list = mutableListOf<ActivityItem>()
+            list.add(ActivityItem(AccessibilityActivity::class.java, "Accessibility Test"))
             list.add(ActivityItem(SuperScriptActivity::class.java, "Super Script test"))
             list.add(ActivityItem(CustomTabLayoutActivity::class.java, "Custom Tab Layout"))
             list.add(ActivityItem(ExpressoTestActivity::class.java, "Expresso Test Activity"))

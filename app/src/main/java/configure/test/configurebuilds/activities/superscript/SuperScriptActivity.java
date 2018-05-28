@@ -70,10 +70,18 @@ public class SuperScriptActivity extends AppCompatActivity {
 
     private void testSuperScript107() {
         String text = "Custom®";
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(text);
-        RelativeSizeSpan relativeSizeSpan = new RelativeSizeSpan(.5f);
-        spannableStringBuilder.setSpan(relativeSizeSpan, 6, 7, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        /*SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(text);
+        RelativeSizeSpan relativeSizeSpan = new RelativeSizeSpan(.75f);
         spannableStringBuilder.setSpan(new SuperscriptSpan(), 6, 7, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableStringBuilder.setSpan(relativeSizeSpan, 6, 7, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        textView7.setText(spannableStringBuilder);*/
+
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(text);
+        RelativeSizeSpan relativeSizeSpan = new RelativeSizeSpan(.75f);
+        spannableStringBuilder.setSpan(new SuperscriptSpan(), text.indexOf("®"), text.indexOf
+                ("®") + 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableStringBuilder.setSpan(relativeSizeSpan, text.indexOf("®"), text.indexOf
+                ("®") + 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         textView7.setText(spannableStringBuilder);
     }
 
