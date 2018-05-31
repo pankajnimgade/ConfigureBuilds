@@ -12,6 +12,7 @@ import configure.test.configurebuilds.activities.dock.list.TestDockTileActivity
 import configure.test.configurebuilds.activities.edittext.CustomEditTextActivity
 import configure.test.configurebuilds.activities.expresso.ExpressoTestActivity
 import configure.test.configurebuilds.activities.superscript.SuperScriptActivity
+import configure.test.configurebuilds.ui.AndroidMeActivity
 
 /**
  * Created by Pankaj Nimgade on 3/11/2018.
@@ -22,6 +23,7 @@ class ActivityItem(val activityClass: Class<out Activity>, val activityName: Str
     companion object {
         fun getActivityItemList(): List<ActivityItem> {
             val list = mutableListOf<ActivityItem>()
+            list.add(ActivityItem(AndroidMeActivity::class.java, "Android Me"))
             list.add(ActivityItem(AccessibilityActivity::class.java, "Accessibility Test"))
             list.add(ActivityItem(SuperScriptActivity::class.java, "Super Script test"))
             list.add(ActivityItem(CustomTabLayoutActivity::class.java, "Custom Tab Layout"))

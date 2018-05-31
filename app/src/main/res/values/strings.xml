@@ -16,4 +16,5 @@
     <string name="title_activity_accessibility">AccessibilityActivity</string>
     <string name="_1_2_3_4_5_6_7_8_9">1 2 3 4 5 6 7 8 9</string>
     <string name="not_to_read_for_accessibility">Not to read for accessibility</string>
+    <string name="title_activity_android_me">AndroidMeActivity</string>
 </resources>

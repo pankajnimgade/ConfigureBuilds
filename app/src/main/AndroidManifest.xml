@@ -119,6 +119,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="configure.test.configurebuilds.MainActivity" />
         </activity>
+        <activity
+            android:name=".udacity.lesson_2.body.part.fragment.AndroidMeActivity"
+            android:label="@string/title_activity_android_me"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

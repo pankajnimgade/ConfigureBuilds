@@ -96,6 +96,13 @@ android {
             applicationIdSuffix '.prod'
 
         }
+
+        android_Me {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-android.me"
+            applicationIdSuffix '.android.me'
+        }
     }
 
     variantFilter { variant ->
@@ -114,6 +121,11 @@ android {
         variant.runtimeConfiguration.resolutionStrategy {
         }
         variant.getAnnotationProcessorConfiguration().resolutionStrategy {
+        }
+    }
+    sourceSets {
+        android_Me {
+            manifest.srcFile 'src/android_Me/AndroidManifest.xml'
         }
     }
 }
