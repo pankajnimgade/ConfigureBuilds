@@ -14,7 +14,9 @@ import configure.test.configurebuilds.R;
 
 public class AndroidMeActivity extends AppCompatActivity {
 
+    private FrameLayout headContainerFrameLayout;
     private FrameLayout bodyContainerFrameLayout;
+    private FrameLayout legContainerFrameLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,15 +39,28 @@ public class AndroidMeActivity extends AppCompatActivity {
     }
 
     private void initializeUi() {
+        legContainerFrameLayout = findViewById(R.id.AndroidMeActivity_leg_container_FrameLayout);
+        headContainerFrameLayout = findViewById(R.id.AndroidMeActivity_head_container_FrameLayout);
         bodyContainerFrameLayout = findViewById(R.id.AndroidMeActivity_body_container_FrameLayout);
 
+        HeadPartFragment headPartFragment = new HeadPartFragment();
         BodyPartFragment bodyPartFragment = new BodyPartFragment();
+        LegPartFragment legPartFragment = new LegPartFragment();
 
         // Use FragmentManager and transaction to add the fragment to the screen
         FragmentManager fragmentManager = getFragmentManager();
 
+        // Add head part fragment to the activity
+        fragmentManager.beginTransaction().add(R.id.AndroidMeActivity_head_container_FrameLayout,
+                headPartFragment).commit();
+
+        // Add body part fragment to the activity
         fragmentManager.beginTransaction().add(R.id.AndroidMeActivity_body_container_FrameLayout,
                 bodyPartFragment).commit();
+
+        // Add body part fragment to the activity
+        fragmentManager.beginTransaction().add(R.id.AndroidMeActivity_leg_container_FrameLayout,
+                legPartFragment).commit();
 
     }
 

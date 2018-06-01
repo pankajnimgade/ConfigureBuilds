@@ -8,10 +8,28 @@
     tools:context="configure.test.configurebuilds.ui.AndroidMeActivity"
     tools:showIn="@layout/activity_android_me">
 
-
-    <FrameLayout
-        android:id="@+id/AndroidMeActivity_body_container_FrameLayout"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/AndroidMeActivity_head_container_FrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="centerInside" />
+
+        <FrameLayout
+            android:id="@+id/AndroidMeActivity_body_container_FrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="centerInside" />
+
+        <FrameLayout
+            android:id="@+id/AndroidMeActivity_leg_container_FrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="centerInside" />
+    </LinearLayout>
 
 </ScrollView>

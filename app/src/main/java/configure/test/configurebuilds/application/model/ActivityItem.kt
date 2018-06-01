@@ -21,9 +21,9 @@ class ActivityItem(val activityClass: Class<out Activity>, val activityName: Str
 
 
     companion object {
+        @JvmStatic
         fun getActivityItemList(): List<ActivityItem> {
             val list = mutableListOf<ActivityItem>()
-            list.add(ActivityItem(AndroidMeActivity::class.java, "Android Me"))
             list.add(ActivityItem(AccessibilityActivity::class.java, "Accessibility Test"))
             list.add(ActivityItem(SuperScriptActivity::class.java, "Super Script test"))
             list.add(ActivityItem(CustomTabLayoutActivity::class.java, "Custom Tab Layout"))
@@ -35,7 +35,18 @@ class ActivityItem(val activityClass: Class<out Activity>, val activityName: Str
             list.add(ActivityItem(TestDockTileActivity::class.java, "Test Dock tile"))
             list.add(ActivityItem(DecoratorOneActivity::class.java, "Decorator One"))
             list.add(ActivityItem(DecoratorTwoActivity::class.java, "Decorator Two"))
+
+            androidMe(list)
             return list
         }
+
+        /**
+         * Use this when using 'androidMe' build variant
+         * */
+        @JvmStatic
+        private fun androidMe(list: MutableList<ActivityItem>) {
+            list.add(0, ActivityItem(AndroidMeActivity::class.java, "AndroidMe Test"))
+        }
+
     }
 }
