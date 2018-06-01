@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import configure.test.configurebuilds.R;
+import configure.test.configurebuilds.data.AndroidImageAssets;
 
 
 public class AndroidMeActivity extends AppCompatActivity {
@@ -35,32 +36,38 @@ public class AndroidMeActivity extends AppCompatActivity {
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        initializeUi();
+        initializeUi(savedInstanceState);
     }
 
-    private void initializeUi() {
-        legContainerFrameLayout = findViewById(R.id.AndroidMeActivity_leg_container_FrameLayout);
-        headContainerFrameLayout = findViewById(R.id.AndroidMeActivity_head_container_FrameLayout);
-        bodyContainerFrameLayout = findViewById(R.id.AndroidMeActivity_body_container_FrameLayout);
+    private void initializeUi(Bundle savedInstanceState) {
 
-        HeadPartFragment headPartFragment = new HeadPartFragment();
-        BodyPartFragment bodyPartFragment = new BodyPartFragment();
-        LegPartFragment legPartFragment = new LegPartFragment();
+        if (savedInstanceState == null){
+            legContainerFrameLayout = findViewById(R.id.AndroidMeActivity_leg_container_FrameLayout);
+            headContainerFrameLayout = findViewById(R.id.AndroidMeActivity_head_container_FrameLayout);
+            bodyContainerFrameLayout = findViewById(R.id.AndroidMeActivity_body_container_FrameLayout);
 
-        // Use FragmentManager and transaction to add the fragment to the screen
-        FragmentManager fragmentManager = getFragmentManager();
+            HeadPartFragment headPartFragment = new HeadPartFragment();
+            BodyPartFragment bodyPartFragment = new BodyPartFragment();
+            LegPartFragment legPartFragment = new LegPartFragment();
 
-        // Add head part fragment to the activity
-        fragmentManager.beginTransaction().add(R.id.AndroidMeActivity_head_container_FrameLayout,
-                headPartFragment).commit();
+            // Use FragmentManager and transaction to add the fragment to the screen
+            FragmentManager fragmentManager = getFragmentManager();
 
-        // Add body part fragment to the activity
-        fragmentManager.beginTransaction().add(R.id.AndroidMeActivity_body_container_FrameLayout,
-                bodyPartFragment).commit();
+            // Add head part fragment to the activity
+            headPartFragment.setmImageIds(AndroidImageAssets.getHeads());
+            fragmentManager.beginTransaction().add(R.id.AndroidMeActivity_head_container_FrameLayout,
+                    headPartFragment).commit();
 
-        // Add body part fragment to the activity
-        fragmentManager.beginTransaction().add(R.id.AndroidMeActivity_leg_container_FrameLayout,
-                legPartFragment).commit();
+            // Add body part fragment to the activity
+            bodyPartFragment.setmImageIds(AndroidImageAssets.getBodies());
+            fragmentManager.beginTransaction().add(R.id.AndroidMeActivity_body_container_FrameLayout,
+                    bodyPartFragment).commit();
+
+            // Add body part fragment to the activity
+            legPartFragment.setmImageIds(AndroidImageAssets.getLegs());
+            fragmentManager.beginTransaction().add(R.id.AndroidMeActivity_leg_container_FrameLayout,
+                    legPartFragment).commit();
+        }
 
     }
 

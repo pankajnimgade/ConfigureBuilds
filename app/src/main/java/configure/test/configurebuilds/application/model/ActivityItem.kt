@@ -13,6 +13,7 @@ import configure.test.configurebuilds.activities.edittext.CustomEditTextActivity
 import configure.test.configurebuilds.activities.expresso.ExpressoTestActivity
 import configure.test.configurebuilds.activities.superscript.SuperScriptActivity
 import configure.test.configurebuilds.ui.AndroidMeActivity
+import configure.test.configurebuilds.ui.MasterListActivity
 
 /**
  * Created by Pankaj Nimgade on 3/11/2018.
@@ -46,6 +47,7 @@ class ActivityItem(val activityClass: Class<out Activity>, val activityName: Str
         @JvmStatic
         private fun androidMe(list: MutableList<ActivityItem>) {
             list.add(0, ActivityItem(AndroidMeActivity::class.java, "AndroidMe Test"))
+            list.add(0, ActivityItem(MasterListActivity::class.java, "Master List Activity"))
         }
 
     }
