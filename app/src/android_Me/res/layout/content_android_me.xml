@@ -9,6 +9,7 @@
     tools:showIn="@layout/activity_android_me">
 
     <LinearLayout
+        android:id="@+id/android_me_linear_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">

@@ -19,6 +19,10 @@ public class AndroidMeActivity extends AppCompatActivity {
     private FrameLayout bodyContainerFrameLayout;
     private FrameLayout legContainerFrameLayout;
 
+    private int headIndex;
+    private int bodyIndex;
+    private int legIndex;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +45,12 @@ public class AndroidMeActivity extends AppCompatActivity {
 
     private void initializeUi(Bundle savedInstanceState) {
 
-        if (savedInstanceState == null){
+        if (savedInstanceState == null) {
+
+            headIndex = getIntent().getIntExtra("headIndex", 0);
+            bodyIndex = getIntent().getIntExtra("bodyIndex", 0);
+            legIndex = getIntent().getIntExtra("legIndex", 0);
+
             legContainerFrameLayout = findViewById(R.id.AndroidMeActivity_leg_container_FrameLayout);
             headContainerFrameLayout = findViewById(R.id.AndroidMeActivity_head_container_FrameLayout);
             bodyContainerFrameLayout = findViewById(R.id.AndroidMeActivity_body_container_FrameLayout);
@@ -55,16 +64,19 @@ public class AndroidMeActivity extends AppCompatActivity {
 
             // Add head part fragment to the activity
             headPartFragment.setmImageIds(AndroidImageAssets.getHeads());
+            headPartFragment.setmListIndex(headIndex);
             fragmentManager.beginTransaction().add(R.id.AndroidMeActivity_head_container_FrameLayout,
                     headPartFragment).commit();
 
             // Add body part fragment to the activity
             bodyPartFragment.setmImageIds(AndroidImageAssets.getBodies());
+            bodyPartFragment.setmListIndex(bodyIndex);
             fragmentManager.beginTransaction().add(R.id.AndroidMeActivity_body_container_FrameLayout,
                     bodyPartFragment).commit();
 
             // Add body part fragment to the activity
             legPartFragment.setmImageIds(AndroidImageAssets.getLegs());
+            legPartFragment.setmListIndex(legIndex);
             fragmentManager.beginTransaction().add(R.id.AndroidMeActivity_leg_container_FrameLayout,
                     legPartFragment).commit();
         }

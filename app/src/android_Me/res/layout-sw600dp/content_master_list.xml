@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <fragment
+        android:id="@+id/MasterListActivity_master_list_fragment"
+        android:name="configure.test.configurebuilds.ui.MasterListFragment"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        tools:context=".ui.MasterListActivity" />
+
+    <LinearLayout
+        android:id="@+id/MasterListActivity_android_me_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/MasterListActivity_head_container_FrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".3"
+            android:scaleType="centerInside" />
+
+        <FrameLayout
+            android:id="@+id/MasterListActivity_body_container_FrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"
+            android:scaleType="centerInside" />
+
+        <FrameLayout
+            android:id="@+id/MasterListActivity_leg_container_FrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.4"
+            android:scaleType="centerInside" />
+    </LinearLayout>
+</LinearLayout>
