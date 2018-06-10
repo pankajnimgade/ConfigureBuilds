@@ -12,19 +12,19 @@ import configure.test.configurebuilds.activities.dock.list.TestDockTileActivity
 import configure.test.configurebuilds.activities.edittext.CustomEditTextActivity
 import configure.test.configurebuilds.activities.expresso.ExpressoTestActivity
 import configure.test.configurebuilds.activities.superscript.SuperScriptActivity
-import configure.test.configurebuilds.ui.AndroidMeActivity
-import configure.test.configurebuilds.ui.MasterListActivity
 
 /**
  * Created by Pankaj Nimgade on 3/11/2018.
  */
-class ActivityItem(val activityClass: Class<out Activity>, val activityName: String) {
+open class ActivityItem(val activityClass: Class<out Activity>, val activityName: String) {
 
 
     companion object {
+
+        val list: MutableList<ActivityItem> = mutableListOf<ActivityItem>()
+
         @JvmStatic
         fun getActivityItemList(): List<ActivityItem> {
-            val list = mutableListOf<ActivityItem>()
             list.add(ActivityItem(AccessibilityActivity::class.java, "Accessibility Test"))
             list.add(ActivityItem(SuperScriptActivity::class.java, "Super Script test"))
             list.add(ActivityItem(CustomTabLayoutActivity::class.java, "Custom Tab Layout"))
@@ -37,17 +37,7 @@ class ActivityItem(val activityClass: Class<out Activity>, val activityName: Str
             list.add(ActivityItem(DecoratorOneActivity::class.java, "Decorator One"))
             list.add(ActivityItem(DecoratorTwoActivity::class.java, "Decorator Two"))
 
-            androidMe(list)
             return list
-        }
-
-        /**
-         * Use this when using 'androidMe' build variant
-         * */
-        @JvmStatic
-        private fun androidMe(list: MutableList<ActivityItem>) {
-            list.add(0, ActivityItem(AndroidMeActivity::class.java, "AndroidMe Test"))
-            list.add(0, ActivityItem(MasterListActivity::class.java, "Master List Activity"))
         }
 
     }

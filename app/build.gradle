@@ -103,6 +103,14 @@ android {
             versionNameSuffix "-android.me"
             applicationIdSuffix '.android.me'
         }
+
+        emojify {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-emojify"
+            applicationIdSuffix '.emogify'
+        }
+
     }
 
     variantFilter { variant ->
@@ -127,6 +135,7 @@ android {
         android_Me {
             manifest.srcFile 'src/android_Me/AndroidManifest.xml'
         }
+        emojify { assets.srcDirs = ['src/emojify/assets', 'src/emojify/assets/'] }
     }
 }
 

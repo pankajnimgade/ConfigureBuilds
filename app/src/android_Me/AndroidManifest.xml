@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <application>
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application android:name="configure.test.configurebuilds.StartUp">
         <activity
             android:name="configure.test.configurebuilds.ui.AndroidMeActivity"
             android:label="@string/title_activity_android_me"

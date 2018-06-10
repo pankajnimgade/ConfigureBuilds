@@ -20,9 +20,8 @@ import android.app.Application;
 
 import java.util.List;
 
+import configure.test.configurebuilds.activities.EmojifyMeActivity;
 import configure.test.configurebuilds.application.model.ActivityItem;
-import configure.test.configurebuilds.ui.AndroidMeActivity;
-import configure.test.configurebuilds.ui.MasterListActivity;
 
 /**
  * Created by Pankaj Nimgade on 3/11/2018.
@@ -36,8 +35,6 @@ public class StartUp extends Application {
     public void onCreate() {
         super.onCreate();
         List<ActivityItem> activityItemList = ActivityItem.getActivityItemList();
-        activityItemList.add(0, new ActivityItem(AndroidMeActivity.class, "AndroidMe Test"));
-        activityItemList.add(0, new ActivityItem(MasterListActivity.class, "Master List " +
-                "Activity"));
+        activityItemList.add(0, new ActivityItem(EmojifyMeActivity.class, "Emojify Me Test"));
     }
 }

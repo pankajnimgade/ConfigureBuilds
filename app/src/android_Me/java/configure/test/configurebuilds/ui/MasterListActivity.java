@@ -78,6 +78,15 @@ public class MasterListActivity extends AppCompatActivity implements MasterListF
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        GridView gridView = findViewById(R.id.fragment_list_GridView);
+        if (gridView != null) {
+            gridView.setNumColumns(2);
+        }
+    }
+
+    @Override
     public void onImageSelected(int position) {
         Snackbar.make(rootCoordinatorLayout, "selected position = " + position, Snackbar
                 .LENGTH_SHORT).show();
