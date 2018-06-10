@@ -16,16 +16,40 @@
 
 package configure.test.configurebuilds.activities;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import configure.test.configurebuilds.R;
 
 public class EmojifyMeActivity extends AppCompatActivity {
+
+    @BindView(R.id.emojify_button)
+    Button mEmojiButton;
+
+    @BindView(R.id.share_button)
+    FloatingActionButton mShareFab;
+
+    @BindView(R.id.save_button)
+    FloatingActionButton mSaveFab;
+
+    @BindView(R.id.clear_button)
+    FloatingActionButton mClearFab;
+
+    @BindView(R.id.title_text_view)
+    TextView mTitleTextView;
+
+    private String mTempPhotoPath;
+
+    private Bitmap mResultsBitmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +67,13 @@ public class EmojifyMeActivity extends AppCompatActivity {
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ButterKnife.bind(this);
+        initializeUi();
+    }
+
+    private void initializeUi() {
+
+        mTitleTextView.setText("Butte Knife example");
     }
 
 }
