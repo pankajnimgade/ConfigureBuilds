@@ -149,6 +149,8 @@ dependencies {
     implementation "com.android.support:cardview-v7:${rootProject.ext.supportVersion}"
     implementation "com.android.support:design:${rootProject.ext.supportVersion}"
     implementation "com.jakewharton:butterknife:${rootProject.ext.butterKnifeVersion}"
+    implementation "com.google.android.gms:play-services-vision:15.0.2"
+
     annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.ext.butterKnifeVersion}"
 
     testImplementation 'junit:junit:4.12'
