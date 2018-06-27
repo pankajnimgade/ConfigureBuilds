@@ -198,9 +198,11 @@ public class EmojifyMeActivity extends AppCompatActivity {
 
         mResultsBitmap = BitmapUtils.resamplePic(this, mTempPhotoPath);
 
-        mImageView.setImageBitmap(mResultsBitmap);
+//        mImageView.setImageBitmap(mResultsBitmap);
 
-        Emojifier.detectFaces(this, mResultsBitmap);
+//        Emojifier.detectFaces(this, mResultsBitmap);
+
+        mImageView.setImageBitmap(Emojifier.detectFaces(this, mResultsBitmap));
     }
 
     public void saveMe(View view) {
