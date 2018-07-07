@@ -20,7 +20,6 @@ import android.app.Application;
 
 import java.util.List;
 
-import configure.test.configurebuilds.activities.EmojifyMeActivity;
 import configure.test.configurebuilds.application.model.ActivityItem;
 import timber.log.Timber;
 
@@ -36,7 +35,8 @@ public class StartUp extends Application {
     public void onCreate() {
         super.onCreate();
         List<ActivityItem> activityItemList = ActivityItem.getActivityItemList();
-        activityItemList.add(0, new ActivityItem(EmojifyMeActivity.class, "Emojify Me Test"));
+        activityItemList.add(0, new ActivityItem(BroadCastReceiverListActivity.class,
+                "BroadCast Receiver List"));
         Timber.plant(new Timber.DebugTree());
         Timber.tag("StartUp");
         Timber.i("start up on create");

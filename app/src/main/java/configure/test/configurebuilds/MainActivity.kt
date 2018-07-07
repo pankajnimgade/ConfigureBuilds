@@ -10,7 +10,6 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.*
 import android.widget.TextView
-import configure.test.configurebuilds.activities.ExampleActivity
 import configure.test.configurebuilds.application.model.ActivityItem
 import kotlinx.android.synthetic.main.activity_main.*
 

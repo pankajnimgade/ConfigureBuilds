@@ -14,18 +14,16 @@
  * limitations under the License.
  */
 
-package configure.test.configurebuilds;
-
-import android.app.Application;
+package configure.test.configurebuilds;import android.app.Application;
 
 import java.util.List;
 
-import configure.test.configurebuilds.activities.EmojifyMeActivity;
 import configure.test.configurebuilds.application.model.ActivityItem;
+import widget.activity.AppWidgetInformationActivity;
 import timber.log.Timber;
 
 /**
- * Created by Pankaj Nimgade on 3/11/2018.
+ * Created by Pankaj Nimgade on 7/4/2018.
  */
 
 public class StartUp extends Application {
@@ -36,7 +34,8 @@ public class StartUp extends Application {
     public void onCreate() {
         super.onCreate();
         List<ActivityItem> activityItemList = ActivityItem.getActivityItemList();
-        activityItemList.add(0, new ActivityItem(EmojifyMeActivity.class, "Emojify Me Test"));
+        activityItemList.add(0, new ActivityItem(AppWidgetInformationActivity.class, "App " +
+                "Widget Information"));
         Timber.plant(new Timber.DebugTree());
         Timber.tag("StartUp");
         Timber.i("start up on create");

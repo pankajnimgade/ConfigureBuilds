@@ -44,6 +44,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import configure.test.configurebuilds.BuildConfig;
 import configure.test.configurebuilds.R;
+import timber.log.Timber;
 
 public class EmojifyMeActivity extends AppCompatActivity {
 
@@ -97,6 +98,8 @@ public class EmojifyMeActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         ButterKnife.bind(this);
         initializeUi();
+        Timber.tag("EmojifyMeActivity");
+        Timber.i("EmojifyMeActivity on create");
     }
 
     private void initializeUi() {
