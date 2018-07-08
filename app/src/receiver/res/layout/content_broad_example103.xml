@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ Copyright 2018 Pankaj Nimgade
   ~
@@ -14,10 +15,13 @@
   ~ limitations under the License.
   -->
 
-<resources>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="configure.test.configurebuilds.receiver.activities.test103.BroadExample103Activity"
+    tools:showIn="@layout/activity_broad_example103">
 
-    <string name="title_activity_broad_cast_receiver_list">BroadCastReceiverListActivity</string>
-    <string name="title_activity_broad_example101">BroadExample101Activity</string>
-    <string name="title_activity_custom_broadcast">CustomBroadcastActivity</string>
-    <string name="title_activity_broad_example103">BroadExample103Activity</string>
-</resources>
+</android.support.constraint.ConstraintLayout>

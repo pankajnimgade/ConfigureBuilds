@@ -59,7 +59,7 @@
                 android:value="configure.test.configurebuilds.BroadCastReceiverListActivity" />
         </activity>
 
-        <!-- Custom 102 broadcast receiver-->
+        <!-- Custom 102 broadcast receiver -->
         <receiver
             android:name="configure.test.configurebuilds.receiver.activities.test102.My102BroadReceiver"
             android:enabled="true"
@@ -68,6 +68,16 @@
                 <action android:name="custom.test102.broadcast" />
             </intent-filter>
         </receiver>
+
+        <activity
+            android:name="configure.test.configurebuilds.receiver.activities.test103.BroadExample103Activity"
+            android:label="@string/title_activity_broad_example103"
+            android:parentActivityName="configure.test.configurebuilds.BroadCastReceiverListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.BroadCastReceiverListActivity" />
+        </activity>
     </application>
 
 </manifest>

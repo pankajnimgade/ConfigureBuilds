@@ -29,6 +29,7 @@ import android.widget.TextView
 import configure.test.configurebuilds.application.model.ActivityItem
 import configure.test.configurebuilds.receiver.activities.test101.BroadExample101Activity
 import configure.test.configurebuilds.receiver.activities.test102.CustomBroadcastActivity
+import configure.test.configurebuilds.receiver.activities.test103.BroadExample103Activity
 import kotlinx.android.synthetic.receiver.activity_broad_cast_receiver_list.*
 
 
@@ -54,6 +55,7 @@ class BroadCastReceiverListActivity : AppCompatActivity() {
 
         list.add(ActivityItem(BroadExample101Activity::class.java, "Broad Example 101"))
         list.add(ActivityItem(CustomBroadcastActivity::class.java, "Custom Broadcast 102"))
+        list.add(ActivityItem(BroadExample103Activity::class.java, "Connectivity Broadcast 103"))
 
         val listRecyclerView: RecyclerView = findViewById(R.id.BroadCastReceiverListActivity_list_RecyclerView)
         val listAdapter: ListAdapter = ListAdapter(this, list)
