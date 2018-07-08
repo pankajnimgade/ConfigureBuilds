@@ -21,7 +21,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="configure.test.configurebuilds.receiver.activites.BroadExample101Activity"
+    tools:context="configure.test.configurebuilds.receiver.activities.test101.BroadExample101Activity"
     tools:showIn="@layout/activity_broad_example101">
 
 </android.support.constraint.ConstraintLayout>

@@ -19,8 +19,7 @@
         android:name="android.hardware.camera"
         android:required="true" />
 
-    <application
-        android:name="configure.test.configurebuilds.StartUp">
+    <application android:name="configure.test.configurebuilds.StartUp">
         <activity
             android:name="configure.test.configurebuilds.BroadCastReceiverListActivity"
             android:label="@string/title_activity_broad_cast_receiver_list"
@@ -31,7 +30,7 @@
                 android:value="configure.test.configurebuilds.MainActivity" />
         </activity>
         <activity
-            android:name="configure.test.configurebuilds.receiver.activites.BroadExample101Activity"
+            android:name="configure.test.configurebuilds.receiver.activities.test101.BroadExample101Activity"
             android:label="@string/title_activity_broad_example101"
             android:parentActivityName="configure.test.configurebuilds.BroadCastReceiverListActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -39,6 +38,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="configure.test.configurebuilds.BroadCastReceiverListActivity" />
         </activity>
+
+        <!-- Charger connected -->
+        <receiver
+            android:name="configure.test.configurebuilds.receiver.activities.test101.My101BroadReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

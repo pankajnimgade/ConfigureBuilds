@@ -20,7 +20,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="configure.test.configurebuilds.receiver.activites.BroadExample101Activity">
+    tools:context="configure.test.configurebuilds.receiver.activities.test101.BroadExample101Activity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

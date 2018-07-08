@@ -27,7 +27,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import configure.test.configurebuilds.application.model.ActivityItem
-import configure.test.configurebuilds.receiver.activites.BroadExample101Activity
+import configure.test.configurebuilds.receiver.activities.test101.BroadExample101Activity
 import kotlinx.android.synthetic.receiver.activity_broad_cast_receiver_list.*
 
 

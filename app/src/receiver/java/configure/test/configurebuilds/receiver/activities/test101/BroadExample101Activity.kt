@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package configure.test.configurebuilds.receiver.activites
+package configure.test.configurebuilds.receiver.activities.test101
 
 import android.os.Bundle
 import android.support.design.widget.Snackbar
