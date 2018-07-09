@@ -132,6 +132,13 @@ android {
             applicationIdSuffix '.receiver'
         }
 
+        services {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-services"
+            applicationIdSuffix '.services'
+        }
+
     }
 
     variantFilter { variant ->
