@@ -12,7 +12,7 @@
   ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
-  -->
+-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-feature
@@ -28,6 +28,15 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="configure.test.configurebuilds.MainActivity" />
+        </activity>
+        <activity
+            android:name="configure.test.configurebuilds.services.test101.ServiceTest101Activity"
+            android:label="@string/title_activity_service_test101"
+            android:parentActivityName="configure.test.configurebuilds.ServicesListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.ServicesListActivity" />
         </activity>
     </application>
 
