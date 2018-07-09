@@ -16,9 +16,11 @@
 
 package configure.test.configurebuilds.services.test101
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
+import android.widget.Button
 import configure.test.configurebuilds.R
 import kotlinx.android.synthetic.services.activity_service_test101.*
 
@@ -34,7 +36,16 @@ class ServiceTest101Activity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
+
+        initiateUi()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    private fun initiateUi() {
+        val button = findViewById<Button>(R.id.ServiceTest101Activity_button)
+        button.setOnClickListener {
+            startService(Intent(this, MyTest101Service::class.java))
+        }
     }
 
 }

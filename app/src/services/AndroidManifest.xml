@@ -38,6 +38,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="configure.test.configurebuilds.ServicesListActivity" />
         </activity>
+
+        <service
+            android:name="configure.test.configurebuilds.services.test101.MyTest101Service"
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
 </manifest>
