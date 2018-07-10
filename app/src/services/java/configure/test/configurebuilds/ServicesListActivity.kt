@@ -29,6 +29,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import configure.test.configurebuilds.application.model.ActivityItem
 import configure.test.configurebuilds.services.test101.ServiceTest101Activity
+import configure.test.configurebuilds.services.test102.ServiceTest102Activity
 import kotlinx.android.synthetic.services.activity_services_list.*
 
 
@@ -51,6 +52,7 @@ class ServicesListActivity : AppCompatActivity() {
     private fun initializeUi() {
         val list = mutableListOf<ActivityItem>()
         list.add(ActivityItem(ServiceTest101Activity::class.java, "Service test 101"))
+        list.add(ActivityItem(ServiceTest102Activity::class.java, "Intent Service 102"))
 
         val serviceAdapter = ServiceListAdapter(this, list)
 

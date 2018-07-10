@@ -41,8 +41,27 @@
 
         <service
             android:name="configure.test.configurebuilds.services.test101.MyTest101Service"
+            android:description="@string/app_name"
             android:enabled="true"
             android:exported="true" />
+
+        <activity
+            android:name="configure.test.configurebuilds.services.test102.ServiceTest102Activity"
+            android:label="@string/title_activity_service_test102"
+            android:parentActivityName="configure.test.configurebuilds.ServicesListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.ServicesListActivity" />
+        </activity>
+
+        <!--
+           Because android:exported is set to "false",
+           the service is only available to this app.
+       -->
+        <service
+            android:name="configure.test.configurebuilds.services.test102.MyIntentServiceTest102"
+            android:exported="false"/>
     </application>
 
 </manifest>
