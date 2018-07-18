@@ -139,6 +139,13 @@ android {
             applicationIdSuffix '.services'
         }
 
+        animations {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-animationa"
+            applicationIdSuffix '.animations'
+        }
+
     }
 
     variantFilter { variant ->
@@ -165,6 +172,7 @@ android {
         }
         emojify { assets.srcDirs = ['src/emojify/assets', 'src/emojify/assets/'] }
         main { assets.srcDirs = ['src/main/assets', 'src/alarm/assets/'] }
+        animations { assets.srcDirs = ['src/animations/assets', 'src/animations/assets/'] }
     }
 }
 
