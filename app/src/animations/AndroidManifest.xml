@@ -1,4 +1,4 @@
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright 2018 Pankaj Nimgade
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,15 +12,30 @@
   ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
-  -->
-
+-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
-        android:name="configure.test.configurebuilds.StartUp">
+        android:name="configure.test.configurebuilds.StartUp"
+        android:theme="@style/AppTheme">
         <activity
             android:name="configure.test.configurebuilds.activities.AnimationListActivity"
             android:label="@string/title_activity_animation_list"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:parentActivityName="configure.test.configurebuilds.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.MainActivity" />
+        </activity>
+        <activity
+            android:name="configure.test.configurebuilds.activities.test101.Animation101Activity"
+            android:label="@string/title_activity_animation101"
+            android:parentActivityName="configure.test.configurebuilds.activities.AnimationListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.activities.AnimationListActivity" />
+        </activity>
     </application>
+
 </manifest>

@@ -16,4 +16,5 @@
 
 <resources>
     <string name="title_activity_animation_list">AnimationListActivity</string>
+    <string name="title_activity_animation101">Animation101Activity</string>
 </resources>

@@ -20,18 +20,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="configure.test.configurebuilds.activities.AnimationListActivity"
-    tools:showIn="@layout/activity_animation_list">
+    tools:context="configure.test.configurebuilds.activities.test101.Animation101Activity"
+    tools:showIn="@layout/activity_animation101">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/AnimationListActivity_list_RecyclerView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="8dp"
-        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Test 101 Animation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/single_activity_item" />
+        tools:text="Test 101 Animation" />
 </android.support.constraint.ConstraintLayout>
