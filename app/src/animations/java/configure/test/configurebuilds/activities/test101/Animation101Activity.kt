@@ -27,7 +27,8 @@ import kotlinx.android.synthetic.animations.activity_animation101.*
 
 class Animation101Activity : AppCompatActivity() {
 
-    private lateinit var animateButton: Button
+    private lateinit var animateHorizontallyButton: Button
+    private lateinit var animateVerticallyButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,13 +53,27 @@ class Animation101Activity : AppCompatActivity() {
     }
 
     private fun animateVertically() {
+        animateVerticallyButton = findViewById(R.id.Animation101Activity_animate_vertically_button)
 
+        animateVerticallyButton.setOnClickListener {
+
+            val animation = ValueAnimator.ofFloat(0f, -100f)
+            animation.duration = 1000
+            animation.start()
+
+            animation.addUpdateListener { updatedAnimation ->
+                updatedAnimation.let {
+                    val animatedValue = updatedAnimation.animatedValue as Float
+                    animateVerticallyButton.translationY = animatedValue
+                }
+            }
+        }
     }
 
     private fun animateHorizontally() {
-        animateButton = findViewById(R.id.Animation101Activity_animate_button)
+        animateHorizontallyButton = findViewById(R.id.Animation101Activity_animate_horizontally_button)
 
-        animateButton.setOnClickListener {
+        animateHorizontallyButton.setOnClickListener {
 
             val animation = ValueAnimator.ofFloat(0f, 100f)
             animation.duration = 1000
@@ -67,7 +82,7 @@ class Animation101Activity : AppCompatActivity() {
             animation.addUpdateListener { updatedAnimation ->
                 updatedAnimation.let {
                     val animatedValue = updatedAnimation.getAnimatedValue() as Float
-                    animateButton.translationX = animatedValue
+                    animateHorizontallyButton.translationX = animatedValue
                 }
             }
         }
