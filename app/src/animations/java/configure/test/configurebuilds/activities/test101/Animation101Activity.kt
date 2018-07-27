@@ -16,13 +16,18 @@
 
 package configure.test.configurebuilds.activities.test101
 
+import android.animation.ValueAnimator
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
+import android.widget.Button
 import configure.test.configurebuilds.R
 import kotlinx.android.synthetic.animations.activity_animation101.*
 
+
 class Animation101Activity : AppCompatActivity() {
+
+    private lateinit var animateButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +38,39 @@ class Animation101Activity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
+
+        initializeUi()
+
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    private fun initializeUi() {
+
+        animateHorizontally()
+        animateVertically()
+
+    }
+
+    private fun animateVertically() {
+
+    }
+
+    private fun animateHorizontally() {
+        animateButton = findViewById(R.id.Animation101Activity_animate_button)
+
+        animateButton.setOnClickListener {
+
+            val animation = ValueAnimator.ofFloat(0f, 100f)
+            animation.duration = 1000
+            animation.start()
+
+            animation.addUpdateListener { updatedAnimation ->
+                updatedAnimation.let {
+                    val animatedValue = updatedAnimation.getAnimatedValue() as Float
+                    animateButton.translationX = animatedValue
+                }
+            }
+        }
     }
 
 }
