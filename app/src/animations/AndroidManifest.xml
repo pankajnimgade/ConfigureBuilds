@@ -36,6 +36,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="configure.test.configurebuilds.activities.AnimationListActivity" />
         </activity>
+        <activity
+            android:name="configure.test.configurebuilds.activities.test102.Animation102Activity"
+            android:label="@string/title_activity_animation102"
+            android:parentActivityName="configure.test.configurebuilds.activities.AnimationListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.activities.AnimationListActivity" />
+        </activity>
     </application>
 
 </manifest>

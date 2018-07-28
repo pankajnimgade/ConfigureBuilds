@@ -23,6 +23,8 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import configure.test.configurebuilds.R
 import kotlinx.android.synthetic.animations.activity_animation101.*
+import android.view.animation.AccelerateDecelerateInterpolator
+import android.view.animation.BounceInterpolator
 
 
 class Animation101Activity : AppCompatActivity() {
@@ -57,8 +59,9 @@ class Animation101Activity : AppCompatActivity() {
 
         animateVerticallyButton.setOnClickListener {
 
-            val animation = ValueAnimator.ofFloat(0f, -100f)
+            val animation = ValueAnimator.ofFloat(0f, -200f)
             animation.duration = 1000
+            animation.interpolator = BounceInterpolator()
             animation.start()
 
             animation.addUpdateListener { updatedAnimation ->
@@ -75,8 +78,9 @@ class Animation101Activity : AppCompatActivity() {
 
         animateHorizontallyButton.setOnClickListener {
 
-            val animation = ValueAnimator.ofFloat(0f, 100f)
+            val animation = ValueAnimator.ofFloat(0f, 200f)
             animation.duration = 1000
+            animation.interpolator = BounceInterpolator()
             animation.start()
 
             animation.addUpdateListener { updatedAnimation ->
