@@ -18,6 +18,7 @@ package configure.test.configurebuilds.activities.test103;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -99,6 +100,10 @@ public class Animation103Activity extends AppCompatActivity {
         animatorSet.play(animate5).after(animate4);
         animatorSet.play(animate6).after(animate5);
         animatorSet.play(animate7).after(animate6);
+        ValueAnimator fadeAnim = ObjectAnimator.ofFloat(animate1, "alpha", 1f, 0f);
+        fadeAnim.setDuration(250);
+        fadeAnim.start();
+        animatorSet.play(animate1).before(fadeAnim);
         animatorSet.start();
 
 
