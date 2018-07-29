@@ -30,6 +30,7 @@ import android.widget.TextView
 import configure.test.configurebuilds.R
 import configure.test.configurebuilds.activities.test101.Animation101Activity
 import configure.test.configurebuilds.activities.test102.Animation102Activity
+import configure.test.configurebuilds.activities.test103.Animation103Activity
 import configure.test.configurebuilds.application.model.ActivityItem
 import kotlinx.android.synthetic.animations.activity_animation_list.*
 
@@ -58,6 +59,7 @@ class AnimationListActivity : AppCompatActivity() {
         if (list.isEmpty()) {
             list.add(ActivityItem(Animation101Activity::class.java, "Animation 101"))
             list.add(ActivityItem(Animation102Activity::class.java, "Animation 102"))
+            list.add(ActivityItem(Animation103Activity::class.java, "Animation 103"))
         }
         recyclerView.adapter = AnimationAdapter(this, list)
 
