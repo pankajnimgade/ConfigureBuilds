@@ -146,6 +146,13 @@ android {
             applicationIdSuffix '.animations'
         }
 
+        demotest {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-demotest"
+            applicationIdSuffix '.demotest'
+        }
+
     }
 
     variantFilter { variant ->
