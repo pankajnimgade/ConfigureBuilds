@@ -121,7 +121,7 @@ class TestDockTileActivity : AppCompatActivity() {
             holder.secondNameTextView.text = currentMyListItem.secondName
         }
 
-        private class MyViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
+        private class MyViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
 
             val firstNameTextView = itemView!!.findViewById<TextView>(R.id
                     .single_dock_title_first_textView)

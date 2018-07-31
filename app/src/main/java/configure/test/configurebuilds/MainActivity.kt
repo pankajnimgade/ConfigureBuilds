@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        class ActivityItemViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
+        class ActivityItemViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
             val rootLayout: CardView = itemView!!.findViewById(R.id
                     .single_activity_item_root_CardView)
             val title: TextView = itemView!!.findViewById(R.id.single_activity_item_name_textView)

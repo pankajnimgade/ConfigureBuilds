@@ -68,7 +68,7 @@ class ListActivity : AppCompatActivity() {
         }
 
 
-        private class MyViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
+        private class MyViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
 
             val firstTitleTextView = itemView!!.findViewById<TextView>(R.id
                     .single_dock_title_first_textView)
