@@ -42,6 +42,8 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+
     /**
      * The buildTypes block is where you can configure multiple build types.
      * By default, the build system defines two build types: debug and release. The
@@ -199,7 +201,11 @@ dependencies {
     annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.ext.butterKnifeVersion}"
     implementation 'com.jakewharton.timber:timber:4.7.0'
 
+    // Required -- JUnit 4 framework
     testImplementation 'junit:junit:4.12'
+    // Optional -- Mockito framework
+    testImplementation 'org.mockito:mockito-core:2.20.1'
+
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation "com.google.code.gson:gson:${rootProject.ext.gsonVersion}"
