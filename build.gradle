@@ -31,7 +31,7 @@ task clean(type: Delete) {
 }
 
 ext {
-    supportVersion = '28.0.0-alpha1'
+    supportVersion = '27.1.1'
     constraintLayoutVersion = '1.1.2'
     gsonVersion = '2.8.2'
     butterKnifeVersion = '8.8.1'
