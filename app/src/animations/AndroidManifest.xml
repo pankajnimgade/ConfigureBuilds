@@ -17,7 +17,8 @@
 
     <application
         android:name="configure.test.configurebuilds.StartUp"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:label="@string/app_name">
         <activity
             android:name="configure.test.configurebuilds.activities.AnimationListActivity"
             android:label="@string/title_activity_animation_list"

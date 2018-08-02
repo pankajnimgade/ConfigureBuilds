@@ -19,7 +19,8 @@
         android:name="android.hardware.camera"
         android:required="true" />
 
-    <application android:name="configure.test.configurebuilds.StartUp">
+    <application android:name="configure.test.configurebuilds.StartUp"
+        android:label="@string/app_name">
         <activity
             android:name="configure.test.configurebuilds.ServicesListActivity"
             android:label="@string/title_activity_services_list"
