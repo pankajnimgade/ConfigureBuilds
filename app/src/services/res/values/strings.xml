@@ -18,4 +18,5 @@
     <string name="title_activity_services_list">ServicesListActivity</string>
     <string name="title_activity_service_test101">ServiceTest101Activity</string>
     <string name="title_activity_service_test102">ServiceTest102Activity</string>
+    <string name="app_name">services-Config</string>
 </resources>

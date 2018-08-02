@@ -15,6 +15,7 @@
   -->
 
 <resources>
+    <string name="app_name">animations-Config</string>
     <string name="title_activity_animation_list">AnimationListActivity</string>
     <string name="title_activity_animation101">Animation101Activity</string>
     <string name="title_activity_animation102">Animation102Activity</string>

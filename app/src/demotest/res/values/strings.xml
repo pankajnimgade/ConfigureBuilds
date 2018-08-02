@@ -17,4 +17,5 @@
 <resources>
     <string name="title_activity_verifying_list">VerifyingListActivity</string>
     <string name="title_activity_test101">Test101Activity</string>
+    <string name="app_name">demotest-Config</string>
 </resources>
