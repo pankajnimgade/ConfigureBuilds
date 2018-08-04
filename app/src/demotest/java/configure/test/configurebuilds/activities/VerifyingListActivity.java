@@ -36,6 +36,7 @@ import java.util.List;
 
 import configure.test.configurebuilds.R;
 import configure.test.configurebuilds.activities.test101.Test101Activity;
+import configure.test.configurebuilds.activities.test102.TestFragmentActivity;
 import configure.test.configurebuilds.application.model.ActivityItem;
 
 public class VerifyingListActivity extends AppCompatActivity {
@@ -74,6 +75,7 @@ public class VerifyingListActivity extends AppCompatActivity {
     private List<ActivityItem> createList() {
         List<ActivityItem> activityItems = new ArrayList<>();
         activityItems.add(new ActivityItem(Test101Activity.class, "Test 101"));
+        activityItems.add(new ActivityItem(TestFragmentActivity.class, "Test Fragment 102"));
         return activityItems;
     }
 

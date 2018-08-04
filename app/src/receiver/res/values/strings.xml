@@ -20,5 +20,5 @@
     <string name="title_activity_broad_example101">BroadExample101Activity</string>
     <string name="title_activity_custom_broadcast">CustomBroadcastActivity</string>
     <string name="title_activity_broad_example103">BroadExample103Activity</string>
-    <string name="app_name">receiver-Config</string>
+    <string name="app_name">Receiver-Config</string>
 </resources>

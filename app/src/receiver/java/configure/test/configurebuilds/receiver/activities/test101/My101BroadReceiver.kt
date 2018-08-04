@@ -30,7 +30,7 @@ class My101BroadReceiver : BroadcastReceiver() {
         // This method is called when the BroadcastReceiver is receiving an Intent broadcast.
         if (intent.action == Intent.ACTION_POWER_CONNECTED) {
             Log.d(TAG, ": Charger connected")
-            Toast.makeText(context, "Charger connected", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Charger connected: My101BroadReceiver", Toast.LENGTH_SHORT).show()
         }
     }
 }
