@@ -26,7 +26,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import butterknife.BindView;
 import configure.test.configurebuilds.R;
 
 /**
@@ -47,9 +46,7 @@ public class TestDialogFragment extends DialogFragment {
     private String mParam1;
     private String mParam2;
 
-    @BindView(R.id.TestDialogFragment_dismiss_button)
     Button dismissButton;
-    @BindView(R.id.TestDialogFragment_retry_button)
     Button retryButton;
 
     private OnFragmentInteractionListener mListener;
@@ -89,7 +86,10 @@ public class TestDialogFragment extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank, container, false);
+        View view = inflater.inflate(R.layout.fragment_blank, container, false);
+        dismissButton = view.findViewById(R.id.TestDialogFragment_dismiss_button);
+        retryButton = view.findViewById(R.id.TestDialogFragment_retry_button);
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -113,7 +113,7 @@ public class TestDialogFragment extends DialogFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        retryButton.setOnClickListener(new View.OnClickListener() {
+        dismissButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dismiss();

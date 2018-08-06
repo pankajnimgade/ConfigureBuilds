@@ -16,6 +16,7 @@
 
 package configure.test.configurebuilds.activities.test102;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -26,7 +27,8 @@ import android.widget.Button;
 
 import configure.test.configurebuilds.R;
 
-public class TestFragmentActivity extends AppCompatActivity {
+public class TestFragmentActivity extends AppCompatActivity implements
+        TestDialogFragment.OnFragmentInteractionListener {
 
     private Button dialogButton;
 
@@ -61,4 +63,8 @@ public class TestFragmentActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
 }
