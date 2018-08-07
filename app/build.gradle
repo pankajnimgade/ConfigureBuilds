@@ -5,6 +5,8 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
+
+
     signingConfigs {
         config {
             keyAlias 'pankaj'
@@ -40,9 +42,16 @@ android {
         versionCode 1
         // Defines a user-friendly version name for your app.
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "configure.test.configurebuilds.test.EspressoInstrumentation"
 
         archivesBaseName = "Config"
+    }
+
+    sourceSets {
+        androidTest {
+            assets.srcDirs = ['src/androidTest/assets']
+            java.srcDirs = ['src/androidTest/java/configure/test/configurebuilds/test']
+        }
     }
 
     /**
@@ -232,4 +241,14 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation "com.google.code.gson:gson:${rootProject.ext.gsonVersion}"
     implementation "com.android.support:gridlayout-v7:${rootProject.ext.supportVersion}"
+
+    androidTestImplementation 'info.cukes:cucumber-android:1.2.4@jar'
+    androidTestImplementation 'info.cukes:cucumber-junit:1.1.4'
+    androidTestImplementation 'info.cukes:cucumber-picocontainer:1.2.4'
+    androidTestImplementation 'info.cukes:cucumber-jvm:1.2.4'
+    androidTestImplementation 'info.cukes:cucumber-core:1.2.4'
+
+    implementation 'com.google.zxing:core:3.2.1'
+    implementation 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
+
 }
