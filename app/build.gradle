@@ -186,6 +186,16 @@ android {
 
             buildConfigField 'String', 'app_name', '\"demotest-Config\"'
         }
+
+        machineLearning {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-machine.learning"
+            applicationIdSuffix '.machine.learning'
+            versionName '-machine.learning'
+
+            buildConfigField 'String', 'app_name', '\"ML-Config\"'
+        }
     }
 
     variantFilter { variant ->
