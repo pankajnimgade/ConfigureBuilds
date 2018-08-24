@@ -196,6 +196,16 @@ android {
 
             buildConfigField 'String', 'app_name', '\"ML-Config\"'
         }
+
+        fonts {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-fonts"
+            applicationIdSuffix '.fonts'
+            versionName '-fonts'
+
+            buildConfigField 'String', 'app_name', '\"Font-Config\"'
+        }
     }
 
     variantFilter { variant ->
@@ -224,6 +234,7 @@ android {
         main { assets.srcDirs = ['src/main/assets', 'src/alarm/assets/'] }
         animations { assets.srcDirs = ['src/main/assets', 'src/animations/assets/'] }
     }
+    sourceSets { fonts { assets.srcDirs = ['src/fonts/assets', 'src/fonts/assets/'] } }
 }
 
 
