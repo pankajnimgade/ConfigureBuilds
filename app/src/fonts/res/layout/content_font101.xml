@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ Copyright 2018 Pankaj Nimgade
   ~
@@ -14,8 +15,13 @@
   ~ limitations under the License.
   -->
 
-<resources>
-    <string name="app_name">Font-Config</string>
-    <string name="title_activity_font_list">FontListActivity</string>
-    <string name="title_activity_font101">Font101Activity</string>
-</resources>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="configure.test.configurebuilds.ui.activities.test101.Font101Activity"
+    tools:showIn="@layout/activity_font101">
+
+</android.support.constraint.ConstraintLayout>

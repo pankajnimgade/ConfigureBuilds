@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright 2018 Pankaj Nimgade
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,4 +23,15 @@
     tools:context="configure.test.configurebuilds.ui.FontListActivity"
     tools:showIn="@layout/activity_font_list">
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/FontListActivity_list_RecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        tools:listitem="@layout/single_activity_item"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
