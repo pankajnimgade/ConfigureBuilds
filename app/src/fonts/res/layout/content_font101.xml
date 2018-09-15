@@ -24,4 +24,45 @@
     tools:context="configure.test.configurebuilds.ui.activities.test101.Font101Activity"
     tools:showIn="@layout/activity_font101">
 
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_margin="8dp"
+                android:fontFamily="@font/raleway"
+                android:layout_height="wrap_content"
+                android:text="@string/test_text" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_margin="8dp"
+                android:fontFamily="@font/oswald"
+                android:layout_height="wrap_content"
+                android:text="@string/test_text" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_margin="8dp"
+                android:fontFamily="@font/muli_semi_bold"
+                android:layout_height="wrap_content"
+                android:text="@string/test_text" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
 </android.support.constraint.ConstraintLayout>
