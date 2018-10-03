@@ -39,6 +39,7 @@ import butterknife.ButterKnife;
 import configure.test.configurebuilds.R;
 import configure.test.configurebuilds.application.model.ActivityItem;
 import configure.test.configurebuilds.ui.activities.test101.Font101Activity;
+import configure.test.configurebuilds.ui.activities.test102.Font102Activity;
 
 public class FontListActivity extends AppCompatActivity {
 
@@ -70,8 +71,9 @@ public class FontListActivity extends AppCompatActivity {
     private void initializeUi() {
         List<ActivityItem> activityItemList = new ArrayList<>();
         activityItemList.add(new ActivityItem(Font101Activity.class, "Font 101"));
+        activityItemList.add(new ActivityItem(Font102Activity.class, "Font 102"));
 
-        FontAdapter fontAdapter = new FontAdapter(activityItemList,this );
+        FontAdapter fontAdapter = new FontAdapter(activityItemList, this);
         recyclerView.setAdapter(fontAdapter);
         fontAdapter.notifyDataSetChanged();
 
@@ -82,7 +84,8 @@ public class FontListActivity extends AppCompatActivity {
         super.onStop();
     }
 }
-class FontAdapter extends RecyclerView.Adapter<FontAdapter.ViewHolder>{
+
+class FontAdapter extends RecyclerView.Adapter<FontAdapter.ViewHolder> {
 
     private List<ActivityItem> activityItems;
     private Context mContext;
@@ -118,7 +121,7 @@ class FontAdapter extends RecyclerView.Adapter<FontAdapter.ViewHolder>{
         return this.activityItems.size();
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder{
+    static class ViewHolder extends RecyclerView.ViewHolder {
 
         private CardView rootView;
         private TextView activityName;

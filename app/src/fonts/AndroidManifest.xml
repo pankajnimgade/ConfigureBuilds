@@ -36,6 +36,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="configure.test.configurebuilds.ui.FontListActivity" />
         </activity>
+        <activity
+            android:name="configure.test.configurebuilds.ui.activities.test102.Font102Activity"
+            android:label="@string/title_activity_font102"
+            android:parentActivityName="configure.test.configurebuilds.ui.FontListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.ui.FontListActivity" />
+        </activity>
     </application>
 
 </manifest>

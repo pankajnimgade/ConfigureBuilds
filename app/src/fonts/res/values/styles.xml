@@ -14,4 +14,9 @@
   ~ limitations under the License.
   -->
 
-<resources></resources>
+<resources>
+
+    <style name="CheckboxStyle" parent="AppTheme">
+        <item name="colorAccent">#7F64D7</item>
+    </style>
+</resources>
