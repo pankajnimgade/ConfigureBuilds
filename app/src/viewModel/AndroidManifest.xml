@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:name="configure.test.configurebuilds.StartUp">
+        <activity
+            android:name="configure.test.configurebuilds.ui.ViewModelListActivity"
+            android:label="@string/title_activity_view_model_list"
+            android:theme="@style/AppTheme.NoActionBar"/>
+    </application>
+</manifest>
