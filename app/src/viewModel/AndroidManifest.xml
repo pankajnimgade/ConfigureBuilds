@@ -6,7 +6,7 @@
             android:name="configure.test.configurebuilds.ui.ViewModelListActivity"
             android:label="@string/title_activity_view_model_list"
             android:parentActivityName="configure.test.configurebuilds.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="configure.test.configurebuilds.MainActivity" />
@@ -14,6 +14,15 @@
         <activity
             android:name="configure.test.configurebuilds.ui.activities.test101.ViewModel101Activity"
             android:label="@string/title_activity_view_model101"
+            android:parentActivityName="configure.test.configurebuilds.ui.ViewModelListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.ui.ViewModelListActivity" />
+        </activity>
+        <activity
+            android:name="configure.test.configurebuilds.ui.activities.test102.ViewModel102Activity"
+            android:label="@string/title_activity_view_model102"
             android:parentActivityName="configure.test.configurebuilds.ui.ViewModelListActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data

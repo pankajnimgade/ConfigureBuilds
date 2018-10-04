@@ -64,7 +64,7 @@ class ViewModelListActivity : AppCompatActivity() {
             }
         }
 
-        class ViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
+        class ViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
 
             var mTitleText: TextView = itemView?.findViewById(R.id.single_activity_item_name_textView)!!
         }

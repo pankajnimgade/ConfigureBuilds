@@ -15,7 +15,7 @@ android {
             storePassword 'pankaj'
         }
     }
-    compileSdkVersion 27
+    compileSdkVersion 28
     /**
      * buildToolsVersion specifies the version of the SDK build tools, command-line
      * utilities, and compiler that Gradle should use to build your app. You need to
@@ -24,7 +24,7 @@ android {
      * If you're using Android plugin 3.0.0 or higher, this property is optional—
      * the plugin uses a recommended version of the build tools by default.
      */
-    buildToolsVersion "27.0.3"
+    buildToolsVersion '28.0.2'
     /**
      * The defaultConfig block encapsulates default settings and entries for all
      * build variants, and can override some attributes in main/AndroidManifest.xml
@@ -37,7 +37,7 @@ android {
         // Defines the minimum API level required to run the app.
         minSdkVersion 21
         // Specifies the API level used to test the app.
-        targetSdkVersion 27
+        targetSdkVersion 28
         // Defines the version number of your app.
         versionCode 1
         // Defines a user-friendly version name for your app.
@@ -251,15 +251,16 @@ android {
 
 dependencies {
     def lifecycle_version = "1.1.1"
+    def support_version = "28.0.0"
 
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "com.android.support:appcompat-v7:${rootProject.ext.supportVersion}"
-    implementation 'com.android.support:support-v4:27.1.1'
-    androidTestImplementation "com.android.support:support-annotations:${rootProject.ext.supportVersion}"
+    implementation "com.android.support:appcompat-v7:$support_version"
+    implementation "com.android.support:support-v4:$support_version"
+    androidTestImplementation "com.android.support:support-annotations:$support_version"
     implementation "com.android.support.constraint:constraint-layout:${rootProject.ext.constraintLayoutVersion}"
-    implementation "com.android.support:cardview-v7:${rootProject.ext.supportVersion}"
-    implementation "com.android.support:design:${rootProject.ext.supportVersion}"
+    implementation "com.android.support:cardview-v7:$support_version"
+    implementation "com.android.support:design:$support_version"
     implementation "com.jakewharton:butterknife:${rootProject.ext.butterKnifeVersion}"
     implementation 'com.google.android.gms:play-services-vision:16.2.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
@@ -273,7 +274,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:rules:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation "com.google.code.gson:gson:${rootProject.ext.gsonVersion}"
-    implementation "com.android.support:gridlayout-v7:${rootProject.ext.supportVersion}"
+    implementation "com.android.support:gridlayout-v7:$support_version"
 
     androidTestImplementation 'info.cukes:cucumber-android:1.2.4@jar'
     androidTestImplementation 'info.cukes:cucumber-junit:1.1.4'

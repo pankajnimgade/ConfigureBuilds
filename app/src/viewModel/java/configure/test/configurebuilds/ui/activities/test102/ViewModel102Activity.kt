@@ -3,9 +3,10 @@ package configure.test.configurebuilds.ui.activities.test102
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
-import configure.test.configurebuilds.view.model.debug.R
+import configure.test.configurebuilds.R
+import kotlinx.android.synthetic.viewModel.activity_view_model102.*
 
-import kotlinx.android.synthetic.main.activity_view_model102.*
+
 class ViewModel102Activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
