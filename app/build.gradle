@@ -6,7 +6,7 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
 
-    dataBinding{
+    dataBinding {
         enabled = true
     }
 
@@ -218,6 +218,16 @@ android {
             versionName '-view.model'
 
             buildConfigField 'String', 'app_name', '\"ViewModel-Config\"'
+        }
+
+        dataBinding {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-data.binding"
+            applicationIdSuffix '.data.binding'
+            versionName '-data.binding'
+
+            buildConfigField 'String', 'app_name', '\"Data-Binding\"'
         }
     }
 
