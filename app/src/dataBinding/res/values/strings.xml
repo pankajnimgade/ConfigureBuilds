@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Data Binding</string>
     <string name="title_activity_data_binding_list">DataBindingListActivity</string>
+    <string name="title_activity_data_binding101">DataBinding101Activity</string>
 </resources>
