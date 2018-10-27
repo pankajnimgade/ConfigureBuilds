@@ -13,5 +13,11 @@ class EventHandlerActivity : AppCompatActivity() {
         val binding: ActivityEventHandlerBinding =
                 DataBindingUtil.setContentView(this, R.layout.activity_event_handler)
         binding.eventHandler = EventHandler()
+
+        val person = Person(firstName = "John", lastName = "Smith")
+        val information = Information(phoneNumber = "01684358", emailAddress = "pankaj.nimgade@gmail.com")
+        val contact = Contact(person = person, information = information)
+        binding.contact = contact
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 }

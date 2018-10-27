@@ -31,7 +31,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="configure.test.configurebuilds.MainActivity" />
         </activity>
-        <activity android:name="configure.test.configurebuilds.ui.activities.test103.EventHandlerActivity"></activity>
+        <activity
+            android:name="configure.test.configurebuilds.ui.activities.test103.EventHandlerActivity"
+            android:parentActivityName="configure.test.configurebuilds.ui.DataBindingListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.ui.DataBindingListActivity" />
+        </activity>
     </application>
 
 </manifest>

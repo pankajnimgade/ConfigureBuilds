@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
+        <variable
+            name="contact"
+            type="configure.test.configurebuilds.ui.activities.test103.Contact" />
 
         <variable
             name="eventHandler"
@@ -12,7 +17,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
         android:orientation="vertical"
         tools:context="configure.test.configurebuilds.ui.activities.test103.EventHandlerActivity">
 
@@ -20,7 +24,16 @@
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:onClick="@{eventHandler::onClickEvent}"
             android:text="Click Me :)" />
+
+        <include
+            layout="@layout/person_layout"
+            bind:contact="@{contact}" />
+
+        <include
+            layout="@layout/information_layout"
+            bind:contact="@{contact}" />
     </LinearLayout>
 </layout>
