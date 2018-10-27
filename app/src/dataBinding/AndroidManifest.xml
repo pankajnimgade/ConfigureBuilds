@@ -22,6 +22,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="configure.test.configurebuilds.ui.DataBindingListActivity" />
         </activity>
+        <activity
+            android:name="configure.test.configurebuilds.ui.activities.test102.Expression102Activity"
+            android:label="@string/title_activity_expression102"
+            android:parentActivityName="configure.test.configurebuilds.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
