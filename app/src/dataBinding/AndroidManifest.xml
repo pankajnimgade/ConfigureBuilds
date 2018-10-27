@@ -31,6 +31,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="configure.test.configurebuilds.MainActivity" />
         </activity>
+        <activity android:name="configure.test.configurebuilds.ui.activities.test103.EventHandlerActivity"></activity>
     </application>
 
 </manifest>
