@@ -6,8 +6,12 @@
 .idea/*
 /.idea/cashes/
 /.idea/*
+*/.idea/*
+*/.idea/
+*/.idea
 .idea
 .idea/
+.idea/*
 .DS_Store
 /build
 /captures
