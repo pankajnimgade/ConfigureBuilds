@@ -1,92 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="configure.test.configurebuilds.ui.activities.test101.DataBinding101Activity"
-    tools:showIn="@layout/activity_data_binding101">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <LinearLayout
+    <data>
+        <variable
+            name="user"
+            type="configure.test.configurebuilds.ui.activities.test101.User" />
+    </data>
+
+    <android.support.v4.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="4dp"
-        android:orientation="vertical"
-        android:padding="4dp">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="configure.test.configurebuilds.ui.activities.test101.DataBinding101Activity"
+        tools:showIn="@layout/activity_data_binding101">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="4dp"
-            android:padding="4dp"
-            android:text="@{user.id, default = 12}"
-            android:textColor="@android:color/black"
-            tools:text="12" />
+            android:orientation="vertical"
+            android:padding="4dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:padding="4dp"
-            android:text="@{user.firstName, default = first}"
-            android:textColor="@android:color/black"
-            tools:text="First Name" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:padding="4dp"
+                android:text="@{String.valueOf(user.id)}"
+                android:textColor="@android:color/black"
+                tools:text="12" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:padding="4dp"
-            android:text="@{user.lastName, default = last}"
-            android:textColor="@android:color/black"
-            tools:text="Last Name" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:padding="4dp"
+                android:text="@{user.firstName}"
+                android:textColor="@android:color/black"
+                tools:text="First Name" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:padding="4dp"
-            android:text="@{user.phoneNumber, default = phoneNumber}"
-            android:textColor="@android:color/black"
-            tools:text="Phone Number" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="@{user.lastName}"
+                android:padding="4dp"
+                android:textColor="@android:color/black"
+                tools:text="Last Name" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:padding="4dp"
-            android:text="@{user.emailAddress, default = email}"
-            android:textColor="@android:color/black"
-            tools:text="Email Address" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:padding="4dp"
+                android:text="@{user.phoneNumber}"
+                android:textColor="@android:color/black"
+                tools:text="Phone Number" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:padding="4dp"
-            android:text="@{user.physicalAddress, default = physicalAddress}"
-            android:textColor="@android:color/black"
-            tools:text="Physical Address" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="@{user.emailAddress}"
+                android:padding="4dp"
+                android:textColor="@android:color/black"
+                tools:text="Email Address" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:padding="4dp"
-            android:text="@{user.zipCode, default = ZipCode}"
-            android:textColor="@android:color/black"
-            tools:text="Zip Code" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:padding="4dp"
+                android:text="@{user.physicalAddress}"
+                android:textColor="@android:color/black"
+                tools:text="Physical Address" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:padding="4dp"
-            android:text="@{user.state, default = sate}"
-            android:textColor="@android:color/black"
-            tools:text="state" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:padding="4dp"
+                android:text="@{user.zipCode}"
+                android:textColor="@android:color/black"
+                tools:text="Zip Code" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:padding="4dp"
+                android:text="@{user.state}"
+                android:textColor="@android:color/black"
+                tools:text="state" />
 
 
-    </LinearLayout>
-</android.support.v4.widget.NestedScrollView>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</layout>

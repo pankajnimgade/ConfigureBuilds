@@ -37,12 +37,6 @@ class DataBindingListActivity : AppCompatActivity() {
     private fun initializeUi() {
         val list = mutableListOf<ActivityItem>()
         list.add(ActivityItem(DataBinding101Activity::class.java, "Data Binding 101"))
-        list.add(ActivityItem(DataBinding101Activity::class.java, "Data Binding 101"))
-        list.add(ActivityItem(DataBinding101Activity::class.java, "Data Binding 101"))
-        list.add(ActivityItem(DataBinding101Activity::class.java, "Data Binding 101"))
-        list.add(ActivityItem(DataBinding101Activity::class.java, "Data Binding 101"))
-        list.add(ActivityItem(DataBinding101Activity::class.java, "Data Binding 101"))
-        list.add(ActivityItem(DataBinding101Activity::class.java, "Data Binding 101"))
         recycler_view_list.adapter = Adapter(list)
     }
 
