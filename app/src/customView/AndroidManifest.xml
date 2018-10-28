@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application android:name="custom.view.StartUp">
+        <activity
+            android:name="custom.view.CustomViewListActivity"
+            android:label="@string/title_activity_custom_view_list"
+            android:parentActivityName="configure.test.configurebuilds.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.MainActivity" />
+        </activity>
+        <activity
+            android:name="custom.view.activities.test101.Custom101Activity"
+            android:label="@string/title_activity_custom101"
+            android:parentActivityName="custom.view.CustomViewListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="custom.view.CustomViewListActivity" />
+        </activity>
+    </application>
+
+</manifest>

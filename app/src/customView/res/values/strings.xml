@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Custom-View</string>
+    <string name="title_activity_custom_view_list">CustomViewListActivity</string>
+    <string name="title_activity_custom101">Custom101Activity</string>
+</resources>

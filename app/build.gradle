@@ -229,6 +229,16 @@ android {
 
             buildConfigField 'String', 'app_name', '\"Data-Binding\"'
         }
+
+        customView {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-custom.view"
+            applicationIdSuffix '.custom.view'
+            versionName '-custom.view'
+
+            buildConfigField 'String', 'app_name', '\"Custom-View\"'
+        }
     }
 
     variantFilter { variant ->
