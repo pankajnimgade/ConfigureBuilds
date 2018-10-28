@@ -3,4 +3,5 @@
     <string name="title_activity_data_binding_list">DataBindingListActivity</string>
     <string name="title_activity_data_binding101">DataBinding101Activity</string>
     <string name="title_activity_expression102">Expression102Activity</string>
+    <string name="title_activity_observable">ObservableActivity</string>
 </resources>

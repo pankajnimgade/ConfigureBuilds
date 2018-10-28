@@ -14,6 +14,7 @@ import configure.test.configurebuilds.application.model.ActivityItem
 import configure.test.configurebuilds.ui.activities.test101.DataBinding101Activity
 import configure.test.configurebuilds.ui.activities.test102.Expression102Activity
 import configure.test.configurebuilds.ui.activities.test103.EventHandlerActivity
+import configure.test.configurebuilds.ui.activities.test104.ObservableActivity
 import kotlinx.android.synthetic.dataBinding.activity_data_binding_list.*
 import kotlinx.android.synthetic.dataBinding.content_data_binding_list.*
 
@@ -41,6 +42,7 @@ class DataBindingListActivity : AppCompatActivity() {
         list.add(ActivityItem(DataBinding101Activity::class.java, "Data Binding 101"))
         list.add(ActivityItem(Expression102Activity::class.java, "Expression 102"))
         list.add(ActivityItem(EventHandlerActivity::class.java, "Event Handler 103"))
+        list.add(ActivityItem(ObservableActivity::class.java, "Observable Activity 103"))
         recycler_view_list.adapter = Adapter(list)
     }
 
