@@ -20,6 +20,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="custom.view.CustomViewListActivity" />
         </activity>
+        <activity
+            android:name="custom.view.activities.test102.Custom102Activity"
+            android:label="@string/title_activity_custom102"
+            android:parentActivityName="custom.view.CustomViewListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="custom.view.CustomViewListActivity" />
+        </activity>
     </application>
 
 </manifest>
