@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 android {
 
     dataBinding {
@@ -268,6 +270,24 @@ android {
         animations { assets.srcDirs = ['src/main/assets', 'src/animations/assets/'] }
     }
     sourceSets { fonts { assets.srcDirs = ['src/fonts/assets', 'src/fonts/assets/'] } }
+}
+
+kapt {
+    generateStubs = true
+    correctErrorTypes = true
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir "${buildDir}/generated/source/kapt/main"
+        }
+    }
+    test {
+        java {
+            srcDir 'src/test/java'
+        }
+    }
 }
 
 
