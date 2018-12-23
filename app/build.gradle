@@ -180,7 +180,7 @@ android {
             applicationIdSuffix '.animations'
             versionName '-animations'
 
-            buildConfigField 'String', 'app_name', '\"animations-Config\"'
+            buildConfigField 'String', 'app_name', '\"Animations-Config\"'
         }
         demotest {
             dimension "tier"
