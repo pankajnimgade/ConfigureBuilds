@@ -17,8 +17,8 @@
 
     <application
         android:name="configure.test.configurebuilds.StartUp"
-        android:theme="@style/AppTheme"
-        android:label="@string/app_name">
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
         <activity
             android:name="configure.test.configurebuilds.activities.AnimationListActivity"
             android:label="@string/title_activity_animation_list"
@@ -67,6 +67,15 @@
         <activity
             android:name="configure.test.configurebuilds.activities.test105.Animation105Activity"
             android:label="@string/title_activity_animation105"
+            android:parentActivityName="configure.test.configurebuilds.activities.AnimationListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.activities.AnimationListActivity" />
+        </activity>
+        <activity
+            android:name="configure.test.configurebuilds.activities.test106.Animation106Activity"
+            android:label="@string/title_activity_animation106"
             android:parentActivityName="configure.test.configurebuilds.activities.AnimationListActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
