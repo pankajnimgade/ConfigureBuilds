@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import configure.test.configurebuilds.R
 
 
@@ -34,7 +35,11 @@ class Test101HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         goToAccount.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.toAccount))
-        goToSetting.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.toSetting))
+        goToSetting.setOnClickListener {
+            it.findNavController().navigate(R.id.toSetting)
+        }
+
+
     }
 
 }
