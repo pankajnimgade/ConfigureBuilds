@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph101"
+    app:startDestination="@id/test101HomeFragment">
+
+    <fragment
+        android:id="@+id/test101HomeFragment"
+        android:name="configure.test.configurebuilds.activities.test101.Test101HomeFragment"
+        android:label="Test 101 Home Fragment"
+        tools:layout="@layout/fragment_test101_home" />
+</navigation>
