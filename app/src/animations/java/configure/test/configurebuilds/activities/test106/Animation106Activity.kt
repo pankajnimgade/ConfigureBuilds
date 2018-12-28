@@ -31,6 +31,7 @@ class Animation106Activity : AppCompatActivity() {
         val list = mutableListOf<VectorImage>()
         list.add(VectorImage(R.drawable.mark))
         list.add(VectorImage(R.drawable.battery_charging))
+        list.add(VectorImage(R.drawable.download))
 
         val adapter = Adapter(list)
         recycler_view.layoutManager = GridLayoutManager(this, 2)

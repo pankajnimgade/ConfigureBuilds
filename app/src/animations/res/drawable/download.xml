@@ -10,7 +10,7 @@
         android:pathData="M100,100m-99.5,0a99.5,99.5 0,1 1,199 0a99.5,99.5 0,1 1,-199 0" />
 
     <path
-        android:fillColor="@color/colorPrimary"
+        android:fillColor="#F00"
         android:pathData="M114.3,57.2H72.1c-2.2,0 -4,1.8 -4,4v77.6c0,2.2 1.8,4 4,4h55.7c2.2,0 4,-1.8 4,-4V75.2L114.3,57.2zM94.9,100.7V80.5h10.3v20.2h6.8l-12,12l-12,-12H94.9zM113.9,119.5H86.1v-3.5h27.9V119.5z" />
     <path
         android:fillColor="@color/colorPrimaryDark"

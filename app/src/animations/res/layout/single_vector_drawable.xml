@@ -13,7 +13,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-
         card_view:cardCornerRadius="4dp"
         card_view:cardElevation="1dp"
         card_view:cardMaxElevation="2dp"
@@ -25,9 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:foregroundGravity="center"
-            android:minWidth="100dp"
-            android:minHeight="100dp"
-            android:src="@drawable/mark" />
+            android:src="@drawable/download" />
 
     </android.support.design.card.MaterialCardView>
 </LinearLayout>
