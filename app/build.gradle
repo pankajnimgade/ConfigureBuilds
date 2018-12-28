@@ -336,7 +336,7 @@ dependencies {
     androidTestImplementation 'info.cukes:cucumber-jvm:1.2.4'
     androidTestImplementation 'info.cukes:cucumber-core:1.2.4'
 
-    implementation 'com.google.zxing:core:3.2.1'
+    implementation 'com.google.zxing:core:3.3.0'
     implementation 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
 
     // ViewModel and LiveData

@@ -6,25 +6,35 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.Navigation
 import configure.test.configurebuilds.R
 
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- *
- */
 class Test101HomeFragment : Fragment() {
+
+    lateinit var goToAccount: Button
+    lateinit var goToSetting: Button
+
+    companion object {
+
+        private val TAG = "Test101HomeFragment"
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_test101_home, container, false)
+        val view = inflater.inflate(R.layout.fragment_test101_home, container, false)
+        goToAccount = view.findViewById(R.id.goToAccount)
+        goToSetting = view.findViewById(R.id.goToSetting)
+        return view
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        goToAccount.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.toAccount))
+        goToSetting.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.toSetting))
+    }
 
 }
