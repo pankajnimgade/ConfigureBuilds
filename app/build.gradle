@@ -241,6 +241,16 @@ android {
 
             buildConfigField 'String', 'app_name', '\"Custom-View\"'
         }
+
+        navigation {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-navigation"
+            applicationIdSuffix '.navigation'
+            versionName '-navigation'
+
+            buildConfigField 'String', 'app_name', '\"Navigation\"'
+        }
     }
 
     variantFilter { variant ->
@@ -305,7 +315,7 @@ dependencies {
     implementation "com.android.support:cardview-v7:$support_version"
     implementation "com.android.support:design:$support_version"
     implementation "com.jakewharton:butterknife:${rootProject.ext.butterKnifeVersion}"
-    implementation 'com.google.android.gms:play-services-vision:16.2.0'
+    implementation 'com.google.android.gms:play-services-vision:17.0.2'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.ext.butterKnifeVersion}"
     implementation 'com.jakewharton.timber:timber:4.7.0'
@@ -330,4 +340,10 @@ dependencies {
 
     // ViewModel and LiveData
     implementation "android.arch.lifecycle:extensions:$lifecycle_version"
+
+    def nav_version = "1.0.0-alpha09"
+
+    implementation "android.arch.navigation:navigation-fragment-ktx:$nav_version"
+    // use -ktx for Kotlin
+    implementation "android.arch.navigation:navigation-ui-ktx:$nav_version" // use -ktx for Kotlin
 }

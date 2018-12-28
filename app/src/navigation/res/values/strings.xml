@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Config-Navigation</string>
+    <string name="title_activity_navigation_list">NavigationListActivity</string>
+</resources>
