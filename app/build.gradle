@@ -251,6 +251,16 @@ android {
 
             buildConfigField 'String', 'app_name', '\"Navigation-Config\"'
         }
+
+        dagger {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-dagger"
+            applicationIdSuffix '.dagger'
+            versionName '-dagger'
+
+            buildConfigField 'String', 'app_name', '\"Dagger-Config\"'
+        }
     }
 
     variantFilter { variant ->

@@ -1,0 +1,12 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:name="configure.test.configurebuilds.StartUp"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name="configure.test.configurebuilds.activities.DaggerListActivity"
+            android:label="@string/title_activity_dagger_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+    </application>
+</manifest>

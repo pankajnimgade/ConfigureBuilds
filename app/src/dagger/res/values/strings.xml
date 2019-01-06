@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Dagger-Config</string>
+    <string name="title_activity_dagger_list">DaggerListActivity</string>
+</resources>
