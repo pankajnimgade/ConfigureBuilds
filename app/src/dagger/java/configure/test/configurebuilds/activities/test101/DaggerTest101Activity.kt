@@ -1,23 +1,20 @@
 package configure.test.configurebuilds.activities.test101
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.CardView
-import android.support.v7.widget.RecyclerView
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
 import configure.test.configurebuilds.R
-import configure.test.configurebuilds.application.model.ActivityItem
+import configure.test.configurebuilds.activities.test101.dagger.DaggerDateComponent
+import configure.test.configurebuilds.activities.test101.dagger.DateComponent
 import kotlinx.android.synthetic.dagger.activity_dagger_test101.*
 import kotlinx.android.synthetic.dagger.content_dagger_test101.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class DaggerTest101Activity : AppCompatActivity() {
+
+    lateinit var dateComponent: DateComponent
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +27,19 @@ class DaggerTest101Activity : AppCompatActivity() {
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        dateComponent = DaggerDateComponent.create()
+
+        initializeUi()
+    }
+
+    override fun onResume() {
+        super.onResume()
+    }
+
+    private fun initializeUi() {
+        val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.US)
+        val format = sdf.format(dateComponent.dateStore.date)
+        tv_date.text = format
     }
 
 }

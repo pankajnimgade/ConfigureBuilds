@@ -9,4 +9,17 @@
     tools:showIn="@layout/activity_dagger_test101">
 
 
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="cursive"
+        android:text="1-6-2018"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="1-6-2018" />
 </android.support.constraint.ConstraintLayout>
