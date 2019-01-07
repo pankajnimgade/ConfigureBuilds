@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Dagger-Config</string>
     <string name="title_activity_dagger_list">DaggerListActivity</string>
+    <string name="title_activity_dagger_test101">DaggerTest101Activity</string>
 </resources>

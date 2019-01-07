@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -7,6 +8,22 @@
         <activity
             android:name="configure.test.configurebuilds.activities.DaggerListActivity"
             android:label="@string/title_activity_dagger_list"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:parentActivityName="configure.test.configurebuilds.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.MainActivity" />
+        </activity>
+
+        <activity
+            android:name="configure.test.configurebuilds.activities.test101.DaggerTest101Activity"
+            android:label="@string/title_activity_dagger_test101"
+            android:parentActivityName="configure.test.configurebuilds.activities.DaggerListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.activities.DaggerListActivity" />
+        </activity>
     </application>
+
 </manifest>
