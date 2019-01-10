@@ -13,6 +13,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import configure.test.configurebuilds.R
 import configure.test.configurebuilds.activities.test101.DaggerTest101Activity
+import configure.test.configurebuilds.activities.test102.DaggerTest102Activity
 import configure.test.configurebuilds.application.model.ActivityItem
 import kotlinx.android.synthetic.dagger.activity_dagger_list.*
 import kotlinx.android.synthetic.dagger.content_dagger_list.*
@@ -39,6 +40,7 @@ class DaggerListActivity : AppCompatActivity() {
         var list = mutableListOf<ActivityItem>()
 
         list.add(ActivityItem(DaggerTest101Activity::class.java, "Dagger Test 101"))
+        list.add(ActivityItem(DaggerTest102Activity::class.java, "Dagger Test 102"))
 
         recycler_view.adapter = DaggerAdapter(this, list)
     }

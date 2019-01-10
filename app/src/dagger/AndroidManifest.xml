@@ -14,10 +14,18 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="configure.test.configurebuilds.MainActivity" />
         </activity>
-
         <activity
             android:name="configure.test.configurebuilds.activities.test101.DaggerTest101Activity"
             android:label="@string/title_activity_dagger_test101"
+            android:parentActivityName="configure.test.configurebuilds.activities.DaggerListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.activities.DaggerListActivity" />
+        </activity>
+        <activity
+            android:name="configure.test.configurebuilds.activities.test102.DaggerTest102Activity"
+            android:label="@string/title_activity_dagger_test102"
             android:parentActivityName="configure.test.configurebuilds.activities.DaggerListActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
