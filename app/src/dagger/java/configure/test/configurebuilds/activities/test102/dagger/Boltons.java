@@ -1,7 +1,9 @@
 package configure.test.configurebuilds.activities.test102.dagger;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
+@Singleton
 public class Boltons implements House {
 
     String mName = "Boltons";

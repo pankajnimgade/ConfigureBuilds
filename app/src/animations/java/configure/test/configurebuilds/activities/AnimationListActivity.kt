@@ -35,6 +35,7 @@ import configure.test.configurebuilds.activities.test104.Animation104Activity
 import configure.test.configurebuilds.activities.test105.Animation105Activity
 import configure.test.configurebuilds.activities.test106.Animation106Activity
 import configure.test.configurebuilds.activities.test107.Animation107Activity
+import configure.test.configurebuilds.activities.test108.Animation108Activity
 import configure.test.configurebuilds.application.model.ActivityItem
 import kotlinx.android.synthetic.animations.activity_animation_list.*
 
@@ -68,6 +69,7 @@ class AnimationListActivity : AppCompatActivity() {
             list.add(ActivityItem(Animation105Activity::class.java, "Animation 105"))
             list.add(ActivityItem(Animation106Activity::class.java, "Animation 106 - Vector drawables"))
             list.add(ActivityItem(Animation107Activity::class.java, "Test 107 - Vector drawables"))
+            list.add(ActivityItem(Animation108Activity::class.java, "Test 108 - list item animation"))
         }
         recyclerView.adapter = AnimationAdapter(this, list)
 

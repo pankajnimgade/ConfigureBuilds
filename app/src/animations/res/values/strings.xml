@@ -33,4 +33,5 @@
     <string name="pause_icon_bottom_path_data">M 32 88 L 32 72 L 96 72 L 96 88 Z</string>
     <string name="title_activity_animation106">Animation106Activity</string>
     <string name="title_activity_animation107">Animation107Activity</string>
+    <string name="title_activity_animation108">Animation108Activity</string>
 </resources>

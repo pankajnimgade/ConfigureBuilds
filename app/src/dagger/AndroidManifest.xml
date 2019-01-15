@@ -32,6 +32,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="configure.test.configurebuilds.activities.DaggerListActivity" />
         </activity>
+        <activity
+            android:name="configure.test.configurebuilds.activities.test103.DaggerTest103Activity"
+            android:label="@string/title_activity_dagger_test103"
+            android:parentActivityName="configure.test.configurebuilds.activities.DaggerListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.activities.DaggerListActivity" />
+        </activity>
     </application>
 
 </manifest>
