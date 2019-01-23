@@ -261,6 +261,16 @@ android {
 
             buildConfigField 'String', 'app_name', '\"Dagger-Config\"'
         }
+
+        camera {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-camera"
+            applicationIdSuffix '.camera'
+            versionName '-camera'
+
+            buildConfigField 'String', 'app_name', '\"Camera-Config\"'
+        }
     }
 
     variantFilter { variant ->

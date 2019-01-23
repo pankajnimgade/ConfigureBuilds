@@ -1,0 +1,38 @@
+<!--
+  ~ Copyright 2018 Pankaj Nimgade
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <string name="app_name">animations-Config</string>
+    <string name="title_activity_animation_list">AnimationListActivity</string>
+    <string name="title_activity_animation101">Animation101Activity</string>
+    <string name="title_activity_animation102">Animation102Activity</string>
+    <string name="title_activity_animation103">Animation103Activity</string>
+    <string name="title_activity_animation104">Animation104Activity</string>
+    <string name="title_activity_animation105">Animation105Activity</string>
+
+    <string name="before">M3,70 l 0,-70 70,70 0,0 -70,70z</string>
+    <string name="after">M5, 50 l 0, -80 80, 80, 0, 10 -90, 50z</string>
+
+    <string name="play_icon_upper_path_data">M 44 32 L 44 64 L 100 64 L 100 64 Z</string>
+    <string name="play_icon_bottom_path_data">M 44 96 L 44 64 L 100 64 L 100 64 Z</string>
+    <!-- Pause Icon -->
+    <string name="pause_icon_upper_path_data">M 32 40 L 32 56  L 96 56 L 96 40 Z</string>
+    <string name="pause_icon_bottom_path_data">M 32 88 L 32 72 L 96 72 L 96 88 Z</string>
+    <string name="title_activity_animation106">Animation106Activity</string>
+    <string name="title_activity_animation107">Animation107Activity</string>
+    <string name="title_activity_animation108">Animation108Activity</string>
+    <string name="title_activity_camera_list">CameraListActivity</string>
+</resources>
