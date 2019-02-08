@@ -17,7 +17,7 @@ public class StartUp extends Application {
         super.onCreate();
         List<ActivityItem> activityItemList = ActivityItem.getActivityItemList();
         activityItemList.add(0, new ActivityItem(CameraListActivity.class,
-                "Animation List"));
+                "Camera List"));
         Timber.plant(new Timber.DebugTree());
         Timber.tag("StartUp");
         Timber.i("start up on create");

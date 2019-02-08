@@ -271,6 +271,16 @@ android {
 
             buildConfigField 'String', 'app_name', '\"Camera-Config\"'
         }
+
+        search {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-search"
+            applicationIdSuffix '.search'
+            versionName '-search'
+
+            buildConfigField 'String', 'app_name', '\"Search-Config\"'
+        }
     }
 
     variantFilter { variant ->
@@ -374,5 +384,6 @@ dependencies {
 
     implementation "android.arch.navigation:navigation-fragment-ktx:$nav_version"
     // use -ktx for Kotlin
-    implementation "android.arch.navigation:navigation-ui-ktx:$nav_version" // use -ktx for Kotlin
+    implementation "android.arch.navigation:navigation-ui-ktx:$nav_version"
+    implementation 'com.android.support:recyclerview-v7:28.0.0'// use -ktx for Kotlin
 }
