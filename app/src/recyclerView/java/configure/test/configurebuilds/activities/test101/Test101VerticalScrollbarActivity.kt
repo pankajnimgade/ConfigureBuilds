@@ -11,7 +11,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import configure.test.configurebuilds.R
 import kotlinx.android.synthetic.recyclerView.activity_test101_vertical_scrollbar.*
-import java.util.*
 
 
 class Test101VerticalScrollbarActivity : AppCompatActivity() {

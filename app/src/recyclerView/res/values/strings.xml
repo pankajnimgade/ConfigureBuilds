@@ -1,4 +1,7 @@
 <resources>
+
+    <string name="app_name">RecyclerView-Config</string>
+
     <string name="title_activity_recycler_view_list">RecyclerViewListActivity</string>
     <string name="title_activity_test101_vertical_scrollbar">Test101VerticalScrollbarActivity
     </string>
