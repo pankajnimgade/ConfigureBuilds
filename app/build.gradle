@@ -281,6 +281,16 @@ android {
 
             buildConfigField 'String', 'app_name', '\"Search-Config\"'
         }
+
+        recyclerView {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-recyclerView"
+            applicationIdSuffix '.recycler.view'
+            versionName '-recyclerView'
+
+            buildConfigField 'String', 'app_name', '\"RecyclerView-Config\"'
+        }
     }
 
     variantFilter { variant ->
