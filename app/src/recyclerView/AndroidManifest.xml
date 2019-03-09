@@ -1,9 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
         android:name="configure.test.configurebuilds.StartUp"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name="configure.test.configurebuilds.activities.test101.Test101VerticalScrollbarActivity"
+            android:label="@string/title_activity_test101_vertical_scrollbar"
+            android:parentActivityName="configure.test.configurebuilds.RecyclerViewListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.RecyclerViewListActivity" />
+        </activity>
         <activity
             android:name="configure.test.configurebuilds.RecyclerViewListActivity"
             android:label="@string/title_activity_recycler_view_list"
@@ -14,4 +24,5 @@
                 android:value="configure.test.configurebuilds.MainActivity" />
         </activity>
     </application>
+
 </manifest>
