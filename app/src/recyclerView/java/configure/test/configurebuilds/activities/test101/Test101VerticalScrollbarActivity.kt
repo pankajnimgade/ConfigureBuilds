@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -22,10 +23,6 @@ class Test101VerticalScrollbarActivity : AppCompatActivity() {
 
         initializeList()
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
@@ -40,13 +37,33 @@ class Test101VerticalScrollbarActivity : AppCompatActivity() {
 
         recycler_view.adapter = adapter
 
-        adapter.notifyDataSetChanged()
+        recycler_view.layoutManager = object : LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false) {
+            override fun onLayoutChildren(recycler: RecyclerView.Recycler?, state: RecyclerView.State) {
+                super.onLayoutChildren(recycler, state)
+                //TODO if the items are filtered, considered hiding the fast scroller here
+                val firstVisibleItemPosition = findFirstVisibleItemPosition()
+                if (firstVisibleItemPosition != 0) {
+                    // this avoids trying to handle un-needed calls
+                    if (firstVisibleItemPosition == -1)
+                    //not initialized, or no items shown, so hide fast-scroller
+                        fastscroller.visibility = View.GONE
+                    return
+                }
+                val lastVisibleItemPosition = findLastVisibleItemPosition()
+                val itemsShown = lastVisibleItemPosition - firstVisibleItemPosition + 1
+                //if all items are shown, hide the fast-scroller
+                fastscroller.visibility = if (adapter.itemCount > itemsShown) View.VISIBLE else View.GONE
+            }
+        }
+
+        fastscroller.setRecyclerView(recycler_view)
+        fastscroller.setViewsToUse(R.layout.recycler_view_fast_scroller__fast_scroller, R.id.fastscroller_bubble, R.id.fastscroller_handle);
     }
 
-    private class TestItem(val text: String)
+    class TestItem(val text: String)
 
-    private class TestItemAdapter(val context: Context,
-                                  val list: List<TestItem>) :
+    class TestItemAdapter(val context: Context,
+                          val list: List<TestItem>) :
             RecyclerView.Adapter<TestItemAdapter.MyViewHolder>() {
 
         private val mLayoutInflater: LayoutInflater = LayoutInflater.from(context)
@@ -60,12 +77,19 @@ class Test101VerticalScrollbarActivity : AppCompatActivity() {
             return list.size
         }
 
+        fun getTextToShowInBubble(position: Int): String {
+
+            val text = list[position].text
+
+            return text.substring(text.length - 4, text.length)
+        }
+
         override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
             val testItem = list[position]
             holder.testText.text = testItem.text
         }
 
-        private class MyViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
+        class MyViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
             val testText: TextView = itemView!!.findViewById(R.id.tv_text)
         }
     }
