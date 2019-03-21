@@ -19,6 +19,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="configure.test.configurebuilds.MainActivity" />
         </activity>
+
+        <activity
+            android:name="configure.test.configurebuilds.activities.test101.AlarmTest101Activity"
+            android:label="Alarm 101"
+            android:parentActivityName="configure.test.configurebuilds.activities.AlarmListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.activities.AlarmListActivity" />
+        </activity>
     </application>
 
 </manifest>
