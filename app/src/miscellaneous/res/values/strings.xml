@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Miscellaneous-Config</string>
+    <string name="title_activity_miscellaneous_list">MiscellaneousListActivity</string>
+</resources>
