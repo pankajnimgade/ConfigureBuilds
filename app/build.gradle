@@ -8,6 +8,11 @@ apply plugin: 'kotlin-kapt'
 
 android {
 
+    lintOptions{
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
     dataBinding {
         enabled = true
     }
@@ -16,7 +21,7 @@ android {
         config {
             keyAlias 'pankaj'
             keyPassword 'pankaj'
-            storeFile file('H:/Projects/Android_Projects/ConfigureBuilds/app/keyStore/ConfigureBuildsKeyStore.jks')
+            storeFile file('G:/Android_Project/ConfigureBuilds/KeyStore/miscellaneousKeyStore.jks')
             storePassword 'pankaj'
         }
     }
@@ -71,7 +76,7 @@ android {
 
         debug {
             ext.enableCrashlytics = false
-            applicationIdSuffix ".debug"
+//            applicationIdSuffix ".debug"
         }
         /**
          * By default, Android Studio configures the release build type to enable code
@@ -83,116 +88,93 @@ android {
         }
     }
     productFlavors {
-
         alarm {
             dimension "tier"
             minSdkVersion 21
             versionNameSuffix "-alarm"
             applicationIdSuffix '.alarm'
             versionName '-alarm'
-
             buildConfigField 'String', 'app_name', '\"alarm-Config\"'
         }
-
         android_Me {
             dimension "tier"
             minSdkVersion 21
             versionNameSuffix "-android.me"
             applicationIdSuffix '.android.me'
             versionName '-android.me'
-
             buildConfigField 'String', 'app_name', '\"android_me-Config\"'
         }
-
         animations {
             dimension "tier"
             minSdkVersion 21
             versionNameSuffix '-animations'
             applicationIdSuffix '.animations'
             versionName '-animations'
-
             buildConfigField 'String', 'app_name', '\"Animations-Config\"'
         }
-
         camera {
             dimension "tier"
             minSdkVersion 21
             versionNameSuffix "-camera"
             applicationIdSuffix '.camera'
             versionName '-camera'
-
             buildConfigField 'String', 'app_name', '\"Camera-Config\"'
         }
-
         customView {
             dimension "tier"
             minSdkVersion 21
             versionNameSuffix "-custom.view"
             applicationIdSuffix '.custom.view'
             versionName '-custom.view'
-
             buildConfigField 'String', 'app_name', '\"Custom-View\"'
         }
-
         dagger {
             dimension "tier"
             minSdkVersion 21
             versionNameSuffix "-dagger"
             applicationIdSuffix '.dagger'
             versionName '-dagger'
-
             buildConfigField 'String', 'app_name', '\"Dagger-Config\"'
         }
-
         dataBinding {
             dimension "tier"
             minSdkVersion 21
             versionNameSuffix "-data.binding"
             applicationIdSuffix '.data.binding'
             versionName '-data.binding'
-
             buildConfigField 'String', 'app_name', '\"Data-Binding\"'
         }
-
         demotest {
             dimension "tier"
             minSdkVersion 21
             versionNameSuffix "-demotest"
             applicationIdSuffix '.demotest'
             versionName '-demotest'
-
             buildConfigField 'String', 'app_name', '\"demotest-Config\"'
         }
-
         dev {
             dimension "tier"
             versionNameSuffix "-dev"
             applicationIdSuffix '.dev'
             versionName '-dev'
-
             buildConfigField 'String', 'app_name', '\"dev-Config\"'
         }
-
         emojify {
             dimension "tier"
             minSdkVersion 21
             versionNameSuffix "-emojify"
             applicationIdSuffix '.emogify'
             versionName '-emojify'
-
             buildConfigField 'String', 'app_name', '\"emojify-Config\"'
         }
-
         fonts {
             dimension "tier"
             minSdkVersion 21
             versionNameSuffix "-fonts"
             applicationIdSuffix '.fonts'
             versionName '-fonts'
-
             buildConfigField 'String', 'app_name', '\"Font-Config\"'
         }
-
         free {
             // Assigns this product flavor to the "tier" flavor dimension. Specifying
             // this property is optional if you are using only one dimension.
@@ -201,120 +183,97 @@ android {
             versionNameSuffix "-free"
             applicationIdSuffix ".free"
             versionName '-free'
-
             buildConfigField 'String', 'app_name', '\"free-Config\"'
         }
-
         machineLearning {
             dimension "tier"
             minSdkVersion 21
             versionNameSuffix "-machine.learning"
             applicationIdSuffix '.machine.learning'
             versionName '-machine.learning'
-
             buildConfigField 'String', 'app_name', '\"ML-Config\"'
         }
-
         miscellaneous {
             dimension "tier"
             minSdkVersion 21
             versionNameSuffix "-miscellaneous"
             applicationIdSuffix '.miscellaneous'
             versionName '-miscellaneous'
-
             buildConfigField 'String', 'app_name', '\"Miscellaneous-Config\"'
+            signingConfig signingConfigs.config
         }
-
         mywidget {
             dimension "tier"
             minSdkVersion 21
             versionNameSuffix "-mywidger"
             applicationIdSuffix '.mywidger'
             versionName '-mywidger'
-
             buildConfigField 'String', 'app_name', '\"mywidget-Config\"'
         }
-
         navigation {
             dimension "tier"
             minSdkVersion 21
             versionNameSuffix "-navigation"
             applicationIdSuffix '.navigation'
             versionName '-navigation'
-
             buildConfigField 'String', 'app_name', '\"Navigation-Config\"'
         }
-
         paid {
             dimension "tier"
             minSdkVersion 21
             versionNameSuffix "-paid"
             applicationIdSuffix ".paid"
             versionName '-paid'
-
             buildConfigField 'String', 'app_name', '\"Paid-Config\"'
         }
-
         prod {
             dimension "tier"
             minSdkVersion 21
             versionNameSuffix "-prod"
             applicationIdSuffix '.prod'
             versionName '-prod'
-
             buildConfigField 'String', 'app_name', '\"prod-Config\"'
         }
-
         receiver {
             dimension "tier"
             minSdkVersion 21
             versionNameSuffix "-receiver"
             applicationIdSuffix '.receiver'
             versionName '-receiver'
-
             buildConfigField 'String', 'app_name', '\"receiver-Config\"'
         }
-
         recyclerView {
             dimension "tier"
             minSdkVersion 21
             versionNameSuffix "-recyclerView"
             applicationIdSuffix '.recycler.view'
             versionName '-recyclerView'
-
             buildConfigField 'String', 'app_name', '\"RecyclerView-Config\"'
         }
-
         search {
             dimension "tier"
             minSdkVersion 21
             versionNameSuffix "-search"
             applicationIdSuffix '.search'
             versionName '-search'
-
             buildConfigField 'String', 'app_name', '\"Search-Config\"'
         }
-
         services {
             dimension "tier"
             minSdkVersion 21
             versionNameSuffix "-services"
             applicationIdSuffix '.services'
             versionName '-services'
-
             buildConfigField 'String', 'app_name', '\"services-Config\"'
         }
-
         viewModel {
             dimension "tier"
             minSdkVersion 21
             versionNameSuffix "-view.model"
             applicationIdSuffix '.view.model'
             versionName '-view.model'
-
             buildConfigField 'String', 'app_name', '\"ViewModel-Config\"'
         }
-
     }
 
     variantFilter { variant ->
@@ -369,7 +328,6 @@ sourceSets {
 dependencies {
     def lifecycle_version = "1.1.1"
     def support_version = "28.0.0"
-
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "com.android.support:appcompat-v7:$support_version"
@@ -384,16 +342,16 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.ext.butterKnifeVersion}"
     implementation 'com.jakewharton.timber:timber:4.7.0'
-
-
     implementation 'com.google.dagger:dagger-android:2.20'
     implementation 'com.google.dagger:dagger-android-support:2.20'
+
     // if you use the support libraries
     kapt 'com.google.dagger:dagger-android-processor:2.20'
     kapt 'com.google.dagger:dagger-compiler:2.20'
 
     // Required -- JUnit 4 framework
     testImplementation 'junit:junit:4.12'
+
     // Optional -- Mockito framework
     testImplementation 'org.mockito:mockito-core:2.21.0'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
@@ -401,23 +359,28 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation "com.google.code.gson:gson:${rootProject.ext.gsonVersion}"
     implementation "com.android.support:gridlayout-v7:$support_version"
-
     androidTestImplementation 'info.cukes:cucumber-android:1.2.4@jar'
     androidTestImplementation 'info.cukes:cucumber-junit:1.1.4'
     androidTestImplementation 'info.cukes:cucumber-picocontainer:1.2.4'
     androidTestImplementation 'info.cukes:cucumber-jvm:1.2.4'
     androidTestImplementation 'info.cukes:cucumber-core:1.2.4'
-
     implementation 'com.google.zxing:core:3.3.0'
     implementation 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
 
     // ViewModel and LiveData
     implementation "android.arch.lifecycle:extensions:$lifecycle_version"
-
     def nav_version = "1.0.0-alpha09"
-
     implementation "android.arch.navigation:navigation-fragment-ktx:$nav_version"
+
     // use -ktx for Kotlin
     implementation "android.arch.navigation:navigation-ui-ktx:$nav_version"
-    implementation 'com.android.support:recyclerview-v7:28.0.0'// use -ktx for Kotlin
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+
+    // use -ktx for Kotlin
+
+    //SMS Retriever
+    implementation 'com.google.android.gms:play-services-base:16.1.0'
+    implementation 'com.google.android.gms:play-services-identity:16.0.0'
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
+    implementation 'com.google.android.gms:play-services-auth-api-phone:16.0.0'
 }
