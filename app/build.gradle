@@ -83,69 +83,7 @@ android {
         }
     }
     productFlavors {
-        free {
-            // Assigns this product flavor to the "tier" flavor dimension. Specifying
-            // this property is optional if you are using only one dimension.
-            dimension "tier"
-            versionNameSuffix "-free"
-            applicationIdSuffix ".free"
-            versionName '-free'
 
-            buildConfigField 'String', 'app_name', '\"free-Config\"'
-        }
-        paid {
-            dimension "tier"
-            versionNameSuffix "-paid"
-            applicationIdSuffix ".paid"
-            versionName '-paid'
-
-            buildConfigField 'String', 'app_name', '\"paid-Config\"'
-        }
-        dev {
-            dimension "tier"
-            minSdkVersion 21
-            versionNameSuffix "-dev"
-            applicationIdSuffix '.dev'
-            versionName '-dev'
-
-            buildConfigField 'String', 'app_name', '\"dev-Config\"'
-        }
-        prod {
-            dimension "tier"
-            minSdkVersion 21
-            versionNameSuffix "-prod"
-            applicationIdSuffix '.prod'
-            versionName '-prod'
-
-            buildConfigField 'String', 'app_name', '\"prod-Config\"'
-        }
-        android_Me {
-            dimension "tier"
-            minSdkVersion 21
-            versionNameSuffix "-android.me"
-            applicationIdSuffix '.android.me'
-            versionName '-android.me'
-
-            buildConfigField 'String', 'app_name', '\"android_me-Config\"'
-        }
-        emojify {
-            dimension "tier"
-            minSdkVersion 21
-            versionNameSuffix "-emojify"
-            applicationIdSuffix '.emogify'
-            versionName '-emojify'
-
-            buildConfigField 'String', 'app_name', '\"emojify-Config\"'
-        }
-        mywidget {
-            dimension "tier"
-            minSdkVersion 21
-            versionNameSuffix "-mywidger"
-            applicationIdSuffix '.mywidger'
-            versionName '-mywidger'
-
-            buildConfigField 'String', 'app_name', '\"mywidget-Config\"'
-        }
         alarm {
             dimension "tier"
             minSdkVersion 21
@@ -155,24 +93,17 @@ android {
 
             buildConfigField 'String', 'app_name', '\"alarm-Config\"'
         }
-        receiver {
+
+        android_Me {
             dimension "tier"
             minSdkVersion 21
-            versionNameSuffix "-receiver"
-            applicationIdSuffix '.receiver'
-            versionName '-receiver'
+            versionNameSuffix "-android.me"
+            applicationIdSuffix '.android.me'
+            versionName '-android.me'
 
-            buildConfigField 'String', 'app_name', '\"receiver-Config\"'
+            buildConfigField 'String', 'app_name', '\"android_me-Config\"'
         }
-        services {
-            dimension "tier"
-            minSdkVersion 21
-            versionNameSuffix "-services"
-            applicationIdSuffix '.services'
-            versionName '-services'
 
-            buildConfigField 'String', 'app_name', '\"services-Config\"'
-        }
         animations {
             dimension "tier"
             minSdkVersion 21
@@ -181,85 +112,6 @@ android {
             versionName '-animations'
 
             buildConfigField 'String', 'app_name', '\"Animations-Config\"'
-        }
-        demotest {
-            dimension "tier"
-            minSdkVersion 21
-            versionNameSuffix "-demotest"
-            applicationIdSuffix '.demotest'
-            versionName '-demotest'
-
-            buildConfigField 'String', 'app_name', '\"demotest-Config\"'
-        }
-
-        machineLearning {
-            dimension "tier"
-            minSdkVersion 21
-            versionNameSuffix "-machine.learning"
-            applicationIdSuffix '.machine.learning'
-            versionName '-machine.learning'
-
-            buildConfigField 'String', 'app_name', '\"ML-Config\"'
-        }
-
-        fonts {
-            dimension "tier"
-            minSdkVersion 21
-            versionNameSuffix "-fonts"
-            applicationIdSuffix '.fonts'
-            versionName '-fonts'
-
-            buildConfigField 'String', 'app_name', '\"Font-Config\"'
-        }
-
-        viewModel {
-            dimension "tier"
-            minSdkVersion 21
-            versionNameSuffix "-view.model"
-            applicationIdSuffix '.view.model'
-            versionName '-view.model'
-
-            buildConfigField 'String', 'app_name', '\"ViewModel-Config\"'
-        }
-
-        dataBinding {
-            dimension "tier"
-            minSdkVersion 21
-            versionNameSuffix "-data.binding"
-            applicationIdSuffix '.data.binding'
-            versionName '-data.binding'
-
-            buildConfigField 'String', 'app_name', '\"Data-Binding\"'
-        }
-
-        customView {
-            dimension "tier"
-            minSdkVersion 21
-            versionNameSuffix "-custom.view"
-            applicationIdSuffix '.custom.view'
-            versionName '-custom.view'
-
-            buildConfigField 'String', 'app_name', '\"Custom-View\"'
-        }
-
-        navigation {
-            dimension "tier"
-            minSdkVersion 21
-            versionNameSuffix "-navigation"
-            applicationIdSuffix '.navigation'
-            versionName '-navigation'
-
-            buildConfigField 'String', 'app_name', '\"Navigation-Config\"'
-        }
-
-        dagger {
-            dimension "tier"
-            minSdkVersion 21
-            versionNameSuffix "-dagger"
-            applicationIdSuffix '.dagger'
-            versionName '-dagger'
-
-            buildConfigField 'String', 'app_name', '\"Dagger-Config\"'
         }
 
         camera {
@@ -272,14 +124,155 @@ android {
             buildConfigField 'String', 'app_name', '\"Camera-Config\"'
         }
 
-        search {
+        customView {
             dimension "tier"
             minSdkVersion 21
-            versionNameSuffix "-search"
-            applicationIdSuffix '.search'
-            versionName '-search'
+            versionNameSuffix "-custom.view"
+            applicationIdSuffix '.custom.view'
+            versionName '-custom.view'
 
-            buildConfigField 'String', 'app_name', '\"Search-Config\"'
+            buildConfigField 'String', 'app_name', '\"Custom-View\"'
+        }
+
+        dagger {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-dagger"
+            applicationIdSuffix '.dagger'
+            versionName '-dagger'
+
+            buildConfigField 'String', 'app_name', '\"Dagger-Config\"'
+        }
+
+        dataBinding {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-data.binding"
+            applicationIdSuffix '.data.binding'
+            versionName '-data.binding'
+
+            buildConfigField 'String', 'app_name', '\"Data-Binding\"'
+        }
+
+        demotest {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-demotest"
+            applicationIdSuffix '.demotest'
+            versionName '-demotest'
+
+            buildConfigField 'String', 'app_name', '\"demotest-Config\"'
+        }
+
+        dev {
+            dimension "tier"
+            versionNameSuffix "-dev"
+            applicationIdSuffix '.dev'
+            versionName '-dev'
+
+            buildConfigField 'String', 'app_name', '\"dev-Config\"'
+        }
+
+        emojify {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-emojify"
+            applicationIdSuffix '.emogify'
+            versionName '-emojify'
+
+            buildConfigField 'String', 'app_name', '\"emojify-Config\"'
+        }
+
+        fonts {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-fonts"
+            applicationIdSuffix '.fonts'
+            versionName '-fonts'
+
+            buildConfigField 'String', 'app_name', '\"Font-Config\"'
+        }
+
+        free {
+            // Assigns this product flavor to the "tier" flavor dimension. Specifying
+            // this property is optional if you are using only one dimension.
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-free"
+            applicationIdSuffix ".free"
+            versionName '-free'
+
+            buildConfigField 'String', 'app_name', '\"free-Config\"'
+        }
+
+        machineLearning {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-machine.learning"
+            applicationIdSuffix '.machine.learning'
+            versionName '-machine.learning'
+
+            buildConfigField 'String', 'app_name', '\"ML-Config\"'
+        }
+
+        miscellaneous {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-miscellaneous"
+            applicationIdSuffix '.miscellaneous'
+            versionName '-miscellaneous'
+
+            buildConfigField 'String', 'app_name', '\"Miscellaneous-Config\"'
+        }
+
+        mywidget {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-mywidger"
+            applicationIdSuffix '.mywidger'
+            versionName '-mywidger'
+
+            buildConfigField 'String', 'app_name', '\"mywidget-Config\"'
+        }
+
+        navigation {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-navigation"
+            applicationIdSuffix '.navigation'
+            versionName '-navigation'
+
+            buildConfigField 'String', 'app_name', '\"Navigation-Config\"'
+        }
+
+        paid {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-paid"
+            applicationIdSuffix ".paid"
+            versionName '-paid'
+
+            buildConfigField 'String', 'app_name', '\"Paid-Config\"'
+        }
+
+        prod {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-prod"
+            applicationIdSuffix '.prod'
+            versionName '-prod'
+
+            buildConfigField 'String', 'app_name', '\"prod-Config\"'
+        }
+
+        receiver {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-receiver"
+            applicationIdSuffix '.receiver'
+            versionName '-receiver'
+
+            buildConfigField 'String', 'app_name', '\"receiver-Config\"'
         }
 
         recyclerView {
@@ -291,6 +284,37 @@ android {
 
             buildConfigField 'String', 'app_name', '\"RecyclerView-Config\"'
         }
+
+        search {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-search"
+            applicationIdSuffix '.search'
+            versionName '-search'
+
+            buildConfigField 'String', 'app_name', '\"Search-Config\"'
+        }
+
+        services {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-services"
+            applicationIdSuffix '.services'
+            versionName '-services'
+
+            buildConfigField 'String', 'app_name', '\"services-Config\"'
+        }
+
+        viewModel {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-view.model"
+            applicationIdSuffix '.view.model'
+            versionName '-view.model'
+
+            buildConfigField 'String', 'app_name', '\"ViewModel-Config\"'
+        }
+
     }
 
     variantFilter { variant ->
