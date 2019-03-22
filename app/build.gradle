@@ -200,6 +200,7 @@ android {
             applicationIdSuffix '.miscellaneous'
             versionName '-miscellaneous'
             buildConfigField 'String', 'app_name', '\"Miscellaneous-Config\"'
+            buildConfigField "String", "SMS_RETRIEVER_HASH_CODE", DEBUG_HASH_CODE
             signingConfig signingConfigs.config
         }
         mywidget {
