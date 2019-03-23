@@ -76,7 +76,7 @@ android {
 
         debug {
             ext.enableCrashlytics = false
-//            applicationIdSuffix ".debug"
+            applicationIdSuffix ".debug"
         }
         /**
          * By default, Android Studio configures the release build type to enable code
@@ -200,7 +200,7 @@ android {
             applicationIdSuffix '.miscellaneous'
             versionName '-miscellaneous'
             buildConfigField 'String', 'app_name', '\"Miscellaneous-Config\"'
-            buildConfigField "String", "SMS_RETRIEVER_HASH_CODE", DEBUG_HASH_CODE
+            buildConfigField "String", "SMS_RETRIEVER_HASH_CODE", '\"uCfz8v6HjRL\"'
             signingConfig signingConfigs.config
         }
         mywidget {

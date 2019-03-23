@@ -9,6 +9,7 @@ import android.widget.Toast
 import com.google.android.gms.auth.api.phone.SmsRetriever
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
+import configure.test.configurebuilds.BuildConfig
 import configure.test.configurebuilds.R
 import kotlinx.android.synthetic.miscellaneous.activity_sms_retriever_test101.*
 
@@ -25,6 +26,16 @@ class SmsRetrieverTest101Activity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         startSmsRetriever()
+
+        initializeText()
+    }
+
+    private fun initializeText() {
+
+        val message = getString(R.string.text_message, BuildConfig.SMS_RETRIEVER_HASH_CODE)
+        tv_generated_message.text = message
+
+        tv_hash_code.text = AppSignatureHelper(applicationContext).appSignatures[0]
     }
 
     private fun startSmsRetriever() {
@@ -44,6 +55,7 @@ class SmsRetrieverTest101Activity : AppCompatActivity() {
             // Successfully started retriever, expect broadcast intent
             // ...
             Log.d(TAG, ": addOnSuccessListener()")
+            Toast.makeText(this, " Started listening...", Toast.LENGTH_LONG).show()
             tv_status.text = "Waiting for the OTP"
 
             val otpListener = object : MySMSBroadcastReceiver.OTPReceiveListener {
@@ -78,8 +90,7 @@ class SmsRetrieverTest101Activity : AppCompatActivity() {
 
         val appSignatureHelper = AppSignatureHelper(applicationContext)
         val appSignatures = appSignatureHelper.appSignatures
-        val message = getString(R.string.text_message, appSignatures[0])
-        Log.d(TAG, message)
+        val message = getString(R.string.text_message, BuildConfig.SMS_RETRIEVER_HASH_CODE)
         tv_generated_message.text = message
     }
 

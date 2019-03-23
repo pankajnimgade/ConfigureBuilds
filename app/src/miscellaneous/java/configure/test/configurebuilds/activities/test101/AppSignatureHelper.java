@@ -14,12 +14,10 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import java.util.ArrayList;
-
 /**
  * Created by Pankaj Nimgade on 3/20/2019.
  */
-public class AppSignatureHelper  extends ContextWrapper {
+public class AppSignatureHelper extends ContextWrapper {
 
     public static final String TAG = AppSignatureHelper.class.getSimpleName();
 
@@ -33,6 +31,7 @@ public class AppSignatureHelper  extends ContextWrapper {
 
     /**
      * Get all the app signatures for the current package
+     *
      * @return
      */
     public ArrayList<String> getAppSignatures() {

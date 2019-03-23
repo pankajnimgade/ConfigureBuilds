@@ -1,5 +1,6 @@
 package configure.test.configurebuilds.activities.test101
 
+import android.annotation.SuppressLint
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -23,6 +24,7 @@ class MySMSBroadcastReceiver : BroadcastReceiver() {
         this.otpReceiver = receiver
     }
 
+    @SuppressLint("LogNotTimber")
     override fun onReceive(context: Context, intent: Intent) {
         Log.d(TAG, "onReceive: ${intent.action}")
         if (SmsRetriever.SMS_RETRIEVED_ACTION == intent.action) {
@@ -35,12 +37,13 @@ class MySMSBroadcastReceiver : BroadcastReceiver() {
                     Log.d(TAG, "onReceive: CommonStatusCodes.SUCCESS")
                     Toast.makeText(context, "CommonStatusCodes.SUCCESS", Toast.LENGTH_LONG).show()
                     var otp: String = extras.get(SmsRetriever.EXTRA_SMS_MESSAGE) as String
+                    Log.d(TAG, ": ${otp}")
 
                     // Extract one-time code from the message and complete verification
                     // by sending the code back to your server for SMS authenticity.
                     // But here we are just passing it to MainActivity
                     if (otpReceiver != null) {
-                        otp = otp.replace("<#> Your ExampleApp code is: ", "").split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()[0]
+//                        otp = otp.replace("<#> Your ExampleApp code is: ", "").split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()[0]
                         otpReceiver?.onOTPReceived(otp)
                     }
                 }

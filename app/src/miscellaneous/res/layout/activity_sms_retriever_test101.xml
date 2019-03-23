@@ -29,8 +29,8 @@
             android:id="@+id/tv_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             android:textAppearance="@android:style/TextAppearance.Material.Title"
             app:layout_constraintBottom_toTopOf="@+id/btn_generate_mesage"
             app:layout_constraintEnd_toEndOf="parent"
@@ -42,14 +42,13 @@
             android:id="@+id/btn_generate_mesage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             android:elevation="4dp"
             android:onClick="generateMessage"
             android:text="GenerateMessage"
             app:layout_constraintBottom_toTopOf="@+id/tv_generated_message"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_status" />
 
@@ -60,11 +59,24 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:textIsSelectable="true"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tv_hash_code"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_generate_mesage"
             tools:text="@string/text_message" />
+
+        <TextView
+            android:id="@+id/tv_hash_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textIsSelectable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_generated_message"
+            tools:text="hash-code" />
     </android.support.constraint.ConstraintLayout>
 
 </android.support.design.widget.CoordinatorLayout>
