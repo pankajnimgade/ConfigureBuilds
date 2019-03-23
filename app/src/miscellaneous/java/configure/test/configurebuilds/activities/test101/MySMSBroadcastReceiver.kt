@@ -37,7 +37,7 @@ class MySMSBroadcastReceiver : BroadcastReceiver() {
                     Log.d(TAG, "onReceive: CommonStatusCodes.SUCCESS")
                     Toast.makeText(context, "CommonStatusCodes.SUCCESS", Toast.LENGTH_LONG).show()
                     var otp: String = extras.get(SmsRetriever.EXTRA_SMS_MESSAGE) as String
-                    Log.d(TAG, ": ${otp}")
+                    Log.d(TAG, ": $otp")
 
                     // Extract one-time code from the message and complete verification
                     // by sending the code back to your server for SMS authenticity.

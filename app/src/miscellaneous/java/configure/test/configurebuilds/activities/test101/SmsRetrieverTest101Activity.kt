@@ -1,5 +1,6 @@
 package configure.test.configurebuilds.activities.test101
 
+import android.content.IntentFilter
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
@@ -55,6 +56,8 @@ class SmsRetrieverTest101Activity : AppCompatActivity() {
             Log.d(TAG, ": addOnSuccessListener()")
             Toast.makeText(this, " Started listening...", Toast.LENGTH_LONG).show()
             tv_status.text = "Waiting for the OTP"
+
+            registerReceiver(smsBroadcast, IntentFilter(SmsRetriever.SMS_RETRIEVED_ACTION))
 
             listenSms()
         })
