@@ -18,6 +18,7 @@
     <string name="app_name">Search-Config</string>
 
     <string name="title_activity_search_list">SearchListActivity</string>
+
     <string name="title_activity_search_test101">SearchTest101Activity</string>
 
 </resources>
