@@ -1,15 +1,12 @@
 package configure.test.configurebuilds.activities.test101
 
-import android.content.IntentFilter
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
-import android.view.View
 import android.widget.Toast
 import com.google.android.gms.auth.api.phone.SmsRetriever
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
-import configure.test.configurebuilds.BuildConfig
 import configure.test.configurebuilds.R
 import kotlinx.android.synthetic.miscellaneous.activity_sms_retriever_test101.*
 
@@ -32,7 +29,8 @@ class SmsRetrieverTest101Activity : AppCompatActivity() {
 
     private fun initializeText() {
 
-        val message = getString(R.string.text_message, BuildConfig.SMS_RETRIEVER_HASH_CODE)
+        val message = "<#> Your code is: ${OtpGenerator.getCode()}\n" +
+                "${AppSignatureHelper(applicationContext).appSignatures[0]}"
         tv_generated_message.text = message
 
         tv_hash_code.text = AppSignatureHelper(applicationContext).appSignatures[0]
@@ -58,23 +56,7 @@ class SmsRetrieverTest101Activity : AppCompatActivity() {
             Toast.makeText(this, " Started listening...", Toast.LENGTH_LONG).show()
             tv_status.text = "Waiting for the OTP"
 
-            val otpListener = object : MySMSBroadcastReceiver.OTPReceiveListener {
-                override fun onOTPReceived(otp: String) {
-//                    customCodeInput.setText(otp)
-                    Log.d(TAG, "onOTPReceived: $otp")
-                    tv_status.text = otp
-                    Toast.makeText(this@SmsRetrieverTest101Activity, otp, Toast.LENGTH_LONG).show()
-                }
-
-                override fun onOTPTimeOut() {
-                    Log.d(TAG, "onOTPTimeOut: ")
-                    tv_status.text = "TimeOut"
-                    Toast.makeText(this@SmsRetrieverTest101Activity, "TimeOut", Toast.LENGTH_SHORT).show()
-                }
-            }
-
-            smsBroadcast.initOTPListener(otpListener)
-            registerReceiver(smsBroadcast, IntentFilter(SmsRetriever.SMS_RETRIEVED_ACTION))
+            listenSms()
         })
 
         task.addOnFailureListener(OnFailureListener {
@@ -86,12 +68,17 @@ class SmsRetrieverTest101Activity : AppCompatActivity() {
         })
     }
 
-    fun generateMessage(view: View) {
+    private fun listenSms() {
+        MySMSBroadcastReceiver.bindListener(object : MySMSBroadcastReceiver.OTPReceiveListener {
+            override fun onOTPReceived(code: String) {
+                Log.d(TAG, "onOTPReceived(): $code")
+//                etCode.setText(code)
+            }
 
-        val appSignatureHelper = AppSignatureHelper(applicationContext)
-        val appSignatures = appSignatureHelper.appSignatures
-        val message = getString(R.string.text_message, BuildConfig.SMS_RETRIEVER_HASH_CODE)
-        tv_generated_message.text = message
+            override fun onOTPTimeOut() {
+                Log.d(TAG, "onOTPTimeOut(): ")
+            }
+        })
     }
 
     override fun onDestroy() {

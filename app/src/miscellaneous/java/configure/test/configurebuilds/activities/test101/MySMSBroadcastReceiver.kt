@@ -60,6 +60,15 @@ class MySMSBroadcastReceiver : BroadcastReceiver() {
         }
     }
 
+    companion object {
+
+        private lateinit var otpReceiveListener: OTPReceiveListener
+
+        fun bindListener(otpReceiveListener: OTPReceiveListener) {
+            this.otpReceiveListener = otpReceiveListener
+        }
+    }
+
     interface OTPReceiveListener {
 
         fun onOTPReceived(otp: String)

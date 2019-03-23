@@ -28,7 +28,13 @@
                 android:value="configure.test.configurebuilds.activities.MiscellaneousListActivity" />
         </activity>
 
-
+        <receiver
+            android:name="configure.test.configurebuilds.activities.test101.MySMSBroadcastReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVED"/>
+            </intent-filter>
+        </receiver>
 
 
     </application>
