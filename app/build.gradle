@@ -8,7 +8,7 @@ apply plugin: 'kotlin-kapt'
 
 android {
 
-    lintOptions{
+    lintOptions {
         checkReleaseBuilds false
         abortOnError false
     }

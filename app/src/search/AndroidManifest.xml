@@ -5,15 +5,7 @@
     <application
         android:name="configure.test.configurebuilds.StartUp"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity
-            android:name="configure.test.configurebuilds.activities.test101.SearchTest101Activity"
-            android:label="@string/title_activity_search_test101"
-            android:parentActivityName="configure.test.configurebuilds.activities.SearchListActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="configure.test.configurebuilds.activities.SearchListActivity" />
-        </activity>
+
         <activity
             android:name="configure.test.configurebuilds.activities.SearchListActivity"
             android:label="@string/title_activity_search_list"
@@ -23,6 +15,39 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="configure.test.configurebuilds.MainActivity" />
         </activity>
+
+        <!-- this activity enables the search dialog to initiate searches
+         in the Searchable101Activity -->
+        <activity
+            android:name="configure.test.configurebuilds.activities.test101.SearchTest101Activity"
+            android:label="@string/title_activity_search_test101"
+            android:parentActivityName="configure.test.configurebuilds.activities.SearchListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.activities.SearchListActivity" />
+
+            <!-- enable the search dialog to send searches to SearchableActivity -->
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="configure.test.configurebuilds.activities.test101.Searchable101Activity" />
+
+        </activity>
+
+        <!-- this is the searchable activity; it performs searches -->
+        <activity
+            android:name="configure.test.configurebuilds.activities.test101.Searchable101Activity"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+
     </application>
 
 </manifest>
