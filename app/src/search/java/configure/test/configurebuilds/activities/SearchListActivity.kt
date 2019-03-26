@@ -13,6 +13,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import configure.test.configurebuilds.R
 import configure.test.configurebuilds.activities.test101.SearchTest101Activity
+import configure.test.configurebuilds.activities.test102.SearchTest102Activity
 import configure.test.configurebuilds.application.model.ActivityItem
 import kotlinx.android.synthetic.search.activity_search_list.*
 import kotlinx.android.synthetic.search.content_search_list.*
@@ -39,6 +40,7 @@ class SearchListActivity : AppCompatActivity() {
         var list = mutableListOf<ActivityItem>()
 
         list.add(ActivityItem(SearchTest101Activity::class.java, "Search Test 101"))
+        list.add(ActivityItem(SearchTest102Activity::class.java, "Search Test 102"))
 
 
         recycler_view.adapter = SearchAdapter(this, list)
