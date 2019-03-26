@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import configure.test.configurebuilds.R
 import kotlinx.android.synthetic.search.activity_search_test101.*
 
+
 private const val TAG = "SEARCH_TEST_101"
 
 class SearchTest101Activity : AppCompatActivity() {
@@ -26,8 +27,20 @@ class SearchTest101Activity : AppCompatActivity() {
             startActivity(Intent(this, Searchable101Activity::class.java))
         }
 
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+
         onSearchRequested()
 
+    }
+
+    override fun onSearchRequested(): Boolean {
+        val appData = Bundle()
+        startSearch(null, false, appData, false)
+        return true
     }
 
 

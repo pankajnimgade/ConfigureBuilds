@@ -38,6 +38,7 @@
         <!-- this is the searchable activity; it performs searches -->
         <activity
             android:name="configure.test.configurebuilds.activities.test101.Searchable101Activity"
+            android:launchMode="singleTop"
             android:theme="@style/AppTheme.NoActionBar">
 
             <intent-filter>
