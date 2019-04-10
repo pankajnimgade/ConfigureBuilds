@@ -13,6 +13,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import configure.test.configurebuilds.R
 import configure.test.configurebuilds.activities.test101.SmsRetrieverTest101Activity
+import configure.test.configurebuilds.activities.test102.CorrectingVoiceTest102Activity
 import configure.test.configurebuilds.application.model.ActivityItem
 import kotlinx.android.synthetic.miscellaneous.activity_miscellaneous_list.*
 
@@ -38,6 +39,7 @@ class MiscellaneousListActivity : AppCompatActivity() {
         var list = mutableListOf<ActivityItem>()
 
         list.add(ActivityItem(SmsRetrieverTest101Activity::class.java, "Sms Retriever Test 101"))
+        list.add(ActivityItem(CorrectingVoiceTest102Activity::class.java, "Correcting Voice Test 102"))
 
 
         recycler_view.adapter = MiscellaneousAdapter(this, list)
