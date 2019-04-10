@@ -219,6 +219,14 @@ android {
             versionName '-navigation'
             buildConfigField 'String', 'app_name', '\"Navigation-Config\"'
         }
+        notification {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-notification"
+            applicationIdSuffix '.notification'
+            versionName '-notification'
+            buildConfigField 'String', 'app_name', '\"Notification-Config\"'
+        }
         paid {
             dimension "tier"
             minSdkVersion 21
