@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Notification-Config</string>
-    <string name="title_activity_notification_list">NotificationListActivity</string>
+
+    <string name="title_activity_notification_list">Notification-List</string>
+    <string name="title_activity_notification_test101">NotificationTest101</string>
 
 
 </resources>
