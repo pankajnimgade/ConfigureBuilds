@@ -32,3 +32,8 @@
 .idea/caches
 .idea/caches/
 .idea/caches/*
+
+*.iml
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
