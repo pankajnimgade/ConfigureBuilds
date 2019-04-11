@@ -26,20 +26,33 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <Button
+            android:id="@+id/btn_big_text_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:onClick="bigTextNotification"
+            android:text="Big text Notification"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toTopOf="@+id/btn_expandable_notification"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Big text Notification" />
+
+        <Button
             android:id="@+id/btn_expandable_notification"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
             android:text="Expandable"
             android:textAllCaps="false"
-            android:onClick="expandableNotification"
+            android:onClick="expandableImageNotification"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_big_text_notification"
             tools:text="Expandable" />
     </android.support.constraint.ConstraintLayout>
 

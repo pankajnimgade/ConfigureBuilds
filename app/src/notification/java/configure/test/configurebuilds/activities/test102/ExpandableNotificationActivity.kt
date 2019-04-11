@@ -3,6 +3,7 @@ package configure.test.configurebuilds.activities.test102
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
+import android.graphics.BitmapFactory
 import android.os.Build
 import android.os.Bundle
 import android.support.v4.app.NotificationCompat
@@ -10,6 +11,7 @@ import android.support.v4.app.NotificationManagerCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import configure.test.configurebuilds.R
+
 
 private const val CHANNEL_ID = "EXPANDABLE_CHANNEL_ID"
 
@@ -22,7 +24,7 @@ class ExpandableNotificationActivity : AppCompatActivity() {
         createNotificationChannel()
     }
 
-    fun expandableNotification(view: View) {
+    fun bigTextNotification(view: View) {
 
         val builder = NotificationCompat.Builder(this, CHANNEL_ID)
                 .setSmallIcon(android.R.drawable.ic_menu_search)
@@ -42,6 +44,24 @@ class ExpandableNotificationActivity : AppCompatActivity() {
         }
     }
 
+    fun expandableImageNotification(view: View) {
+
+        val gokuBitmap = BitmapFactory.decodeResource(resources,
+                R.drawable.goku_thumb_nail)
+
+        var notification = NotificationCompat.Builder(this, CHANNEL_ID)
+                .setSmallIcon(android.R.drawable.ic_menu_manage)
+                .setContentTitle("Goku")
+                .setContentText("Goku image")
+                .setLargeIcon(gokuBitmap)
+                .setStyle(NotificationCompat.BigPictureStyle().bigPicture(gokuBitmap).bigLargeIcon(null))
+                .build()
+
+        with(NotificationManagerCompat.from(this)) {
+
+            notify(12, notification)
+        }
+    }
 
     private fun createNotificationChannel() {
         // Create the NotificationChannel, but only on API 26+ because
