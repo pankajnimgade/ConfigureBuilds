@@ -3,6 +3,7 @@ package configure.test.configurebuilds.activities.test102
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Build
 import android.os.Bundle
@@ -17,10 +18,14 @@ private const val CHANNEL_ID = "EXPANDABLE_CHANNEL_ID"
 
 class ExpandableNotificationActivity : AppCompatActivity() {
 
+    private lateinit var gokuBitmap: Bitmap
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_expandable_notification)
 
+        gokuBitmap = BitmapFactory.decodeResource(resources,
+                R.drawable.goku_thumb_nail)
         createNotificationChannel()
     }
 
@@ -46,16 +51,34 @@ class ExpandableNotificationActivity : AppCompatActivity() {
 
     fun expandableImageNotification(view: View) {
 
-        val gokuBitmap = BitmapFactory.decodeResource(resources,
-                R.drawable.goku_thumb_nail)
-
-        var notification = NotificationCompat.Builder(this, CHANNEL_ID)
+        val notification = NotificationCompat.Builder(this, CHANNEL_ID)
                 .setSmallIcon(android.R.drawable.ic_menu_manage)
                 .setContentTitle("Goku")
                 .setContentText("Goku image")
                 .setLargeIcon(gokuBitmap)
                 .setStyle(NotificationCompat.BigPictureStyle().bigPicture(gokuBitmap).bigLargeIcon(null))
                 .build()
+
+        with(NotificationManagerCompat.from(this)) {
+
+            notify(12, notification)
+        }
+    }
+
+    fun largeBlockOfTextNotification(view: View) {
+
+        val notification = NotificationCompat.Builder(this, CHANNEL_ID)
+                .setSmallIcon(android.R.drawable.stat_sys_headset)
+                .setContentTitle("Word")
+                .setContentText("Meaning of the word")
+                .setLargeIcon(gokuBitmap)
+                .setStyle(NotificationCompat.BigTextStyle()
+                        .bigText("This could be a very large text over here" +
+                                "This could be a very large text over here" +
+                                "This could be a very large text over here" +
+                                "This could be a very large text over here"))
+                .build()
+
 
         with(NotificationManagerCompat.from(this)) {
 
