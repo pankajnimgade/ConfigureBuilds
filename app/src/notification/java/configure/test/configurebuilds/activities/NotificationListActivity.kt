@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import configure.test.configurebuilds.R
 import configure.test.configurebuilds.activities.test101.Test101Activity
+import configure.test.configurebuilds.activities.test102.ExpandableNotificationActivity
 import configure.test.configurebuilds.application.model.ActivityItem
 import kotlinx.android.synthetic.notification.activity_notification_list.*
 
@@ -32,6 +33,7 @@ class NotificationListActivity : AppCompatActivity() {
         val list = mutableListOf<ActivityItem>()
 
         list.add(ActivityItem(Test101Activity::class.java, "Notification Test 101"))
+        list.add(ActivityItem(ExpandableNotificationActivity::class.java, "Expandable Notification Test 102"))
 
         recycler_view.adapter = NotificationAdapter(this, list)
     }

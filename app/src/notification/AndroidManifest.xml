@@ -5,6 +5,17 @@
     <application
         android:name="configure.test.configurebuilds.StartUp"
         tools:ignore="GoogleAppIndexingWarning">
+
+        <activity
+            android:name="configure.test.configurebuilds.activities.test102.ExpandableNotificationActivity"
+            android:label="Expandable Notification"
+            android:parentActivityName="configure.test.configurebuilds.activities.NotificationListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.activities.NotificationListActivity" />
+        </activity>
+
         <activity
             android:name="configure.test.configurebuilds.activities.NotificationListActivity"
             android:label="@string/title_activity_notification_list"
