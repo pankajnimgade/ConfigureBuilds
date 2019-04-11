@@ -9,9 +9,11 @@ import android.os.Build
 import android.os.Bundle
 import android.support.v4.app.NotificationCompat
 import android.support.v4.app.NotificationManagerCompat
+import android.support.v4.app.Person
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import configure.test.configurebuilds.R
+import java.util.*
 
 
 private const val CHANNEL_ID = "EXPANDABLE_CHANNEL_ID"
@@ -73,10 +75,42 @@ class ExpandableNotificationActivity : AppCompatActivity() {
                 .setContentText("Meaning of the word")
                 .setLargeIcon(gokuBitmap)
                 .setStyle(NotificationCompat.BigTextStyle()
-                        .bigText("This could be a very large text over here" +
+                        .bigText("Synonym\nvery large text over here" +
                                 "This could be a very large text over here" +
-                                "This could be a very large text over here" +
+                                "\nAntonym\nlarge text over here" +
                                 "This could be a very large text over here"))
+                .build()
+
+
+        with(NotificationManagerCompat.from(this)) {
+
+            notify(12, notification)
+        }
+    }
+
+    fun conversationNotification(view: View) {
+
+        val synonyms = Person.Builder().setName("Synonyms").setIcon(null).setBot(false).build()
+        val antonyms = Person.Builder().setName("Antonyms").setIcon(null).setBot(false).build()
+
+        val message1 =
+                NotificationCompat.MessagingStyle.Message("Ecstasy, Happiness, Heaven",
+                        Calendar.getInstance().timeInMillis,
+                        synonyms)
+
+        val message2 =
+                NotificationCompat.MessagingStyle.Message("Misery, Sadness, Trouble",
+                        Calendar.getInstance().timeInMillis,
+                        antonyms)
+
+        val notification = NotificationCompat.Builder(this, CHANNEL_ID)
+                .setSmallIcon(android.R.drawable.ic_dialog_map)
+                .setContentTitle("Nirvana")
+                .setShowWhen(false)
+                .setContentText("Meaning of the word")
+                .setStyle(NotificationCompat.MessagingStyle("")
+                        .addMessage(message1)
+                        .addMessage(message2))
                 .build()
 
 
