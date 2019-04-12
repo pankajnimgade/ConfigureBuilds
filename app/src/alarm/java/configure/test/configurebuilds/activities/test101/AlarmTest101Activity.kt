@@ -13,6 +13,9 @@ import kotlinx.android.synthetic.alarm.activity_alarm_test101.*
 
 private val TAG = "Test101"
 
+/**
+ * Wake up the device to fire the alarm in 30 minutes, and every 30 minutes after that:
+ * */
 class AlarmTest101Activity : AppCompatActivity() {
 
     private lateinit var mPendingIntent: PendingIntent
@@ -42,7 +45,7 @@ class AlarmTest101Activity : AppCompatActivity() {
             alarmMgr?.setInexactRepeating(
                     AlarmManager.ELAPSED_REALTIME_WAKEUP,
                     SystemClock.elapsedRealtime() + (1 * 60 * 1000),
-                    AlarmManager.INTERVAL_DAY,
+                    AlarmManager.INTERVAL_HALF_HOUR,
                     mPendingIntent
             )
         }

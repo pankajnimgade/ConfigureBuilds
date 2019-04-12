@@ -1,4 +1,4 @@
-package configure.test.configurebuilds.activities.test102
+package configure.test.configurebuilds.activities.test103
 
 import android.app.AlarmManager
 import android.app.PendingIntent
@@ -6,25 +6,32 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.os.SystemClock
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import configure.test.configurebuilds.R
-import kotlinx.android.synthetic.alarm.activity_test102_one_time.*
+import kotlinx.android.synthetic.alarm.activity_alarm_test103.*
+import java.util.*
 
-private val TAG = "Test102"
+private val TAG = "Test103"
 
 /**
- * Wake up the device to fire a one-time (non-repeating) alarm in one minute:
- */
+ * Wake up the device to fire the alarm at approximately 2:00 p.m., and repeat once a day at the same time:
+ * */
+class AlarmTest103Activity : AppCompatActivity() {
 
-class Test102OneTimeActivity : AppCompatActivity() {
     private lateinit var mPendingIntent: PendingIntent
     private var alarmMgr: AlarmManager? = null
 
+    // Set the alarm to start at approximately 2:00 p.m.
+    val calendar: Calendar = Calendar.getInstance().apply {
+        timeInMillis = System.currentTimeMillis()
+        set(Calendar.HOUR_OF_DAY, 8)
+    }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_test102_one_time)
+        setContentView(R.layout.activity_alarm_test103)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
@@ -35,19 +42,17 @@ class Test102OneTimeActivity : AppCompatActivity() {
 
     private fun initializeUi() {
 
-        btn_one_time_alarm.setOnClickListener {
-
+        btn_rtc_alarm.setOnClickListener {
             Log.d(TAG, ": ")
 
-            alarmMgr = applicationContext.getSystemService(Context.ALARM_SERVICE) as AlarmManager
-
-            alarmMgr?.set(
-                    AlarmManager.ELAPSED_REALTIME_WAKEUP,
-                    SystemClock.elapsedRealtime() + (60 * 1000),
+            alarmMgr = application.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+            alarmMgr?.setInexactRepeating(
+                    AlarmManager.RTC_WAKEUP,
+                    calendar.timeInMillis,
+                    AlarmManager.INTERVAL_DAY,
                     mPendingIntent
             )
         }
-
     }
 
     private fun initializePendingIntent() {
