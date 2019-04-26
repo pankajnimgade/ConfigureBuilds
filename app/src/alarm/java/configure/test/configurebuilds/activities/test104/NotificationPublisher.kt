@@ -18,9 +18,6 @@ private const val TAG = "NotificationPub"
 
 class NotificationPublisher : BroadcastReceiver() {
 
-    var NOTIFICATION_ID = "notification-id"
-    var NOTIFICATION = "notification"
-
     override fun onReceive(context: Context, intent: Intent) {
 
         Log.d(TAG, ": onReceive()")
