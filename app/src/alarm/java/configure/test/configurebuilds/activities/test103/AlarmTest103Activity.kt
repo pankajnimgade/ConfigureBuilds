@@ -23,7 +23,7 @@ class AlarmTest103Activity : AppCompatActivity() {
     private var alarmMgr: AlarmManager? = null
 
     // Set the alarm to start at approximately 2:00 p.m.
-    val calendar: Calendar = Calendar.getInstance().apply {
+    private val calendar: Calendar = Calendar.getInstance().apply {
         timeInMillis = System.currentTimeMillis()
         set(Calendar.HOUR_OF_DAY, 8)
     }
@@ -43,13 +43,18 @@ class AlarmTest103Activity : AppCompatActivity() {
     private fun initializeUi() {
 
         btn_rtc_alarm.setOnClickListener {
-            Log.d(TAG, ": ")
+
+            calendar.apply {
+                set(Calendar.HOUR_OF_DAY, 21)
+                set(Calendar.MINUTE, 53)
+            }
+            Log.d(TAG, ": ${calendar.time}")
 
             alarmMgr = application.getSystemService(Context.ALARM_SERVICE) as AlarmManager
             alarmMgr?.setInexactRepeating(
                     AlarmManager.RTC_WAKEUP,
                     calendar.timeInMillis,
-                    AlarmManager.INTERVAL_DAY,
+                    (1 * 60 * 1000),
                     mPendingIntent
             )
         }
