@@ -51,14 +51,11 @@ class AlarmTest104Activity : AppCompatActivity() {
                 notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT)
 
         val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        val instance = Calendar.getInstance().apply {
-            set(Calendar.HOUR_OF_DAY, 23)
-            set(Calendar.MINUTE, 4)
-        }
+        val instance = Calendar.getInstance()
 
         alarmManager.setInexactRepeating(
                 AlarmManager.RTC_WAKEUP,
-                instance.timeInMillis,
+                instance.timeInMillis + 1000,
                 (1 * 60 * 1000),
                 pendingIntent)
 
