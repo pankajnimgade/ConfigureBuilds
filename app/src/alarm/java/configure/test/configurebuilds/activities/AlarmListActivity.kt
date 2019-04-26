@@ -15,6 +15,7 @@ import configure.test.configurebuilds.R
 import configure.test.configurebuilds.activities.test101.AlarmTest101Activity
 import configure.test.configurebuilds.activities.test102.Test102OneTimeActivity
 import configure.test.configurebuilds.activities.test103.AlarmTest103Activity
+import configure.test.configurebuilds.activities.test104.AlarmTest104Activity
 import configure.test.configurebuilds.application.model.ActivityItem
 import kotlinx.android.synthetic.alarm.activity_alarm_list.*
 
@@ -42,6 +43,7 @@ class AlarmListActivity : AppCompatActivity() {
         list.add(ActivityItem(AlarmTest101Activity::class.java, "Alarm Test 101"))
         list.add(ActivityItem(Test102OneTimeActivity::class.java, "Alarm Test 102 One time alarm"))
         list.add(ActivityItem(AlarmTest103Activity::class.java, "Alarm Test 103"))
+        list.add(ActivityItem(AlarmTest104Activity::class.java, "Alarm Test 104"))
 
 
         recycler_view.adapter = AlarmAdapter(this, list)
