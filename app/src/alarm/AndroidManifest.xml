@@ -55,6 +55,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="configure.test.configurebuilds.activities.AlarmListActivity" />
         </activity>
+
+        <receiver
+            android:name="configure.test.configurebuilds.activities.test104.NotificationPublisher"
+            android:enabled="true" />
     </application>
 
 </manifest>
