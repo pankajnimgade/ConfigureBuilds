@@ -4,7 +4,9 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
 
-public class CustomTabItem extends android.support.v7.widget.AppCompatTextView {
+import androidx.appcompat.widget.AppCompatTextView;
+
+public class CustomTabItem extends AppCompatTextView {
 
     public CustomTabItem(Context context) {
         super(context);

@@ -6,8 +6,8 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import configure.test.configurebuilds.R
 import kotlinx.android.synthetic.alarm.activity_alarm_test103.*
 import java.util.*

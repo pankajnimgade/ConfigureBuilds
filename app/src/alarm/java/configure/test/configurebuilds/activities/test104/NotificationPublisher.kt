@@ -1,13 +1,12 @@
 package configure.test.configurebuilds.activities.test104
 
 import android.app.Notification
-import android.app.NotificationManager
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.support.v4.app.NotificationCompat
 import android.util.Log
-import java.util.*
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 
 
 /**
@@ -21,9 +20,11 @@ class NotificationPublisher : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
 
         Log.d(TAG, ": onReceive()")
-        val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
-        notificationManager.notify((Random().nextInt(100)), getNotification(context))
+
+        with(NotificationManagerCompat.from(context)) {
+            notify(0, getNotification(context))
+        }
 
     }
 

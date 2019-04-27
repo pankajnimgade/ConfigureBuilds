@@ -1,8 +1,8 @@
 package configure.test.configurebuilds.activities.edittext
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 import configure.test.configurebuilds.R
 
 import kotlinx.android.synthetic.main.activity_custom_edit_text.*

@@ -2,10 +2,6 @@ package configure.test.configurebuilds.activities.superscript;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
@@ -13,6 +9,12 @@ import android.text.style.RelativeSizeSpan;
 import android.text.style.SuperscriptSpan;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import configure.test.configurebuilds.R;
 
@@ -32,10 +34,10 @@ public class SuperScriptActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_super_script);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,14 +51,14 @@ public class SuperScriptActivity extends AppCompatActivity {
     }
 
     private void initializeUi() {
-        textView1 = (TextView) findViewById(R.id.SuperScriptActivity_textView1);
-        textView2 = (TextView) findViewById(R.id.SuperScriptActivity_textView2);
-        textView3 = (TextView) findViewById(R.id.SuperScriptActivity_textView3);
-        textView4 = (TextView) findViewById(R.id.SuperScriptActivity_textView4);
-        textView5 = (TextView) findViewById(R.id.SuperScriptActivity_textView5);
-        textView6 = (TextView) findViewById(R.id.SuperScriptActivity_textView6);
-        textView7 = (TextView) findViewById(R.id.SuperScriptActivity_textView7);
-        textView8 = (TextView) findViewById(R.id.SuperScriptActivity_textView8);
+        textView1 = findViewById(R.id.SuperScriptActivity_textView1);
+        textView2 = findViewById(R.id.SuperScriptActivity_textView2);
+        textView3 = findViewById(R.id.SuperScriptActivity_textView3);
+        textView4 = findViewById(R.id.SuperScriptActivity_textView4);
+        textView5 = findViewById(R.id.SuperScriptActivity_textView5);
+        textView6 = findViewById(R.id.SuperScriptActivity_textView6);
+        textView7 = findViewById(R.id.SuperScriptActivity_textView7);
+        textView8 = findViewById(R.id.SuperScriptActivity_textView8);
 
 
         testSuperScript101();

@@ -2,11 +2,12 @@ package configure.test.configurebuilds.activities.dock.list;
 
 import android.graphics.Canvas;
 import android.graphics.Rect;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import configure.test.configurebuilds.R;
 

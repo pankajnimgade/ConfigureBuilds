@@ -5,10 +5,10 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.support.v4.app.NotificationCompat
-import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NotificationCompat
 import configure.test.configurebuilds.R
 import kotlinx.android.synthetic.alarm.activity_alarm_test104.*
 import java.util.*
