@@ -21,6 +21,7 @@ import android.app.Application;
 import java.util.List;
 
 import configure.test.configurebuilds.activities.RoomListActivity;
+import configure.test.configurebuilds.activities.database.AppDatabase;
 import configure.test.configurebuilds.application.model.ActivityItem;
 
 /**
@@ -31,10 +32,23 @@ public class StartUp extends Application {
 
     private static final String TAG = "START_UP";
 
+    private AppDatabase mAppDatabase;
+
     @Override
     public void onCreate() {
         super.onCreate();
         List<ActivityItem> activityItemList = ActivityItem.getActivityItemList();
         activityItemList.add(0, new ActivityItem(RoomListActivity.class, "Room List"));
+
+        initializeRoomDatabase();
+    }
+
+    private void initializeRoomDatabase() {
+
+        AppDatabase appDatabase = AppDatabase.getAppDatabase(this);
+    }
+
+    public AppDatabase getAppDatabase() {
+        return mAppDatabase;
     }
 }
