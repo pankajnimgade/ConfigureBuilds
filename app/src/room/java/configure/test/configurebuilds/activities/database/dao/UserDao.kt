@@ -1,9 +1,6 @@
 package configure.test.configurebuilds.activities.database.dao
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 import configure.test.configurebuilds.activities.database.entities.User
 
 /**
@@ -22,7 +19,7 @@ interface UserDao {
             "last_name LIKE :last LIMIT 1")
     fun findByName(first: String, last: String): User
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(vararg users: User)
 
     @Delete
