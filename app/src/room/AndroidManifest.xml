@@ -5,7 +5,15 @@
     <application
         android:name="configure.test.configurebuilds.StartUp"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="configure.test.configurebuilds.activities.test101.RoomTest101Activity"></activity>
+        <activity
+            android:name="configure.test.configurebuilds.activities.test101.RoomTest101Activity"
+            android:label="@string/title_activity_room_test101"
+            android:parentActivityName="configure.test.configurebuilds.activities.RoomListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.activities.RoomListActivity" />
+        </activity>
         <activity
             android:name="configure.test.configurebuilds.activities.RoomListActivity"
             android:label="@string/title_activity_room_list"
