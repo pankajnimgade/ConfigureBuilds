@@ -45,7 +45,7 @@ public class StartUp extends Application {
 
     private void initializeRoomDatabase() {
 
-        AppDatabase appDatabase = AppDatabase.getAppDatabase(this);
+        mAppDatabase = AppDatabase.getAppDatabase(this);
     }
 
     public AppDatabase getAppDatabase() {
