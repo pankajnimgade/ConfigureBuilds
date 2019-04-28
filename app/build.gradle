@@ -263,6 +263,14 @@ android {
             versionName '-recyclerView'
             buildConfigField 'String', 'app_name', '\"RecyclerView-Config\"'
         }
+        room {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-room"
+            applicationIdSuffix '.room'
+            versionName '-room'
+            buildConfigField 'String', 'app_name', '\"Room-Config\"'
+        }
         search {
             dimension "tier"
             minSdkVersion 21
