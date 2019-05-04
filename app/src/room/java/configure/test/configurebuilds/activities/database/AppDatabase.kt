@@ -24,12 +24,10 @@ abstract class AppDatabase : RoomDatabase() {
         @JvmStatic
         fun getAppDatabase(application: Application): AppDatabase {
 
-            if (INSTANCE == null) {
                 INSTANCE = Room.databaseBuilder(application, AppDatabase::class.java,
                         "App_Database.db")
                         .addMigrations(MIGRATION_1_2)
                         .build()
-            }
             return INSTANCE as AppDatabase
         }
 

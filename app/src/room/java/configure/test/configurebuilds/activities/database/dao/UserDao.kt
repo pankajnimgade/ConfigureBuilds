@@ -1,5 +1,6 @@
 package configure.test.configurebuilds.activities.database.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import configure.test.configurebuilds.activities.database.entities.User
 
@@ -10,7 +11,7 @@ import configure.test.configurebuilds.activities.database.entities.User
 interface UserDao {
 
     @Query("SELECT * FROM user")
-    fun getAll(): List<User>
+    fun getAll(): LiveData<List<User>>
 
     @Query("SELECT * FROM user WHERE id IN (:userIds)")
     fun loadAllByIds(userIds: IntArray): List<User>
