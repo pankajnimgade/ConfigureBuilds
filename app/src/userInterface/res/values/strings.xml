@@ -1,3 +1,5 @@
 <resources>
+    <string name="app_name">Ui-Config</string>
+
     <string name="title_activity_user_interface_list">UserInterfaceListActivity</string>
 </resources>
