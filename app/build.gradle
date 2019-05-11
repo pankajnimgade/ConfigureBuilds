@@ -69,7 +69,6 @@ android {
     }
 
 
-
     sourceSets {
         androidTest {
             assets.srcDirs = ['src/androidTest/assets']
@@ -295,6 +294,14 @@ android {
             applicationIdSuffix '.services'
             versionName '-services'
             buildConfigField 'String', 'app_name', '\"services-Config\"'
+        }
+        userInterface {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-user.interface"
+            applicationIdSuffix '.user.interface'
+            versionName '-user.interface'
+            buildConfigField 'String', 'app_name', '\"UserInterface-Config\"'
         }
         viewModel {
             dimension "tier"
