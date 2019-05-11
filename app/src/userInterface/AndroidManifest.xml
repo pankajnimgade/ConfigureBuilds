@@ -6,8 +6,17 @@
         android:name="configure.test.configurebuilds.StartUp"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
+            android:name="configure.test.configurebuilds.activities.test102.Test102ThemeActivity"
+            android:label="Theme"
+            android:parentActivityName="configure.test.configurebuilds.activities.UserInterfaceListActivity"
+            android:theme="@style/AppThemeTest102.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.activities.UserInterfaceListActivity" />
+        </activity>
+        <activity
             android:name="configure.test.configurebuilds.activities.test101.Test101StyleActivity"
-            android:label="Theme and Style"
+            android:label="Style"
             android:parentActivityName="configure.test.configurebuilds.activities.UserInterfaceListActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
