@@ -59,7 +59,16 @@ android {
         testInstrumentationRunner "configure.test.configurebuilds.test.EspressoInstrumentation"
 
         archivesBaseName = "Config"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation":
+                                     "$projectDir/schemas".toString()]
+            }
+        }
     }
+
+
 
     sourceSets {
         androidTest {
@@ -262,6 +271,14 @@ android {
             applicationIdSuffix '.recycler.view'
             versionName '-recyclerView'
             buildConfigField 'String', 'app_name', '\"RecyclerView-Config\"'
+        }
+        room {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-room"
+            applicationIdSuffix '.room'
+            versionName '-room'
+            buildConfigField 'String', 'app_name', '\"Room-Config\"'
         }
         search {
             dimension "tier"
