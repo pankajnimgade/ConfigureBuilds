@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import configure.test.configurebuilds.R
 import kotlinx.android.synthetic.userInterface.activity_test101_theme_style.*
 
-class Test101ThemeStyleActivity : AppCompatActivity() {
+class Test101StyleActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -12,7 +12,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import configure.test.configurebuilds.R
-import configure.test.configurebuilds.activities.test101.Test101ThemeStyleActivity
+import configure.test.configurebuilds.activities.test101.Test101StyleActivity
 import configure.test.configurebuilds.application.model.ActivityItem
 import kotlinx.android.synthetic.userInterface.activity_user_interface_list.*
 import kotlinx.android.synthetic.userInterface.content_user_interface_list.*
@@ -37,7 +37,7 @@ class UserInterfaceListActivity : AppCompatActivity() {
     private fun initializeUi() {
 
         val list = mutableListOf<ActivityItem>()
-        list.add(ActivityItem(Test101ThemeStyleActivity::class.java, "Theme"))
+        list.add(ActivityItem(Test101StyleActivity::class.java, "Theme"))
 
         recycler_view.adapter = UserInterfaceAdapter(this, list)
     }
