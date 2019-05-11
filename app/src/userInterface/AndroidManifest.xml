@@ -1,9 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
         android:name="configure.test.configurebuilds.StartUp"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name="configure.test.configurebuilds.activities.test101.Test101ThemeStyleActivity"
+            android:label="Theme and Style"
+            android:parentActivityName="configure.test.configurebuilds.activities.UserInterfaceListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.activities.UserInterfaceListActivity" />
+        </activity>
         <activity
             android:name="configure.test.configurebuilds.activities.UserInterfaceListActivity"
             android:label="@string/title_activity_user_interface_list"
@@ -14,4 +24,5 @@
                 android:value="configure.test.configurebuilds.MainActivity" />
         </activity>
     </application>
+
 </manifest>
