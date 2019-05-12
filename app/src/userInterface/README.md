@@ -1,3 +1,12 @@
+Theme and Styles
+
+They're technically the same thing
+Themes == Styles
+
+both declared using <style> tag
+
+The only difference between them is how they're used
+
 #Style
 
 A style is a collection of properties that specify the look and format for a View or Window.
