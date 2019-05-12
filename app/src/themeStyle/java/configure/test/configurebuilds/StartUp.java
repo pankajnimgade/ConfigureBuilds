@@ -36,7 +36,7 @@ public class StartUp extends Application {
     public void onCreate() {
         super.onCreate();
         List<ActivityItem> activityItemList = ActivityItem.getActivityItemList();
-        activityItemList.add(0, new ActivityItem(UserInterfaceListActivity.class, "Ui List"));
+        activityItemList.add(0, new ActivityItem(ThemeStyleListActivity.class, "Theme and Style List"));
 
     }
 

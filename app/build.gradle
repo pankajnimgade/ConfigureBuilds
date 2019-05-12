@@ -295,6 +295,14 @@ android {
             versionName '-services'
             buildConfigField 'String', 'app_name', '\"services-Config\"'
         }
+        themeStyle {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-theme.style"
+            applicationIdSuffix '.theme.style'
+            versionName '-theme.style'
+            buildConfigField 'String', 'app_name', '\"ThemeStyle-Config\"'
+        }
         userInterface {
             dimension "tier"
             minSdkVersion 21
