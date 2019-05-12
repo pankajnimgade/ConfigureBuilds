@@ -24,7 +24,7 @@
     tools:context="configure.test.configurebuilds.ui.activities.test101.Font101Activity"
     tools:showIn="@layout/activity_font101">
 
-    <android.support.v4.widget.NestedScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
@@ -64,5 +64,5 @@
                 android:layout_height="wrap_content"
                 android:text="@string/test_text" />
         </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
+    </androidx.core.widget.NestedScrollView>
 </android.support.constraint.ConstraintLayout>
