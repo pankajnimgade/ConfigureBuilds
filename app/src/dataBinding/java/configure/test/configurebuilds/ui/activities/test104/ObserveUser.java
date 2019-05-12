@@ -1,7 +1,7 @@
 package configure.test.configurebuilds.ui.activities.test104;
 
-import android.databinding.ObservableField;
-import android.databinding.ObservableInt;
+import androidx.databinding.ObservableField;
+import androidx.databinding.ObservableInt;
 
 public final class ObserveUser {
 
