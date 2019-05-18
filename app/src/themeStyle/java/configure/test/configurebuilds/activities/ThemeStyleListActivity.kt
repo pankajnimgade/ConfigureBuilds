@@ -14,6 +14,7 @@ import com.google.android.material.snackbar.Snackbar
 import configure.test.configurebuilds.R
 import configure.test.configurebuilds.activities.test101.Test101StyleActivity
 import configure.test.configurebuilds.activities.test102.Test102ThemeActivity
+import configure.test.configurebuilds.activities.test103.Test103ThemeSwitchActivity
 import configure.test.configurebuilds.application.model.ActivityItem
 import kotlinx.android.synthetic.themeStyle.activity_theme_style_list.*
 import kotlinx.android.synthetic.themeStyle.content_theme_style_list.*
@@ -40,6 +41,7 @@ class ThemeStyleListActivity : AppCompatActivity() {
         val list = mutableListOf<ActivityItem>()
         list.add(ActivityItem(Test101StyleActivity::class.java, "Style"))
         list.add(ActivityItem(Test102ThemeActivity::class.java, "Theme"))
+        list.add(ActivityItem(Test103ThemeSwitchActivity::class.java, "switching theme"))
 
         recycler_view.adapter = UserInterfaceAdapter(this, list)
     }
