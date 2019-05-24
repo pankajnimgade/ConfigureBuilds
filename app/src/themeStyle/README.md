@@ -20,3 +20,12 @@ Theme.MaterialComponents.NoActionBar
 Theme.MaterialComponents.Light
 Theme.MaterialComponents.Light.NoActionBar
 Theme.MaterialComponents.Light.DarkActionBar
+
+#Colors             Swatch number
+-----------------------------------
+colorPrimary        500
+-----------------------------------
+colorPrimaryDark    700
+-----------------------------------
+colorAccent         200   ---(secondary Color)
+-----------------------------------
