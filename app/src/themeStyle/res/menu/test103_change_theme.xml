@@ -5,6 +5,12 @@
     tools:context=".activities.test103.Test103ThemeSwitchActivity">
 
     <item
+        android:title="3D"
+        android:id="@+id/theme_secure"
+        android:icon="@drawable/ic_baseline_3d_rotation_24px"
+        app:showAsAction="always"/>
+
+    <item
         android:id="@+id/theme_light"
         android:title="Light"
         app:showAsAction="never" />

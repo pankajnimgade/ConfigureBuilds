@@ -8,7 +8,7 @@
         <activity android:name="configure.test.configurebuilds.activities.test103.Test103ThemeSwitchActivity"
             android:label="Switching Theme"
             android:parentActivityName="configure.test.configurebuilds.activities.ThemeStyleListActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/Test103AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="configure.test.configurebuilds.activities.ThemeStyleListActivity" />

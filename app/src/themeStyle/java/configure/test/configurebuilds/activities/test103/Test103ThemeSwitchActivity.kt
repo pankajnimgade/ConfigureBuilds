@@ -6,12 +6,14 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import configure.test.configurebuilds.R
 import kotlinx.android.synthetic.themeStyle.activity_test103_theme_switch.*
 
 class Test103ThemeSwitchActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        delegate.localNightMode = AppCompatDelegate.MODE_NIGHT_YES
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test103_theme_switch)
         setSupportActionBar(toolbar)
