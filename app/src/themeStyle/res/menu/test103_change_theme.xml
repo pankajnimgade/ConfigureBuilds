@@ -7,6 +7,8 @@
     <item
         android:title="3D"
         android:id="@+id/theme_secure"
+        android:iconTint="?attr/colorAccent"
+        android:iconTintMode="add"
         android:icon="@drawable/ic_baseline_3d_rotation_24px"
         app:showAsAction="always"/>
 

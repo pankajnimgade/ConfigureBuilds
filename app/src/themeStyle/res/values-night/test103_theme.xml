@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <color name="test103_primaryColor">#9c27b0</color>
-    <color name="test103_primaryLightColor">#d05ce3</color>
-    <color name="test103_primaryDarkColor">#6a0080</color>
-    <color name="test103_secondaryColor">#c6ff00</color>
-    <color name="test103_secondaryLightColor">#fdff58</color>
-    <color name="test103_secondaryDarkColor">#90cc00</color>
-    <color name="test103_primaryTextColor">#ffffff</color>
+    <color name="test103_primaryColor">#009688</color>
+    <color name="test103_primaryLightColor">#52c7b8</color>
+    <color name="test103_primaryDarkColor">#00675b</color>
+    <color name="test103_secondaryColor">#ffa000</color>
+    <color name="test103_secondaryLightColor">#ffd149</color>
+    <color name="test103_secondaryDarkColor">#c67100</color>
+    <color name="test103_primaryTextColor">#000000</color>
     <color name="test103_secondaryTextColor">#000000</color>
 
     <style name="Test103AppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
@@ -19,15 +19,12 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Test103AppTheme.AppBar" parent="ThemeOverlay.AppCompat.Light">
-
-    </style>
+    <style name="Test103AppTheme.AppBar" parent="ThemeOverlay.AppCompat.Dark"></style>
 
     <style name="Test103AppTheme.Toolbar" parent="Widget.AppCompat.Toolbar">
         <item name="android:background">?attr/colorPrimary</item>
         <item name="android:theme">?theme</item>
-        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
-
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Dark</item>
 
     </style>
 </resources>
