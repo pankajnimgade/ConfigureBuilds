@@ -1,9 +1,12 @@
 package configure.test.configurebuilds.activities.test101
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
 import androidx.appcompat.app.AppCompatActivity
 import configure.test.configurebuilds.R
 import kotlinx.android.synthetic.themeStyle.activity_test101_style.*
+
 
 class Test101StyleActivity : AppCompatActivity() {
 
@@ -14,4 +17,8 @@ class Test101StyleActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
     }
+
+
+
+
 }
