@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
@@ -8,22 +7,13 @@
     android:gravity="center"
     android:padding="2dp">
 
-    <android.support.design.card.MaterialCardView
+
+    <ImageView
+        android:id="@+id/iv_vector_drawable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        card_view:cardCornerRadius="4dp"
-        card_view:cardElevation="1dp"
-        card_view:cardMaxElevation="2dp"
-        >
+        android:foregroundGravity="center"
+        android:src="@drawable/download" />
 
-        <ImageView
-            android:id="@+id/iv_vector_drawable"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:foregroundGravity="center"
-            android:src="@drawable/download" />
-
-    </android.support.design.card.MaterialCardView>
 </LinearLayout>
