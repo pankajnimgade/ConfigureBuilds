@@ -19,16 +19,15 @@ package configure.test.configurebuilds.activities
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.CardView
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
+import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 import configure.test.configurebuilds.R
-import configure.test.configurebuilds.activities.test101.Animation101Activity
 import configure.test.configurebuilds.activities.test102.Animation102Activity
 import configure.test.configurebuilds.activities.test103.Animation103Activity
 import configure.test.configurebuilds.activities.test104.Animation104Activity
@@ -62,7 +61,7 @@ class AnimationListActivity : AppCompatActivity() {
                 .AnimationListActivity_list_RecyclerView)
 
         if (list.isEmpty()) {
-            list.add(ActivityItem(Animation101Activity::class.java, "Animation 101"))
+//            list.add(ActivityItem(Animation101Activity::class.java, "Animation 101"))
             list.add(ActivityItem(Animation102Activity::class.java, "Animation 102"))
             list.add(ActivityItem(Animation103Activity::class.java, "Animation 103"))
             list.add(ActivityItem(Animation104Activity::class.java, "Animation 104"))

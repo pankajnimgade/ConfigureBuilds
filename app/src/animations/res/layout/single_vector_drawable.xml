@@ -8,15 +8,14 @@
     android:gravity="center"
     android:padding="2dp">
 
-    <android.support.design.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    <android.support.design.card.MaterialCardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         card_view:cardCornerRadius="4dp"
         card_view:cardElevation="1dp"
         card_view:cardMaxElevation="2dp"
-        card_view:layout_gravity="center">
+        >
 
         <ImageView
             android:id="@+id/iv_vector_drawable"

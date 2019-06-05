@@ -18,13 +18,12 @@ package configure.test.configurebuilds.activities.test101
 
 import android.animation.ValueAnimator
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
+import android.view.animation.BounceInterpolator
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 import configure.test.configurebuilds.R
 import kotlinx.android.synthetic.animations.activity_animation101.*
-import android.view.animation.AccelerateDecelerateInterpolator
-import android.view.animation.BounceInterpolator
 
 
 class Animation101Activity : AppCompatActivity() {
