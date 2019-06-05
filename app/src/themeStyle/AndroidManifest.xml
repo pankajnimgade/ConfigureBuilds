@@ -5,6 +5,14 @@
     <application
         android:name="configure.test.configurebuilds.StartUp"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name="configure.test.configurebuilds.activities.test103.Test103ThemeSwitchActivity"
+            android:label="Switching Theme"
+            android:parentActivityName="configure.test.configurebuilds.activities.ThemeStyleListActivity"
+            android:theme="@style/Test103AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.activities.ThemeStyleListActivity" />
+        </activity>
         <activity
             android:name="configure.test.configurebuilds.activities.test102.Test102ThemeActivity"
             android:label="Theme"

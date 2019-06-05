@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.test103.Test103ThemeSwitchActivity">
+
+    <item
+        android:title="3D"
+        android:id="@+id/theme_secure"
+        android:iconTint="?attr/colorAccent"
+        android:iconTintMode="add"
+        android:icon="@drawable/ic_baseline_3d_rotation_24px"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/theme_light"
+        android:title="Light"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/theme_dark"
+        android:title="Dark"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/theme_system"
+        android:title="Auto"
+        app:showAsAction="never" />
+</menu>

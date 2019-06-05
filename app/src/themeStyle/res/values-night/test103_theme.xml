@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="test103_primaryColor">#009688</color>
+    <color name="test103_primaryLightColor">#52c7b8</color>
+    <color name="test103_primaryDarkColor">#00675b</color>
+    <color name="test103_secondaryColor">#ffa000</color>
+    <color name="test103_secondaryLightColor">#ffd149</color>
+    <color name="test103_secondaryDarkColor">#c67100</color>
+    <color name="test103_primaryTextColor">#000000</color>
+    <color name="test103_secondaryTextColor">#000000</color>
+
+    <style name="Test103AppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/test103_primaryColor</item>
+        <item name="colorPrimaryDark">@color/test103_primaryDarkColor</item>
+        <item name="colorAccent">@color/test103_secondaryColor</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Test103AppTheme.AppBar" parent="ThemeOverlay.AppCompat.Dark"></style>
+
+    <style name="Test103AppTheme.Toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="android:theme">?theme</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Dark</item>
+
+    </style>
+</resources>
