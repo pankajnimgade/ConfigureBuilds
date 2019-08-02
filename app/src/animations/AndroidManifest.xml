@@ -6,6 +6,15 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
+            android:name="configure.test.configurebuilds.activities.test110.Animation110Activity"
+            android:label="@string/title_activity_animation110"
+            android:parentActivityName="configure.test.configurebuilds.activities.AnimationListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.activities.AnimationListActivity" />
+        </activity>
+        <activity
             android:name="configure.test.configurebuilds.activities.test109.Animation109Activity"
             android:label="@string/title_activity_animation109"
             android:parentActivityName="configure.test.configurebuilds.activities.AnimationListActivity"
