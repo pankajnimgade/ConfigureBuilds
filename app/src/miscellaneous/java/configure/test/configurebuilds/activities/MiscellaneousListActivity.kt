@@ -3,17 +3,18 @@ package configure.test.configurebuilds.activities
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
+import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 import configure.test.configurebuilds.R
 import configure.test.configurebuilds.activities.test101.SmsRetrieverTest101Activity
 import configure.test.configurebuilds.activities.test102.CorrectingVoiceTest102Activity
+import configure.test.configurebuilds.activities.test103.GetWebContentActivity
 import configure.test.configurebuilds.application.model.ActivityItem
 import kotlinx.android.synthetic.miscellaneous.activity_miscellaneous_list.*
 
@@ -40,6 +41,7 @@ class MiscellaneousListActivity : AppCompatActivity() {
 
         list.add(ActivityItem(SmsRetrieverTest101Activity::class.java, "Sms Retriever Test 101"))
         list.add(ActivityItem(CorrectingVoiceTest102Activity::class.java, "Correcting Voice Test 102"))
+        list.add(ActivityItem(GetWebContentActivity::class.java, "Get Web Content"))
 
 
         recycler_view.adapter = MiscellaneousAdapter(this, list)

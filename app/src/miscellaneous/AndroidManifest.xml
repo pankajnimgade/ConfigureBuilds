@@ -35,6 +35,18 @@
                 android:value="configure.test.configurebuilds.activities.MiscellaneousListActivity" />
         </activity>
 
+        <activity
+            android:name="configure.test.configurebuilds.activities.test103.GetWebContentActivity"
+            android:label="Get Web Content"
+            android:parentActivityName="configure.test.configurebuilds.activities.MiscellaneousListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.activities.MiscellaneousListActivity" />
+        </activity>
+
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

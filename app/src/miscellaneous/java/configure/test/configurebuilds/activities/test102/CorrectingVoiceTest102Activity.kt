@@ -3,14 +3,14 @@ package configure.test.configurebuilds.activities.test102
 import android.content.Context
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
 import configure.test.configurebuilds.R
 import kotlinx.android.synthetic.miscellaneous.activity_correcting_voice.*
 import java.util.*

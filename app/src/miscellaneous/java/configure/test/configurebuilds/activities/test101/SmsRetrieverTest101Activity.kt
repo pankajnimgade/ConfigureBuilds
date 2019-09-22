@@ -2,9 +2,9 @@ package configure.test.configurebuilds.activities.test101
 
 import android.content.IntentFilter
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.phone.SmsRetriever
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
