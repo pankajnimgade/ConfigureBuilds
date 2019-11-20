@@ -1,7 +1,5 @@
-package configure.test.configurebuilds.activities.test101
+package configure.test.configurebuilds.activities.test102
 
-// Your IDE likely can auto-import these classes, but there are several
-// different implementations so we list them here to disambiguate.
 import android.Manifest
 import android.content.pm.PackageManager
 import android.graphics.Matrix
@@ -19,10 +17,10 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import configure.test.configurebuilds.R
-import configure.test.configurebuilds.databinding.ActivityCamera101Binding
+import configure.test.configurebuilds.databinding.ActivityCamera102Binding
 import java.util.concurrent.Executors
 
-class Camera101Activity : AppCompatActivity() {
+class Camera102Activity : AppCompatActivity() {
 
     companion object {
         // This is an arbitrary number we are using to keep track of the permission
@@ -34,12 +32,17 @@ class Camera101Activity : AppCompatActivity() {
         private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
     }
 
-    private lateinit var binding: ActivityCamera101Binding
     private lateinit var viewFinder: TextureView
+
+
+    private lateinit var binding: ActivityCamera102Binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_camera101)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_camera102)
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
 
         // Add this at the end of onCreate function
         viewFinder = binding.textureView
@@ -57,7 +60,6 @@ class Camera101Activity : AppCompatActivity() {
             updateTransform()
         }
     }
-
 
     // Add this after onCreate
 
@@ -99,7 +101,7 @@ class Camera101Activity : AppCompatActivity() {
         val centerY = viewFinder.height / 2f
 
         // Correct preview output to account for display rotation
-        val rotationDegrees = when(viewFinder.display.rotation) {
+        val rotationDegrees = when (viewFinder.display.rotation) {
             Surface.ROTATION_0 -> 0
             Surface.ROTATION_90 -> 90
             Surface.ROTATION_180 -> 180

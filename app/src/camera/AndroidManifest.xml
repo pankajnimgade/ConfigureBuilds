@@ -7,7 +7,7 @@
     <application
         android:name="configure.test.configurebuilds.StartUp"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="configure.test.configurebuilds.activities.test101.Camera101Activity"></activity>
+
         <activity
             android:name="configure.test.configurebuilds.activities.CameraListActivity"
             android:label="@string/title_activity_camera_list"
@@ -16,6 +16,16 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="configure.test.configurebuilds.MainActivity" />
+        </activity>
+        <activity android:name="configure.test.configurebuilds.activities.test101.Camera101Activity" />
+
+        <activity
+            android:name="configure.test.configurebuilds.activities.test102.Camera102Activity"
+            android:parentActivityName="configure.test.configurebuilds.activities.CameraListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.activities.CameraListActivity" />
         </activity>
     </application>
 

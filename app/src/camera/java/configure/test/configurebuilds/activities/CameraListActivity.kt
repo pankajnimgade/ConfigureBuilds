@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import configure.test.configurebuilds.R
 import configure.test.configurebuilds.activities.test101.Camera101Activity
+import configure.test.configurebuilds.activities.test102.Camera102Activity
 import configure.test.configurebuilds.application.model.ActivityItem
 import configure.test.configurebuilds.databinding.ActivityCameraListBinding
 
@@ -40,7 +41,8 @@ class CameraListActivity : AppCompatActivity() {
     private fun initializeUi() {
 
         if (list.isEmpty()) {
-            list.add(ActivityItem(Camera101Activity::class.java, "Camera 101"))
+            list.add(ActivityItem(Camera101Activity::class.java, "Camera 101- preview"))
+            list.add(ActivityItem(Camera102Activity::class.java, "Camera 102- ImageCapture"))
         }
 
         binding.recyclerView.adapter = CameraAdapter(this, list)
