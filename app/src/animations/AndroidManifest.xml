@@ -87,7 +87,7 @@
                 android:value="configure.test.configurebuilds.activities.AnimationListActivity" />
         </activity>
         <activity
-            android:name="configure.test.configurebuilds.activities.test107.Animation107Activity"
+            android:name="configure.test.configurebuilds.activities.test101.Animation107Activity"
             android:label="@string/title_activity_animation107"
             android:parentActivityName="configure.test.configurebuilds.activities.AnimationListActivity"
             android:theme="@style/AppTheme.NoActionBar">

@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
         android:name="configure.test.configurebuilds.StartUp"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name="configure.test.configurebuilds.activities.test101.Camera101Activity"></activity>
         <activity
             android:name="configure.test.configurebuilds.activities.CameraListActivity"
             android:label="@string/title_activity_camera_list"
@@ -14,4 +16,5 @@
                 android:value="configure.test.configurebuilds.MainActivity" />
         </activity>
     </application>
+
 </manifest>

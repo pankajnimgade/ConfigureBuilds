@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="configure.test.configurebuilds.activities.test107.Animation107Activity">
+    tools:context="configure.test.configurebuilds.activities.test101.Animation107Activity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
