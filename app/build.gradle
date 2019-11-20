@@ -348,6 +348,10 @@ android {
         animations { assets.srcDirs = ['src/main/assets', 'src/animations/assets/'] }
     }
     sourceSets { fonts { assets.srcDirs = ['src/fonts/assets', 'src/fonts/assets/'] } }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 kapt {
