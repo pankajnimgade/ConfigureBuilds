@@ -6,7 +6,7 @@
 
     <application
         android:name="configure.test.configurebuilds.StartUp"
-        tools:ignore="GoogleAppIndexingWarning">
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity
             android:name="configure.test.configurebuilds.activities.ConstraintListActivity"
             android:label="@string/title_activity_camera_list"
