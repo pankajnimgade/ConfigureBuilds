@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:name="configure.test.configurebuilds.StartUp"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name="configure.test.configurebuilds.activities.ConstraintListActivity"
+            android:label="@string/title_activity_camera_list"
+            android:parentActivityName="configure.test.configurebuilds.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.MainActivity" />
+        </activity>
+
+        <activity
+            android:name="configure.test.configurebuilds.activities.test101.Constraint101Activity"
+            android:label="Constraint101"
+            android:parentActivityName="configure.test.configurebuilds.activities.ConstraintListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="configure.test.configurebuilds.activities.ConstraintListActivity" />
+        </activity>
+    </application>
+
+</manifest>

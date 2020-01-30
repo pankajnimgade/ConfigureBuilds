@@ -132,6 +132,14 @@ android {
             versionName '-camera'
             buildConfigField 'String', 'app_name', '\"Camera-Config\"'
         }
+        constraint {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-constraint.layout"
+            applicationIdSuffix '.constraint.layout'
+            versionName '-constraint.layout'
+            buildConfigField 'String', 'app_name', '\"Constraint Layout\"'
+        }
         customView {
             dimension "tier"
             minSdkVersion 21
