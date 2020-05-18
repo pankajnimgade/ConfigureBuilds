@@ -8,21 +8,25 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import configure.test.configurebuilds.R
 import configure.test.configurebuilds.activities.test101.RxJava101Activity
 import configure.test.configurebuilds.application.model.ActivityItem
+import configure.test.configurebuilds.databinding.ActivityRxJavaListBinding
 import kotlinx.android.synthetic.rxjava.activity_rx_java_list.*
 
 
 class RxJavaListActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityRxJavaListBinding
+
     private val list: MutableList<ActivityItem> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_rx_java_list)
-        setSupportActionBar(toolbar)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_rx_java_list)
+        setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         initializeUi()
@@ -33,7 +37,7 @@ class RxJavaListActivity : AppCompatActivity() {
         if (list.isEmpty()) {
             list.add(ActivityItem(RxJava101Activity::class.java, "RxJava 101"))
         }
-        recycler_view.adapter = RxJavaAdapter(list)
+        binding.recyclerView.adapter = RxJavaAdapter(list)
     }
 
     class RxJavaAdapter(val list: List<ActivityItem>) :
