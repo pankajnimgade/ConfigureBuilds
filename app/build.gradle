@@ -457,4 +457,8 @@ dependencies {
     //SMS Retriever
     implementation 'com.google.android.gms:play-services-auth-api-phone:17.4.0'
     implementation 'androidx.annotation:annotation:1.1.0'
+
+    //Rx Java
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    implementation "io.reactivex.rxjava3:rxjava:3.0.3"
 }
