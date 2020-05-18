@@ -12,6 +12,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import configure.test.configurebuilds.R
 import configure.test.configurebuilds.activities.test101.RxJava101Activity
+import configure.test.configurebuilds.activities.test102.RxJava102FlatMapActivity
 import configure.test.configurebuilds.application.model.ActivityItem
 import configure.test.configurebuilds.databinding.ActivityRxJavaListBinding
 import kotlinx.android.synthetic.rxjava.activity_rx_java_list.*
@@ -36,6 +37,7 @@ class RxJavaListActivity : AppCompatActivity() {
 
         if (list.isEmpty()) {
             list.add(ActivityItem(RxJava101Activity::class.java, "RxJava 101"))
+            list.add(ActivityItem(RxJava102FlatMapActivity::class.java, "RxJava Flat Map 102"))
         }
         binding.recyclerView.adapter = RxJavaAdapter(list)
     }
