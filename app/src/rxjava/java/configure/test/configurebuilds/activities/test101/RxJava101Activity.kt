@@ -8,11 +8,14 @@ import configure.test.configurebuilds.R
 import configure.test.configurebuilds.databinding.ActivityRxJava101Binding
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
 
 class RxJava101Activity : AppCompatActivity() {
 
     private val TAG = RxJava101Activity::class.java.simpleName
+
+    private val disposable = CompositeDisposable()
 
     lateinit var binding: ActivityRxJava101Binding
 
@@ -35,7 +38,7 @@ class RxJava101Activity : AppCompatActivity() {
                 }
                 .observeOn(AndroidSchedulers.mainThread())
 
-        taskObservable.subscribe({
+        val newDisposable = taskObservable.subscribe({
             Log.d(TAG, "onNext() ${Thread.currentThread().name}")
             Log.d(TAG, "onNext() ${it.description}")
         }, {
@@ -43,5 +46,11 @@ class RxJava101Activity : AppCompatActivity() {
         }, {
             Log.d(TAG, "OnComplete was called")
         })
+        disposable.add(newDisposable)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        disposable.clear()
     }
 }
