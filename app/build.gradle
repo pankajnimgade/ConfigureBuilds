@@ -287,6 +287,14 @@ android {
             versionName '-room'
             buildConfigField 'String', 'app_name', '\"Room-Config\"'
         }
+        rxjava {
+            dimension "tier"
+            minSdkVersion 21
+            versionNameSuffix "-rxjava"
+            applicationIdSuffix '.rxjava'
+            versionName '-rxjava'
+            buildConfigField 'String', 'app_name', '\"RxJava-Config\"'
+        }
         search {
             dimension "tier"
             minSdkVersion 21
@@ -360,6 +368,13 @@ android {
     dataBinding {
         enabled = true
     }
+// To inline the bytecode built with JVM target 1.8 into
+// bytecode that is being built with JVM target 1.6. (e.g. navArgs)
+
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
 
 kapt {
@@ -386,16 +401,16 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.3.0-alpha01'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta4'
-    implementation 'com.google.android.material:material:1.2.0-alpha04'
+    implementation 'androidx.core:core-ktx:1.3.0-rc01'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta6'
+    implementation 'com.google.android.material:material:1.2.0-alpha06'
     implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
-    implementation 'androidx.recyclerview:recyclerview:1.2.0-alpha01'
+    implementation 'androidx.recyclerview:recyclerview:1.2.0-alpha03'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
 
-    implementation 'com.google.android.gms:play-services-vision:19.0.0'
-    implementation "com.jakewharton:butterknife:${rootProject.ext.butterKnifeVersion}"
+    implementation 'com.google.android.gms:play-services-vision:20.0.0'
+    annotationProcessor "com.jakewharton:butterknife:${rootProject.ext.butterKnifeVersion}"
     annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.ext.butterKnifeVersion}"
     implementation 'com.jakewharton.timber:timber:4.7.1'
     implementation 'com.google.dagger:dagger-android:2.24'
@@ -403,7 +418,7 @@ dependencies {
 
     // if you use the support libraries
     kapt 'com.google.dagger:dagger-android-processor:2.24'
-    kapt 'com.google.dagger:dagger-compiler:2.25.4'
+    kapt 'com.google.dagger:dagger-compiler:2.26'
 
     // Required -- JUnit 4 framework
     testImplementation 'junit:junit:4.13'
@@ -417,9 +432,9 @@ dependencies {
 
     //android Navigation component
     def nav_version = "1.0.0"
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.2.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.2.2'
     // use -ktx for Kotlin
-    implementation 'androidx.navigation:navigation-ui-ktx:2.2.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'
     // use -ktx for Kotlin
 
     // ViewModel and LiveData
@@ -431,15 +446,15 @@ dependencies {
     kapt "androidx.room:room-compiler:$room_version" // use kapt for Kotlin
 
     // Use the most recent version of CameraX, currently that is alpha06.
-    def camerax_version = '1.0.0-alpha09'
+    def camerax_version = '1.0.0-beta03'
     implementation "androidx.camera:camera-core:${camerax_version}"
     implementation "androidx.camera:camera-camera2:${camerax_version}"
 
     testImplementation "junit:junit:$junit_version"
-    androidTestImplementation 'androidx.test:runner:1.3.0-alpha03'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0-alpha03'
+    androidTestImplementation 'androidx.test:runner:1.3.0-beta01'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0-beta01'
 
     //SMS Retriever
-    implementation 'com.google.android.gms:play-services-auth-api-phone:17.3.0'
+    implementation 'com.google.android.gms:play-services-auth-api-phone:17.4.0'
     implementation 'androidx.annotation:annotation:1.1.0'
 }
