@@ -14,8 +14,9 @@ import configure.test.configurebuilds.R
 import configure.test.configurebuilds.activities.test102.models.Post
 import configure.test.configurebuilds.activities.test102.requests.ServiceGenerator
 import configure.test.configurebuilds.databinding.ActivityRxJava102FlatMapBinding
-import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.Observable
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import java.util.*
 
@@ -25,6 +26,8 @@ class RxJava102FlatMapActivity : AppCompatActivity() {
     private val TAG = "RxJava102FlatMap"
 
     private lateinit var binding: ActivityRxJava102FlatMapBinding
+
+    private val disposables = CompositeDisposable()
 
     private var adapter = PostAdapter()
 
@@ -39,13 +42,14 @@ class RxJava102FlatMapActivity : AppCompatActivity() {
     private fun initializeUi() {
         binding.recyclerView.adapter = adapter
 
-        getPostsObservable()
+        val subscribe = getPostsObservable()
                 .subscribeOn(Schedulers.io())
                 .flatMap {
                     return@flatMap getCommentsObservable(it)
                 }
-                .observeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
+
                     Log.d(TAG, ": OnNext was Called")
                     Log.d(TAG, ": ${it.title}")
                     adapter.updatePosts(it)
@@ -54,15 +58,18 @@ class RxJava102FlatMapActivity : AppCompatActivity() {
                 }, {
                     Log.d(TAG, ": OnComplete was called")
                 })
+        disposables.add(subscribe)
     }
 
     private fun getCommentsObservable(post: Post): Observable<Post> {
-        return ServiceGenerator.getRequestApi()
+        return ServiceGenerator
+                .getRequestApi()
                 .getComments(post.id)
                 .map {
-                    val delay = Random().nextInt(5) * 500
+                    val delay = ((Random().nextInt(5)) * 500)
                     Thread.sleep(delay.toLong())
-                    post.comments = it
+                    Log.d(TAG, "${Thread.currentThread().name} sleeps for $delay")
+                    post.comments = it.toMutableList()
                     return@map post
                 }.subscribeOn(Schedulers.io())
     }
@@ -74,7 +81,7 @@ class RxJava102FlatMapActivity : AppCompatActivity() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .flatMap {
                     adapter.setPosts(it)
-                    Observable.fromIterable(it).subscribeOn(Schedulers.io())
+                   return@flatMap Observable.fromIterable(it).subscribeOn(Schedulers.io())
                 }
     }
 
@@ -122,5 +129,10 @@ class RxJava102FlatMapActivity : AppCompatActivity() {
             val post = list[position]
             holder.onBind(post)
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        disposables.clear()
     }
 }

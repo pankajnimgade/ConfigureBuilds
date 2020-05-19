@@ -12,9 +12,9 @@ import retrofit2.http.Path
 interface RequestApi {
 
     @GET("posts")
-    fun getPosts(): Observable<MutableList<Post>>
+    fun getPosts(): Observable<List<Post>>
 
     @GET("posts/{id}/comments")
-    fun getComments(@Path("id") id: Int): Observable<MutableList<Comment>>
+    fun getComments(@Path("id") id: Int): Observable<List<Comment>>
 
 }
