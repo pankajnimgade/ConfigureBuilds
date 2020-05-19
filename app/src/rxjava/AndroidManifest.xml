@@ -4,7 +4,8 @@
     <application
         android:name="configure.test.configurebuilds.StartUp"
         android:label="@string/app_name">
-        <activity android:name="configure.test.configurebuilds.activities.test103.RxJava103JustActivity"></activity>
+        <activity android:name="configure.test.configurebuilds.activities.test104.RxJavaTest104JustActivity"></activity>
+        <activity android:name="configure.test.configurebuilds.activities.test103.RxJava103CreateActivity" />
         <activity
             android:name="configure.test.configurebuilds.activities.test102.RxJava102FlatMapActivity"
             android:parentActivityName="configure.test.configurebuilds.activities.RxJavaListActivity"

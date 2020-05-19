@@ -13,10 +13,10 @@ import androidx.recyclerview.widget.RecyclerView
 import configure.test.configurebuilds.R
 import configure.test.configurebuilds.activities.test101.RxJava101Activity
 import configure.test.configurebuilds.activities.test102.RxJava102FlatMapActivity
-import configure.test.configurebuilds.activities.test103.RxJava103JustActivity
+import configure.test.configurebuilds.activities.test103.RxJava103CreateActivity
+import configure.test.configurebuilds.activities.test104.RxJavaTest104JustActivity
 import configure.test.configurebuilds.application.model.ActivityItem
 import configure.test.configurebuilds.databinding.ActivityRxJavaListBinding
-import kotlinx.android.synthetic.rxjava.activity_rx_java_list.*
 
 
 class RxJavaListActivity : AppCompatActivity() {
@@ -39,7 +39,8 @@ class RxJavaListActivity : AppCompatActivity() {
         if (list.isEmpty()) {
             list.add(ActivityItem(RxJava101Activity::class.java, "RxJava 101"))
             list.add(ActivityItem(RxJava102FlatMapActivity::class.java, "RxJava Flat Map 102"))
-            list.add(ActivityItem(RxJava103JustActivity::class.java, "RxJava Create 103"))
+            list.add(ActivityItem(RxJava103CreateActivity::class.java, "RxJava Create 103"))
+            list.add(ActivityItem(RxJavaTest104JustActivity::class.java, "RxJava Just 104"))
         }
         binding.recyclerView.adapter = RxJavaAdapter(list)
     }

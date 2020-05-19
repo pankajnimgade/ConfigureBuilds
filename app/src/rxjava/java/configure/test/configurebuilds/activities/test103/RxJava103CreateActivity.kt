@@ -10,15 +10,15 @@ import io.reactivex.ObservableOnSubscribe
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-class RxJava103JustActivity : AppCompatActivity() {
+class RxJava103CreateActivity : AppCompatActivity() {
 
     private val TAG = "RxJava103Just"
 
-    lateinit var taskObservable: Observable<Task>
+    lateinit var task103Observable: Observable<Task103>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_rx_java103_just)
+        setContentView(R.layout.activity_rx_java103_create)
 
         studyRxJava()
     }
@@ -26,12 +26,12 @@ class RxJava103JustActivity : AppCompatActivity() {
     private fun studyRxJava() {
 //        val task = Task("Walk the dog", false, 3)
 
-        val taskList : List<Task> = DataSource.createTaskList()
+        val task103List : List<Task103> = DataSource103.createTaskList()
 
-        taskObservable = Observable.create(ObservableOnSubscribe<Task> { emitter ->
+        task103Observable = Observable.create(ObservableOnSubscribe<Task103> { emitter ->
             Log.d(TAG, ": Someone has subscribed to this observable...")
 
-            taskList.forEach {
+            task103List.forEach {
                 if (!emitter.isDisposed) {
                     emitter.onNext(it)
                 }
@@ -47,7 +47,7 @@ class RxJava103JustActivity : AppCompatActivity() {
     }
 
     fun onAddSubscriber(view: View) {
-        taskObservable.subscribe({
+        task103Observable.subscribe({
             Log.d(TAG, ": onNext was called")
             Log.d(TAG, ": Task : ${it.description}")
         }, {
