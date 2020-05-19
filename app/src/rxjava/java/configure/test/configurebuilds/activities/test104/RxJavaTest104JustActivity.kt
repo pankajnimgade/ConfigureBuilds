@@ -27,14 +27,11 @@ class RxJavaTest104JustActivity : AppCompatActivity() {
     }
 
     private fun studyRxJavaJust() {
-
         val taskList = Task104("Take out the trash", true, 3)
-
         taskObservable = Observable
                 .just(taskList)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-
     }
 
     fun onAddSubscriber(view: View) {
