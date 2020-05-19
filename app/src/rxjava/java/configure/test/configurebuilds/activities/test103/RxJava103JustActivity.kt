@@ -24,13 +24,22 @@ class RxJava103JustActivity : AppCompatActivity() {
     }
 
     private fun studyRxJava() {
-        val task = Task("Walk the dog", false, 3)
+//        val task = Task("Walk the dog", false, 3)
+
+        val taskList : List<Task> = DataSource.createTaskList()
+
         taskObservable = Observable.create(ObservableOnSubscribe<Task> { emitter ->
             Log.d(TAG, ": Someone has subscribed to this observable...")
+
+            taskList.forEach {
+                if (!emitter.isDisposed) {
+                    emitter.onNext(it)
+                }
+            }
             if (!emitter.isDisposed) {
-                emitter.onNext(task)
                 emitter.onComplete()
             }
+
         })
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
