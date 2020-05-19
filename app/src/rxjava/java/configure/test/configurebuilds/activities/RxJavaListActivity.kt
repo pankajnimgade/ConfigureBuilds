@@ -16,6 +16,7 @@ import configure.test.configurebuilds.activities.test102.RxJava102FlatMapActivit
 import configure.test.configurebuilds.activities.test103.RxJava103CreateActivity
 import configure.test.configurebuilds.activities.test104.RxJavaTest104JustActivity
 import configure.test.configurebuilds.activities.test105.RxJava105RangeActivity
+import configure.test.configurebuilds.activities.test106.buffer.RxJava106BufferActivity
 import configure.test.configurebuilds.application.model.ActivityItem
 import configure.test.configurebuilds.databinding.ActivityRxJavaListBinding
 
@@ -43,6 +44,7 @@ class RxJavaListActivity : AppCompatActivity() {
             list.add(ActivityItem(RxJava103CreateActivity::class.java, "RxJava Create 103"))
             list.add(ActivityItem(RxJavaTest104JustActivity::class.java, "RxJava Just 104"))
             list.add(ActivityItem(RxJava105RangeActivity::class.java, "RxJava Range 105"))
+            list.add(ActivityItem(RxJava106BufferActivity::class.java, "RxJava Buffer 106"))
         }
         binding.recyclerView.adapter = RxJavaAdapter(list)
     }
