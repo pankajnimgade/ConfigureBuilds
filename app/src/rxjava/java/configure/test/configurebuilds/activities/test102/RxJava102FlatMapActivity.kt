@@ -58,6 +58,7 @@ class RxJava102FlatMapActivity : AppCompatActivity() {
                 }, {
                     Log.d(TAG, ": OnComplete was called")
                 })
+
         disposables.add(subscribe)
     }
 
@@ -75,17 +76,18 @@ class RxJava102FlatMapActivity : AppCompatActivity() {
     }
 
     private fun getPostsObservable(): Observable<Post> {
-        return ServiceGenerator.getRequestApi()
+        return ServiceGenerator
+                .getRequestApi()
                 .getPosts()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .flatMap {
                     adapter.setPosts(it)
-                   return@flatMap Observable.fromIterable(it).subscribeOn(Schedulers.io())
+                    return@flatMap Observable.fromIterable(it).subscribeOn(Schedulers.io())
                 }
     }
 
-    class PostAdapter(var list: MutableList<Post> = mutableListOf()) :
+    private class PostAdapter(var list: MutableList<Post> = mutableListOf()) :
             RecyclerView.Adapter<PostAdapter.ViewHolder>() {
 
         class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

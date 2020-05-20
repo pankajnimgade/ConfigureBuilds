@@ -18,6 +18,7 @@ import configure.test.configurebuilds.activities.test104.RxJavaTest104JustActivi
 import configure.test.configurebuilds.activities.test105.RxJava105RangeActivity
 import configure.test.configurebuilds.activities.test106.buffer.RxJava106BufferActivity
 import configure.test.configurebuilds.activities.test107.debounce.RxJava107DebounceActivity
+import configure.test.configurebuilds.activities.test108.flatmap.RxJava108ConcatMapActivity
 import configure.test.configurebuilds.application.model.ActivityItem
 import configure.test.configurebuilds.databinding.ActivityRxJavaListBinding
 
@@ -47,6 +48,7 @@ class RxJavaListActivity : AppCompatActivity() {
             list.add(ActivityItem(RxJava105RangeActivity::class.java, "RxJava Range 105"))
             list.add(ActivityItem(RxJava106BufferActivity::class.java, "RxJava Buffer 106"))
             list.add(ActivityItem(RxJava107DebounceActivity::class.java, "RxJava Debounce 107"))
+            list.add(ActivityItem(RxJava108ConcatMapActivity::class.java, "RxJava Concat Map 108"))
         }
         binding.recyclerView.adapter = RxJavaAdapter(list)
     }
