@@ -15,7 +15,7 @@ class ServiceGenerator {
         private const val BASE_URL = "https://jsonplaceholder.typicode.com"
 
         private val logging = HttpLoggingInterceptor().apply {
-            setLevel(HttpLoggingInterceptor.Level.HEADERS);
+            setLevel(HttpLoggingInterceptor.Level.BODY);
         }
         private val client = OkHttpClient.Builder().addInterceptor(logging).build()
 

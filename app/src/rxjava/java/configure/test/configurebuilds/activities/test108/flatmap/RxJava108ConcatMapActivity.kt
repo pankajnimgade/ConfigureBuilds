@@ -45,9 +45,9 @@ class RxJava108ConcatMapActivity : AppCompatActivity() {
                     Log.d(TAG, ": ${it.title}")
                     adapter.updatePosts(it)
                 }, {
-                    Log.d(TAG, ": onComplete was called")
+                    Log.d(TAG, ": onError was called")
                 }, {
-                    Log.d(TAG, ": onError called")
+                    Log.d(TAG, ": onComplete called")
                 })
 
 
@@ -59,7 +59,7 @@ class RxJava108ConcatMapActivity : AppCompatActivity() {
                 .getRequestApi()
                 .getComments(post.id)
                 .map {
-                    val delay = ((Random().nextInt(2)) * 500)
+                    val delay = ((Random().nextInt(5)) * 500)
                     Thread.sleep(delay.toLong())
                     Log.d(TAG, "${Thread.currentThread().name} sleeps for $delay")
                     post.comments = it.toMutableList()
