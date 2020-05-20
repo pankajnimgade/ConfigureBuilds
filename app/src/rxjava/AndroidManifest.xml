@@ -4,7 +4,8 @@
     <application
         android:name="configure.test.configurebuilds.StartUp"
         android:label="@string/app_name">
-        <activity android:name="configure.test.configurebuilds.activities.test106.buffer.RxJava106BufferActivity"></activity>
+        <activity android:name="configure.test.configurebuilds.activities.test107.debounce.RxJava107DebounceActivity"></activity>
+        <activity android:name="configure.test.configurebuilds.activities.test106.buffer.RxJava106BufferActivity" />
         <activity android:name="configure.test.configurebuilds.activities.test105.RxJava105RangeActivity" />
         <activity android:name="configure.test.configurebuilds.activities.test104.RxJavaTest104JustActivity" />
         <activity android:name="configure.test.configurebuilds.activities.test103.RxJava103CreateActivity" />

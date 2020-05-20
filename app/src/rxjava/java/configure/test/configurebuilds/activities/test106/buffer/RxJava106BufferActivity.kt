@@ -35,7 +35,7 @@ class RxJava106BufferActivity : AppCompatActivity() {
     fun onAddSubscriber(view: View) {
         taskObservable
                 .buffer(2)
-                .subscribe({ it ->
+                .subscribe({ it -> 
                     Log.d(TAG, ": onNext was called")
                     Log.d(TAG, ": Task : ${it.size}")
                     it.forEach { Log.d(TAG, ": ${it.description}") }
