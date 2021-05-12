@@ -1,5 +1,6 @@
 package configure.test.configurebuilds.activities.test108.flatmap
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -33,6 +34,7 @@ class RxJava108ConcatMapActivity : AppCompatActivity() {
         initializeUi()
     }
 
+    @SuppressLint("LogNotTimber")
     private fun initializeUi() {
         val disposable = getPostsObservable()
                 .subscribeOn(Schedulers.io())
